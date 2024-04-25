@@ -3,9 +3,35 @@ calc_metrics.py
 Brooke Reams - breams@esri.com
 Feb. 23, 2024
 
-Script written for WFRC to calculate "Big 5 Metrics" consumed by Dashboard
-"""
+Modified by: jreynolds@wfrc.org
 
+Script written for WFRC to calculate "Big 5 Metrics" consumed by Dashboard
+
+---
+
+The script obtains the names (e.g Clearfield, Utah County North,) from each geography field provided, sums the data values, 
+then performs an outer join with those names and the names from the boundary layer feature service. This means that 
+the field name does not matter as long as the actual geog name values match those in the boundary layer, otherwise 
+the geog name will not be assigned a geo type or have an associated geometry.
+
+
+The GIS API object is accessed by a specified username and password from the keyring module
+
+
+"inputs" dictionary keys:
+- itemID: the item's id from ArcGIS Online
+- index: the layer number. This is usually zero unless the item is a gdb
+- query: (optional) intial subset of the data
+- geogFields: Fields that the dataset will be summarized to. Note the boundary layer 
+    currently only contains city area, small area, county, and region
+- geogAreas: new geographies that are summarized using the statement shown
+- keyFieldPattern: the fields that currently contain the data
+- outFieldPattern: the new fields that will be created and added to the train; 
+    each layer must have a unique pattern 
+    
+To add data from a new table, the code must be updated in three places.
+
+"""
 
 import arcgis
 import pandas as pd
@@ -14,6 +40,7 @@ import re
 import logging
 import datetime
 import sys
+import keyring
 
 
 def logIt(message):
@@ -24,6 +51,16 @@ def logIt(message):
 def getFeatureLayerFromItemId(gis, item_id):
     item = gis.content.get(item_id)
     fl = item.layers[0]
+
+    return fl
+
+def getFeatureLayerFromItemIdandIndex(gis, item_id, index):
+    """
+    Same as the original function but also ingests an index. 
+    For datasets that have multiple layers
+    """
+    item = gis.content.get(item_id)
+    fl = item.layers[index]
 
     return fl
 
@@ -48,6 +85,8 @@ def metricJobsBy(gis, metric_name, input):
     ato_df = ato_fl.query(where=input["query"]).sdf
     # Get geog fields from dataframe
     df_flds = input["geogFields"][:]
+
+    
     # Get geog area query fields from dataframe
     for d in input["geogAreas"]:
         for fld in d["queryFields"]:
@@ -110,7 +149,7 @@ def metricJobsBy(gis, metric_name, input):
         geog_df = pd.DataFrame(geog_list, columns=out_flds)
         geog_df["geoname"] = geog_df["geoname"].str.title()
         geog_df = geog_df.groupby("geoname").sum()
-        logIt(geog_df.head())
+        # logIt(geog_df.head())
         all_df_list.append(geog_df)
 
 
@@ -156,13 +195,14 @@ def metricJobsBy(gis, metric_name, input):
 def metricEstimatesProjections(gis, metric_name, input):
     logIt("Current metric: {}".format(metric_name))
     # Get fs item from portal
-    ato_fl = getFeatureLayerFromItemId(gis, input["itemId"])
+    ato_fl = getFeatureLayerFromItemIdandIndex(gis, input["itemId"], input["index"])
     logIt(ato_fl)
 
     # Convert layer to pandas dataframe
     ato_df = ato_fl.query(where=input["query"]).sdf
     # Get geog fields from dataframe
     df_flds = input["geogFields"][:]
+
     # Get geog area query fields from dataframe
     for d in input["geogAreas"]:
         for fld in d["queryFields"]:
@@ -172,6 +212,7 @@ def metricEstimatesProjections(gis, metric_name, input):
     # Get key fields from dataframe
     key_flds = [i for i in ato_df.columns if re.match(input["keyFieldPattern"], i)]
     df_flds.extend(key_flds)
+
     ato_df = ato_df[df_flds]
     
     # Get dictionary of out table fields
@@ -247,43 +288,195 @@ def metricEstimatesProjections(gis, metric_name, input):
 
 
 def main():
+    
+    # toggle whether to upload to AGOL or write to csv
+    upload_data = True
+
     # Script inputs - each metric should be added as dictionary of key/value pairs in the inputs dictionary
-    inputs = {"Jobs By Auto": {"itemId": "d485928e777740c7963a5b68a37db116",
-            "query": "1=1",
-            "geogFields": ["CITYAREA", "CO_NAME", "SMALLAREA"],
-            "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
-                            {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
-                            {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
-            "keyFieldPattern": "^JOBAUTO_[0-9]{2}$",
-            "weightedFieldPattern": "^HH_[0-9]{2}$",
-            "weightedFieldPrefix": "HH_",
-            "outFieldPattern": "weighted_ato_jobauto_"},
-            "Jobs By Transit": {"itemId": "d485928e777740c7963a5b68a37db116",
-            "query": "1=1",
-            "geogFields": ["CITYAREA", "CO_NAME", "SMALLAREA"],
-            "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
-                            {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
-                            {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
-            "keyFieldPattern": "^JOBTRANSIT_[0-9]{2}$",
-            "weightedFieldPattern": "^HH_[0-9]{2}$",
-            "weightedFieldPrefix": "HH_",
-            "outFieldPattern": "weighted_ato_jobtransit_"},
-            "Population Estimates": {"itemId": "db1ebf9044e347758468de2b6d5f744a",
-                "query": "ModelArea = 'Wasatch Front Travel Demand Model'",
-                "geogFields": ["CityArea", "CO_NAME"],
-                "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
-                            {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
-                            {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
-                "keyFieldPattern": "^YEAR[0-9]{4}$",
-                "outFieldPattern": "pop_proj_"},
-            "Household Estimates": {"itemId": "920e71114c8e491cb0d1c01e3766d839",
-                "query": "ModelArea = 'Wasatch Front Travel Demand Model'",
-                "geogFields": ["CityArea", "CO_NAME"],
-                "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
-                            {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
-                            {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
-                "keyFieldPattern": "^YEAR[0-9]{4}$",
-                "outFieldPattern": "hh_proj_"}}
+    inputs = {
+                "Jobs By Auto": 
+                    {"itemId": "d485928e777740c7963a5b68a37db116",
+                    "index":0,
+                    "query": "1=1",
+                    "geogFields": ["CITYAREA", "CO_NAME", "SMALLAREA"],
+                    "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
+                    "keyFieldPattern": "^JOBAUTO_[0-9]{2}$",
+                    "weightedFieldPattern": "^HH_[0-9]{2}$",
+                    "weightedFieldPrefix": "HH_",
+                    "outFieldPattern": "weighted_ato_jobauto_"},
+
+                "Jobs By Transit": 
+                    {"itemId": "d485928e777740c7963a5b68a37db116",
+                    "index":0,
+                    "query": "1=1",
+                    "geogFields": ["CITYAREA", "CO_NAME", "SMALLAREA"],
+                    "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
+                    "keyFieldPattern": "^JOBTRANSIT_[0-9]{2}$",
+                    "weightedFieldPattern": "^HH_[0-9]{2}$",
+                    "weightedFieldPrefix": "HH_",
+                    "outFieldPattern": "weighted_ato_jobtransit_"},
+
+                "Population Estimates": 
+                    {"itemId": "db1ebf9044e347758468de2b6d5f744a",
+                        "index":0,
+                        "query": "ModelArea = 'Wasatch Front Travel Demand Model'",
+                        "geogFields": ["CityArea", "CO_NAME"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
+                        "keyFieldPattern": "^YEAR[0-9]{4}$",
+                        "outFieldPattern": "pop_proj_"},
+
+                "Household Estimates": 
+                    {"itemId": "920e71114c8e491cb0d1c01e3766d839",
+                        "index":0,
+                        "query": "ModelArea = 'Wasatch Front Travel Demand Model'",
+                        "geogFields": ["CityArea", "CO_NAME"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
+                        "keyFieldPattern": "^YEAR[0-9]{4}$",
+                        "outFieldPattern": "hh_proj_"},
+
+                "Households with Access to Transit": 
+                    {"itemId": "98a0bd9da71a47339f29fefc7b1cb46a",
+                        "index":0,
+                        "query": "1=1",
+                        "geogFields": ["CITYAREA", "CO_NAME"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
+                        "keyFieldPattern": "^HH_[0-9]{4}$",
+                        "outFieldPattern": "hh_20min_walk_transit_"},
+
+                "Households with Access to Trails": 
+                    {"itemId": "09655a26d6204e5fb00ef10b4a9a9899",
+                        "index":0,
+                        "query": "1=1",
+                        "geogFields": ["CITYAREA", "CO_NAME"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
+                        "keyFieldPattern": "^HH_[0-9]{4}$",
+                        "outFieldPattern": "hh_20min_walk_trail_"},
+
+                "Households with Access to Parks": 
+                    {"itemId": "b964fa04b6184b5ebc9ec2ae24a586ab",
+                        "index":0,
+                        "query": "1=1",
+                        "geogFields": ["CITYAREA", "CO_NAME"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
+                        "keyFieldPattern": "^HH_[0-9]{4}$",
+                        "outFieldPattern": "hh_20min_walk_parks_"},
+
+                "Population within Centers": 
+                    {"itemId": "f693c6c6e09a4a75b98169eb1dfbeee4",
+                        "index":0,
+                        "query": "1=1",
+                        "geogFields": ["CITYAREA", "CO_NAME"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
+                        "keyFieldPattern": "^POP_[0-9]{4}$",
+                        "outFieldPattern": "pop_within_centers_"},
+
+                "Commuters that Drive Alone": 
+                    {"itemId": "9fae7da885ce461fad068dad14bcf67c",
+                        "query": "1=1",
+                        "index":0,
+                        "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["COUNTY"], "query": "COUNTY == 'Utah'"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["COUNTY"], "query": "COUNTY==COUNTY"}],
+                        "keyFieldPattern": "^ACS5_[0-9]{4}$",
+                        "outFieldPattern": "commuters_drive_alone_"},
+
+
+                "Commuters that use Public Transportation": 
+                    {"itemId": "9fae7da885ce461fad068dad14bcf67c",
+                        "index":2,
+                        "query": "1=1",
+                        "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["COUNTY"], "query": "COUNTY == 'Utah'"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["COUNTY"], "query": "COUNTY==COUNTY"}],
+                        "keyFieldPattern": "^ACS5_[0-9]{4}$",
+                        "outFieldPattern": "commuters_public_tranport_"},
+
+                "Commuters that Work From Home": 
+                    {"itemId": "9fae7da885ce461fad068dad14bcf67c",
+                        "index":1,
+                        "query": "1=1",
+                        "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["COUNTY"], "query": "COUNTY == 'Utah'"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["COUNTY"], "query": "COUNTY==COUNTY"}],
+                        "keyFieldPattern": "^ACS5_[0-9]{4}$",
+                        "outFieldPattern": "commuters_work_home_"},
+
+                "Median Income": 
+                    {"itemId": "9fae7da885ce461fad068dad14bcf67c",
+                        "index":7,
+                        "query": "1=1",
+                        "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["COUNTY"], "query": "COUNTY == 'Utah'"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["COUNTY"], "query": "COUNTY==COUNTY"}],
+                        "keyFieldPattern": "^ACS5_[0-9]{4}$",
+                        "outFieldPattern": "median_income_"},
+                
+                "Persons below Poverty Level": 
+                    {"itemId": "9fae7da885ce461fad068dad14bcf67c",
+                        "index":11,
+                        "query": "1=1",
+                        "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["COUNTY"], "query": "COUNTY == 'Utah'"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["COUNTY"], "query": "COUNTY==COUNTY"}],
+                        "keyFieldPattern": "^ACS5_[0-9]{4}$",
+                        "outFieldPattern": "persons_below_poverty_"},
+
+                "Aggregate Travel Time for Commuters": 
+                    {"itemId": "9fae7da885ce461fad068dad14bcf67c",
+                        "index":13,
+                        "query": "1=1",
+                        "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["COUNTY"], "query": "COUNTY == 'Utah'"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["COUNTY"], "query": "COUNTY==COUNTY"}],
+                        "keyFieldPattern": "^ACS5_[0-9]{4}$",
+                        "outFieldPattern": "commuter_travel_time_"},
+
+                "Median Age": 
+                    {"itemId": "9fae7da885ce461fad068dad14bcf67c",
+                        "index":14,
+                        "query": "1=1",
+                        "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["COUNTY"], "query": "COUNTY == 'Utah'"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["COUNTY"], "query": "COUNTY==COUNTY"}],
+                        "keyFieldPattern": "^ACS5_[0-9]{4}$",
+                        "outFieldPattern": "median_age_"},
+                
+                "Persons with Education of Bachelors Degree": 
+                    {"itemId": "9fae7da885ce461fad068dad14bcf67c",
+                        "index":21,
+                        "query": "1=1",
+                        "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["COUNTY"], "query": "COUNTY == 'Utah'"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["COUNTY"], "query": "COUNTY==COUNTY"}],
+                        "keyFieldPattern": "^ACS5_[0-9]{4}$",
+                        "outFieldPattern": "persons_with_bachelors_"},
+            }
+    
+
 
     # Item id of the feature layer that the output table will be joined to
     boundaries_item_id = "98bfc2eb26d94adcb6ae9cab2f7d57a8"
@@ -293,7 +486,6 @@ def main():
             "newServiceName": "WFRC_PerformanceMetrics",
             "newItemTags": "wfrc, metrics"}
     
-
     # Logging details
     now = datetime.datetime.now()
     cwd = sys.path[0]
@@ -309,21 +501,37 @@ def main():
 
 
     # Metrics to run
-    metrics = ["Jobs By Auto", "Jobs By Transit", "Population Estimates", "Household Estimates"]
+    metrics = ["Jobs By Auto", 
+               "Jobs By Transit", 
+               "Population Estimates", 
+               "Household Estimates", 
+               "Households with Access to Transit", 
+               "Households with Access to Trails", 
+               "Households with Access to Parks", 
+               "Population within Centers", 
+               "Commuters that Drive Alone", 
+               "Commuters that use Public Transportation", 
+               "Commuters that Work From Home", 
+               "Median Income", 
+               "Persons below Poverty Level", 
+               "Aggregate Travel Time for Commuters", 
+               "Median Age", 
+               "Persons with Education of Bachelors Degree"]
 
 
     if metrics:
+        un = 'analytics_wfrc'
+        pw = keyring.get_password('Analytics AGOL', un)
+        
         # Portal info
         portal_profile = "wfrc_profile"
 
         # Connect to WFRC's portal
-        ##gis = arcgis.gis.GIS(profile=portal_profile)
-        gis = arcgis.gis.GIS("https://wfrc.maps.arcgis.com", "wfrc_consult", "consulting4wfrc", profile=portal_profile)
+        gis = arcgis.gis.GIS("https://wfrc.maps.arcgis.com", un, pw, profile=portal_profile)
         logIt("Connected to gis: {}".format(gis))
 
         # Initialize final output dataframe
         output_df = pd.DataFrame()
-
 
         # Run chosen metrics
         if "Jobs By Auto" in metrics:
@@ -354,6 +562,92 @@ def main():
             # Merge metric to existing output
             output_df = mergeMetricDataframes(output_df, metric_df)
 
+        if "Households with Access to Transit" in metrics:
+            input = inputs["Households with Access to Transit"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Households with Access to Transit", input)
+            metric_df.to_csv(r"E:\Tasks\WFRC_Dashboard\Outputs\Households with Access to Transit.csv", index=False)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Households with Access to Trails" in metrics:
+            input = inputs["Households with Access to Trails"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Households with Access to Trails", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Households with Access to Parks" in metrics:
+            input = inputs["Households with Access to Parks"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Households with Access to Parks", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+        
+        if "Population within Centers" in metrics:
+            input = inputs["Population within Centers"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Population within Centers", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Commuters that Drive Alone" in metrics:
+            input = inputs["Commuters that Drive Alone"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Commuters that Drive Alone", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Commuters that use Public Transportation" in metrics:
+            input = inputs["Commuters that use Public Transportation"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Commuters that use Public Transportation", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Commuters that Work From Home" in metrics:
+            input = inputs["Commuters that Work From Home"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Commuters that Work From Home", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+        
+        if "Median Income" in metrics:
+            input = inputs["Median Income"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Median Income", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Persons below Poverty Level" in metrics:
+            input = inputs["Persons below Poverty Level"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Persons below Poverty Level", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+        
+        if "Aggregate Travel Time for Commuters" in metrics:
+            input = inputs["Aggregate Travel Time for Commuters"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Aggregate Travel Time for Commuters", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Median Age" in metrics:
+            input = inputs["Median Age"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Median Age", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Persons with Education of Bachelors Degree" in metrics:
+            input = inputs["Persons with Education of Bachelors Degree"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Persons with Education of Bachelors Degree", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+
 
         # Get feature layer used for joining data
         logIt("Retrieving Performance Metric Boundaries feature layer from Portal")
@@ -368,29 +662,32 @@ def main():
         # Drop duplicate columns"
         merged_df.drop(columns=["Shape__Area", "Shape__Length"], inplace=True)
 
-        # Check if item already exists
-        logIt("Checking for existing File Geodatabase item.")
-        gdb_found = [item for item in gis.content.search('title:{} AND type:File Geodatabase'.format(output_item["newItemTitle"])) if item.title == output_item["newItemTitle"]]
-        if gdb_found:
-            logIt("File Geodatabase found.  Deleting item.")
-            item = gdb_found[0]
-            item.delete()
-
-        # Check for exact name.  This is needed as a workaround where the query in the content search is returning items with titles that don't match exactly.
-        logIt("Checking for existing Feature Service item.")
-        items_found = [item for item in gis.content.search('title:{} AND type:Feature Service'.format(output_item["newItemTitle"])) if item.title == output_item["newItemTitle"]]
-        if items_found:
-            item = items_found[0]
-            logIt("Existing feature service found.  Overwriting item.")
-            result = merged_df.spatial.to_featurelayer(output_item["newItemTitle"], gis=gis, tags=output_item["newItemTags"],
-                                                           overwrite=True, service={"featureServiceId": item.id, "layer": 0})
-            logIt(result)
-        else:
-            logIt("Feature service not found.  Adding item.")
-            result = merged_df.spatial.to_featurelayer(output_item["newItemTitle"])
-            logIt(result)
-
         
+        if upload_data == True:
+            # Check if item already exists
+            logIt("Checking for existing File Geodatabase item.")
+            gdb_found = [item for item in gis.content.search('title:{} AND type:File Geodatabase'.format(output_item["newItemTitle"])) if item.title == output_item["newItemTitle"]]
+            if gdb_found:
+                logIt("File Geodatabase found.  Deleting item.")
+                item = gdb_found[0]
+                item.delete()
+
+            # Check for exact name.  This is needed as a workaround where the query in the content search is returning items with titles that don't match exactly.
+            logIt("Checking for existing Feature Service item.")
+            items_found = [item for item in gis.content.search('title:{} AND type:Feature Service'.format(output_item["newItemTitle"])) if item.title == output_item["newItemTitle"]]
+            if items_found:
+                item = items_found[0]
+                logIt("Existing feature service found.  Overwriting item.")
+                result = merged_df.spatial.to_featurelayer(output_item["newItemTitle"], gis=gis, tags=output_item["newItemTags"],
+                                                            overwrite=True, service={"featureServiceId": item.id, "layer": 0})
+                logIt(result)
+            else:
+                logIt("Feature service not found.  Adding item.")
+                result = merged_df.spatial.to_featurelayer(output_item["newItemTitle"])
+                logIt(result)
+
+        if upload_data == False:
+            merged_df.to_csv(r".\Outputs\test_metrics.csv", index=False)
 
 
 if __name__ == "__main__":
