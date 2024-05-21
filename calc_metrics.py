@@ -9,6 +9,8 @@ Script written for WFRC to calculate "Big 5 Metrics" consumed by Dashboard
 
 ---
 
+Note: This script must be run in an arcpy-enabled environment, otherwise field names will be truncated
+
 The script obtains the names (e.g Clearfield, Utah County North,) from each geography field provided, sums the data values, 
 then performs an outer join with those names and the names from the boundary layer feature service. This means that 
 the field name does not matter as long as the actual geog name values match those in the boundary layer, otherwise 
@@ -232,7 +234,7 @@ def metricEstimatesProjections(gis, metric_name, input):
         groupby_dict = {}
         for fld in ato_df.columns:
             if re.match(input["keyFieldPattern"], fld):
-                groupby_dict[fld] = "sum"
+                groupby_dict[fld] = input["aggregation"]
             elif fld == "geoname":
                 groupby_dict[fld] = "first"
 
@@ -265,7 +267,7 @@ def metricEstimatesProjections(gis, metric_name, input):
         drop_columns = []
         for fld in area_df.columns:
             if re.match(input["keyFieldPattern"], fld):
-                groupby_dict[fld] = "sum"
+                groupby_dict[fld] = input["aggregation"]
             elif fld == "geoname":
                 groupby_dict[fld] = "first"
             else:
@@ -297,6 +299,7 @@ def main():
                 "Jobs By Auto": 
                     {"itemId": "d485928e777740c7963a5b68a37db116",
                     "index":0,
+                    "aggregation":"sum",
                     "query": "1=1",
                     "geogFields": ["CITYAREA", "CO_NAME", "SMALLAREA"],
                     "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
@@ -310,6 +313,7 @@ def main():
                 "Jobs By Transit": 
                     {"itemId": "d485928e777740c7963a5b68a37db116",
                     "index":0,
+                    "aggregation":"sum",
                     "query": "1=1",
                     "geogFields": ["CITYAREA", "CO_NAME", "SMALLAREA"],
                     "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
@@ -323,6 +327,7 @@ def main():
                 "Population Estimates": 
                     {"itemId": "db1ebf9044e347758468de2b6d5f744a",
                         "index":0,
+                        "aggregation":"sum",
                         "query": "ModelArea = 'Wasatch Front Travel Demand Model'",
                         "geogFields": ["CityArea", "CO_NAME"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
@@ -334,6 +339,7 @@ def main():
                 "Household Estimates": 
                     {"itemId": "920e71114c8e491cb0d1c01e3766d839",
                         "index":0,
+                        "aggregation":"sum",
                         "query": "ModelArea = 'Wasatch Front Travel Demand Model'",
                         "geogFields": ["CityArea", "CO_NAME"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
@@ -345,6 +351,7 @@ def main():
                 "Households with Access to Transit": 
                     {"itemId": "98a0bd9da71a47339f29fefc7b1cb46a",
                         "index":0,
+                        "aggregation":"sum",
                         "query": "1=1",
                         "geogFields": ["CITYAREA", "CO_NAME"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
@@ -356,6 +363,7 @@ def main():
                 "Households with Access to Trails": 
                     {"itemId": "09655a26d6204e5fb00ef10b4a9a9899",
                         "index":0,
+                        "aggregation":"sum",
                         "query": "1=1",
                         "geogFields": ["CITYAREA", "CO_NAME"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
@@ -367,6 +375,7 @@ def main():
                 "Households with Access to Parks": 
                     {"itemId": "b964fa04b6184b5ebc9ec2ae24a586ab",
                         "index":0,
+                        "aggregation":"sum",
                         "query": "1=1",
                         "geogFields": ["CITYAREA", "CO_NAME"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
@@ -378,6 +387,7 @@ def main():
                 "Population within Centers": 
                     {"itemId": "f693c6c6e09a4a75b98169eb1dfbeee4",
                         "index":0,
+                        "aggregation":"sum",
                         "query": "1=1",
                         "geogFields": ["CITYAREA", "CO_NAME"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
@@ -386,10 +396,47 @@ def main():
                         "keyFieldPattern": "^POP_[0-9]{4}$",
                         "outFieldPattern": "pop_within_centers_"},
 
+                "Housing Costs": 
+                    {"itemId": "82fdb720f4bf43f98c1b7cac14a93c0f",
+                        "index":0,
+                        "aggregation":"mean",
+                        "query": "1=1",
+                        "geogFields": ["CityArea", 'SUBAREA', "CO_NAME"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_NAME"], "query": "CO_NAME in ['BOX ELDER', 'WEBER', 'DAVIS', 'SALT LAKE']"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_NAME"], "query": "CO_NAME == 'UTAH'"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_NAME"], "query": "CO_NAME==CO_NAME"}],
+                        "keyFieldPattern": "^h_ami_[0-9]{4}$",
+                        "outFieldPattern": "h_ami_"},
+
+                "Transportation Costs": 
+                    {"itemId": "82fdb720f4bf43f98c1b7cac14a93c0f",
+                        "index":0,
+                        "aggregation":"mean",
+                        "query": "1=1",
+                        "geogFields": ["CityArea", 'SUBAREA', "CO_NAME"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_NAME"], "query": "CO_NAME in ['BOX ELDER', 'WEBER', 'DAVIS', 'SALT LAKE']"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_NAME"], "query": "CO_NAME == 'UTAH'"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_NAME"], "query": "CO_NAME==CO_NAME"}],
+                        "keyFieldPattern": "^t_ami_[0-9]{4}$",
+                        "outFieldPattern": "t_ami_"},
+
+                "Housing + Transportation Costs": 
+                    {"itemId": "82fdb720f4bf43f98c1b7cac14a93c0f",
+                        "index":0,
+                        "aggregation":"mean",
+                        "query": "1=1",
+                        "geogFields": ["CityArea", 'SUBAREA', "CO_NAME"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_NAME"], "query": "CO_NAME in ['BOX ELDER', 'WEBER', 'DAVIS', 'SALT LAKE']"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_NAME"], "query": "CO_NAME == 'UTAH'"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_NAME"], "query": "CO_NAME==CO_NAME"}],
+                        "keyFieldPattern": "^ht_ami_[0-9]{4}$",
+                        "outFieldPattern": "ht_ami_"},
+
                 "Commuters that Drive Alone": 
                     {"itemId": "9fae7da885ce461fad068dad14bcf67c",
-                        "query": "1=1",
                         "index":0,
+                        "aggregation":"sum",
+                        "query": "1=1",
                         "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
                                     {"geogName": "Mountainland Association of Governments Region", "queryFields": ["COUNTY"], "query": "COUNTY == 'Utah'"},
@@ -401,6 +448,7 @@ def main():
                 "Commuters that use Public Transportation": 
                     {"itemId": "9fae7da885ce461fad068dad14bcf67c",
                         "index":2,
+                        "aggregation":"sum",
                         "query": "1=1",
                         "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
@@ -412,6 +460,7 @@ def main():
                 "Commuters that Work From Home": 
                     {"itemId": "9fae7da885ce461fad068dad14bcf67c",
                         "index":1,
+                        "aggregation":"sum",
                         "query": "1=1",
                         "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
@@ -423,6 +472,7 @@ def main():
                 "Median Income": 
                     {"itemId": "9fae7da885ce461fad068dad14bcf67c",
                         "index":7,
+                        "aggregation":"sum",
                         "query": "1=1",
                         "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
@@ -434,6 +484,7 @@ def main():
                 "Persons below Poverty Level": 
                     {"itemId": "9fae7da885ce461fad068dad14bcf67c",
                         "index":11,
+                        "aggregation":"sum",
                         "query": "1=1",
                         "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
@@ -445,6 +496,7 @@ def main():
                 "Aggregate Travel Time for Commuters": 
                     {"itemId": "9fae7da885ce461fad068dad14bcf67c",
                         "index":13,
+                        "aggregation":"sum",
                         "query": "1=1",
                         "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
@@ -456,6 +508,7 @@ def main():
                 "Median Age": 
                     {"itemId": "9fae7da885ce461fad068dad14bcf67c",
                         "index":14,
+                        "aggregation":"sum",
                         "query": "1=1",
                         "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
@@ -467,6 +520,7 @@ def main():
                 "Persons with Education of Bachelors Degree": 
                     {"itemId": "9fae7da885ce461fad068dad14bcf67c",
                         "index":21,
+                        "aggregation":"sum",
                         "query": "1=1",
                         "geogFields": ["CITY_NAME", 'SUBAREA', "COUNTY"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["COUNTY"], "query": "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"},
@@ -508,7 +562,10 @@ def main():
                "Households with Access to Transit", 
                "Households with Access to Trails", 
                "Households with Access to Parks", 
-               "Population within Centers", 
+               "Population within Centers",
+               "Housing Costs",
+               "Transportation Costs",
+               "Housing + Transportation Costs",
                "Commuters that Drive Alone", 
                "Commuters that use Public Transportation", 
                "Commuters that Work From Home", 
@@ -566,7 +623,6 @@ def main():
             input = inputs["Households with Access to Transit"]
             # Get dataframe of metric data
             metric_df = metricEstimatesProjections(gis, "Households with Access to Transit", input)
-            metric_df.to_csv(r"E:\Tasks\WFRC_Dashboard\Outputs\Households with Access to Transit.csv", index=False)
             # Merge metric to existing output
             output_df = mergeMetricDataframes(output_df, metric_df)
 
@@ -588,6 +644,27 @@ def main():
             input = inputs["Population within Centers"]
             # Get dataframe of metric data
             metric_df = metricEstimatesProjections(gis, "Population within Centers", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Housing Costs" in metrics:
+            input = inputs["Housing Costs"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Housing Costs", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Transportation Costs" in metrics:
+            input = inputs["Transportation Costs"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Transportation Costs", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Housing + Transportation Costs" in metrics:
+            input = inputs["Housing + Transportation Costs"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Housing + Transportation Costs", input)
             # Merge metric to existing output
             output_df = mergeMetricDataframes(output_df, metric_df)
 
@@ -679,11 +756,11 @@ def main():
                 item = items_found[0]
                 logIt("Existing feature service found.  Overwriting item.")
                 result = merged_df.spatial.to_featurelayer(output_item["newItemTitle"], gis=gis, tags=output_item["newItemTags"],
-                                                            overwrite=True, service={"featureServiceId": item.id, "layer": 0})
+                                                            overwrite=True, service={"featureServiceId": item.id, "layer": 0}, sanitize_columns=False)
                 logIt(result)
             else:
                 logIt("Feature service not found.  Adding item.")
-                result = merged_df.spatial.to_featurelayer(output_item["newItemTitle"])
+                result = merged_df.spatial.to_featurelayer(output_item["newItemTitle"], sanitize_columns=False)
                 logIt(result)
 
         if upload_data == False:
