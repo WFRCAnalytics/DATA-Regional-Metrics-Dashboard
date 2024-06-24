@@ -292,7 +292,7 @@ def metricEstimatesProjections(gis, metric_name, input):
 def main():
     
     # toggle whether to upload to AGOL or write to csv
-    upload_data = True
+    upload_data = False
 
     # Script inputs - each metric should be added as dictionary of key/value pairs in the inputs dictionary
     inputs = {
@@ -360,8 +360,20 @@ def main():
                         "keyFieldPattern": "^HH_[0-9]{4}$",
                         "outFieldPattern": "hh_20min_walk_transit_"},
 
-                "Households with Access to Trails": 
-                    {"itemId": "09655a26d6204e5fb00ef10b4a9a9899",
+                # "Households with Access to Trails": 
+                #     {"itemId": "09655a26d6204e5fb00ef10b4a9a9899",
+                #         "index":0,
+                #         "aggregation":"sum",
+                #         "query": "1=1",
+                #         "geogFields": ["CITYAREA", "CO_NAME"],
+                #         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
+                #                     {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
+                #                     {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
+                #         "keyFieldPattern": "^HH_[0-9]{4}$",
+                #         "outFieldPattern": "hh_20min_walk_trail_"},
+                
+                "Households with Access to Trails 5min": 
+                    {"itemId": "ee833e7d6461440bbd23d1be0918b875",
                         "index":0,
                         "aggregation":"sum",
                         "query": "1=1",
@@ -370,10 +382,34 @@ def main():
                                     {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
                                     {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
                         "keyFieldPattern": "^HH_[0-9]{4}$",
-                        "outFieldPattern": "hh_20min_walk_trail_"},
+                        "outFieldPattern": "hh_5min_walk_trail_"},
+                
+                "Households with Access to Trails 10min": 
+                    {"itemId": "ce0caa2c8f6c412ba8178e744ae52282",
+                        "index":0,
+                        "aggregation":"sum",
+                        "query": "1=1",
+                        "geogFields": ["CITYAREA", "CO_NAME"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
+                        "keyFieldPattern": "^HH_[0-9]{4}$",
+                        "outFieldPattern": "hh_10min_walk_trail_"},
 
-                "Households with Access to Parks": 
-                    {"itemId": "b964fa04b6184b5ebc9ec2ae24a586ab",
+                # "Households with Access to Parks": 
+                #     {"itemId": "b964fa04b6184b5ebc9ec2ae24a586ab",
+                #         "index":0,
+                #         "aggregation":"sum",
+                #         "query": "1=1",
+                #         "geogFields": ["CITYAREA", "CO_NAME"],
+                #         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
+                #                     {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
+                #                     {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
+                #         "keyFieldPattern": "^HH_[0-9]{4}$",
+                #         "outFieldPattern": "hh_20min_walk_parks_"},
+
+                "Households with Access to Parks 5min": 
+                    {"itemId": "371d341c3aa043e9bc0caf046bfaf403",
                         "index":0,
                         "aggregation":"sum",
                         "query": "1=1",
@@ -382,7 +418,19 @@ def main():
                                     {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
                                     {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
                         "keyFieldPattern": "^HH_[0-9]{4}$",
-                        "outFieldPattern": "hh_20min_walk_parks_"},
+                        "outFieldPattern": "hh_5min_walk_parks_"},
+
+                "Households with Access to Parks 10min": 
+                    {"itemId": "a2fd003749824e12a347cb561b2ad089",
+                        "index":0,
+                        "aggregation":"sum",
+                        "query": "1=1",
+                        "geogFields": ["CITYAREA", "CO_NAME"],
+                        "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS in [3, 57, 11, 35]"},
+                                    {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS == 49"},
+                                    {"geogName": "Wasatch Front Region", "queryFields": ["CO_FIPS"], "query": "CO_FIPS==CO_FIPS"}],
+                        "keyFieldPattern": "^HH_[0-9]{4}$",
+                        "outFieldPattern": "hh_10min_walk_parks_"},
 
                 "Population within Centers": 
                     {"itemId": "f693c6c6e09a4a75b98169eb1dfbeee4",
@@ -560,8 +608,12 @@ def main():
                "Population Estimates", 
                "Household Estimates", 
                "Households with Access to Transit", 
-               "Households with Access to Trails", 
-               "Households with Access to Parks", 
+            #    "Households with Access to Trails",
+               "Households with Access to Trails 5min",
+               "Households with Access to Trails 10min",
+            #    "Households with Access to Parks",
+               "Households with Access to Parks 5min",
+               "Households with Access to Parks 10min",
                "Population within Centers",
                "Housing Costs",
                "Transportation Costs",
@@ -626,17 +678,45 @@ def main():
             # Merge metric to existing output
             output_df = mergeMetricDataframes(output_df, metric_df)
 
-        if "Households with Access to Trails" in metrics:
-            input = inputs["Households with Access to Trails"]
+        # if "Households with Access to Trails" in metrics:
+        #     input = inputs["Households with Access to Trails"]
+        #     # Get dataframe of metric data
+        #     metric_df = metricEstimatesProjections(gis, "Households with Access to Trails", input)
+        #     # Merge metric to existing output
+        #     output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Households with Access to Trails 5min" in metrics:
+            input = inputs["Households with Access to Trails 5min"]
             # Get dataframe of metric data
-            metric_df = metricEstimatesProjections(gis, "Households with Access to Trails", input)
+            metric_df = metricEstimatesProjections(gis, "Households with Access to Trails 5min", input)
             # Merge metric to existing output
             output_df = mergeMetricDataframes(output_df, metric_df)
 
-        if "Households with Access to Parks" in metrics:
-            input = inputs["Households with Access to Parks"]
+        if "Households with Access to Trails 10min" in metrics:
+            input = inputs["Households with Access to Trails 10min"]
             # Get dataframe of metric data
-            metric_df = metricEstimatesProjections(gis, "Households with Access to Parks", input)
+            metric_df = metricEstimatesProjections(gis, "Households with Access to Trails 10min", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        # if "Households with Access to Parks" in metrics:
+        #     input = inputs["Households with Access to Parks"]
+        #     # Get dataframe of metric data
+        #     metric_df = metricEstimatesProjections(gis, "Households with Access to Parks", input)
+        #     # Merge metric to existing output
+        #     output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Households with Access to Parks 5min" in metrics:
+            input = inputs["Households with Access to Parks 5min"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Households with Access to Parks 5min", input)
+            # Merge metric to existing output
+            output_df = mergeMetricDataframes(output_df, metric_df)
+
+        if "Households with Access to Parks 10min" in metrics:
+            input = inputs["Households with Access to Parks 10min"]
+            # Get dataframe of metric data
+            metric_df = metricEstimatesProjections(gis, "Households with Access to Parks 10min", input)
             # Merge metric to existing output
             output_df = mergeMetricDataframes(output_df, metric_df)
         
