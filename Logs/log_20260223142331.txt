@@ -1,0 +1,428 @@
+23-Feb-26 14:23:31 - Updating profile wfrc_profile ...
+23-Feb-26 14:23:35 - Connected to gis: GIS @ https://wfrc.maps.arcgis.com version:2025.3
+23-Feb-26 14:23:35 - Current metric: Jobs By Auto
+23-Feb-26 14:23:40 - Calculating metric for: CITYAREA
+23-Feb-26 14:23:40 - Calculating metric for: CO_NAME
+23-Feb-26 14:23:41 - Calculating metric for: SMALLAREA
+23-Feb-26 14:23:41 - Calculating metric for: Wasatch Front Regional Council Region
+23-Feb-26 14:23:41 -                                        weighted_ato_jobauto_CY  weighted_ato_jobauto_FY1  weighted_ato_jobauto_FY2  weighted_ato_jobauto_FY3
+geoname                                                                                                                                     
+Wasatch Front Regional Council Region             321682.79663             351812.474141             374646.543234             383936.100144
+23-Feb-26 14:23:41 - Calculating metric for: Mountainland Association of Governments Region
+23-Feb-26 14:23:41 -                                                 weighted_ato_jobauto_CY  weighted_ato_jobauto_FY1  weighted_ato_jobauto_FY2  weighted_ato_jobauto_FY3
+geoname                                                                                                                                              
+Mountainland Association Of Governments Region            176370.934017             188824.022637             199895.781157             212216.170743
+23-Feb-26 14:23:41 - Calculating metric for: Wasatch Front Region
+23-Feb-26 14:23:41 -                       weighted_ato_jobauto_CY  weighted_ato_jobauto_FY1  weighted_ato_jobauto_FY2  weighted_ato_jobauto_FY3
+geoname                                                                                                                    
+Wasatch Front Region            286569.600903              308640.15141             326077.670504             334696.622283
+23-Feb-26 14:23:41 - Current metric: Jobs By Transit
+23-Feb-26 14:23:46 - Calculating metric for: CITYAREA
+23-Feb-26 14:23:47 - Calculating metric for: CO_NAME
+23-Feb-26 14:23:47 - Calculating metric for: SMALLAREA
+23-Feb-26 14:23:47 - Calculating metric for: Wasatch Front Regional Council Region
+23-Feb-26 14:23:47 -                                        weighted_ato_jobtransit_CY  weighted_ato_jobtransit_FY1  weighted_ato_jobtransit_FY2  weighted_ato_jobtransit_FY3
+geoname                                                                                                                                                 
+Wasatch Front Regional Council Region                22580.042643                 26963.404181                 29360.981932                 33550.909574
+23-Feb-26 14:23:47 - Calculating metric for: Mountainland Association of Governments Region
+23-Feb-26 14:23:47 -                                                 weighted_ato_jobtransit_CY  weighted_ato_jobtransit_FY1  weighted_ato_jobtransit_FY2  weighted_ato_jobtransit_FY3
+geoname                                                                                                                                                          
+Mountainland Association Of Governments Region                 9871.306364                 10180.150724                   9475.25342                 13504.421954
+23-Feb-26 14:23:47 - Calculating metric for: Wasatch Front Region
+23-Feb-26 14:23:48 -                       weighted_ato_jobtransit_CY  weighted_ato_jobtransit_FY1  weighted_ato_jobtransit_FY2  weighted_ato_jobtransit_FY3
+geoname                                                                                                                                
+Wasatch Front Region                19509.100351                 22517.862009                 23834.096636                 27802.720725
+23-Feb-26 14:23:48 - Current metric: Population Estimates
+23-Feb-26 14:23:48 - <FeatureLayer url:"https://services1.arcgis.com/taguadKoI1XFwivx/arcgis/rest/services/Population_TAZ_Projections_RTP_2023/FeatureServer/0">
+23-Feb-26 14:23:52 - Calculating metric for: CityArea
+23-Feb-26 14:23:52 -                                    geoname  pop_proj_2019  pop_proj_2020  pop_proj_2021  pop_proj_2022  pop_proj_2023  pop_proj_2024  ...  pop_proj_2044  pop_proj_2045  pop_proj_2046  pop_proj_2047  pop_proj_2048  pop_proj_2049  pop_proj_2050
+CityArea                                                                                                                              ...                                                                                                         
+Alpine                              Alpine        10236.0        10344.0        10384.0        10408.0        10427.0        10457.0  ...        11143.0        11241.0        11261.0        11307.0        11332.0        11359.0        11398.0
+Alta                                  Alta          249.0          250.2          251.0          252.1          253.2          254.3  ...          274.9          275.8          276.7          277.5          278.3          279.1          279.9
+American Fork                American Fork        32056.0        32980.0        34020.0        35662.0        37506.0        38544.0  ...        46304.0        46541.0        46633.0        46712.0        46814.0        46973.0        47007.0
+Balance of BOX ELDER  Balance Of Box Elder          154.6          157.1          158.4          158.6          158.9          159.4  ...          257.4          258.3          259.2          259.8          260.1          260.2          260.4
+Benjamin                          Benjamin          932.0          929.0          922.0          914.0          908.0          903.0  ...         1898.0         2126.0         2525.0         2994.0         3654.0         4343.0         5280.0
+
+[5 rows x 33 columns]
+23-Feb-26 14:23:52 - Calculating metric for: CO_NAME
+23-Feb-26 14:23:52 -              geoname  pop_proj_2019  pop_proj_2020  pop_proj_2021  pop_proj_2022  pop_proj_2023  pop_proj_2024  pop_proj_2025  ...  pop_proj_2043  pop_proj_2044  pop_proj_2045  pop_proj_2046  pop_proj_2047  pop_proj_2048  pop_proj_2049  pop_proj_2050
+CO_NAME                                                                                                                        ...                                                                                                                        
+BOX ELDER  Box Elder        30296.3        30788.5        31631.6        32275.9        32940.3        33607.6        34263.6  ...        42930.0        43384.1        43833.6        44280.5        44720.6        45155.4        45580.4        45995.4
+DAVIS          Davis      356443.04       359628.0      364127.01      368343.01      372453.04      376632.04      381001.02  ...      485381.97      491102.83      496738.05      502342.96      507865.05      513300.94      518609.05      523779.05
+SALT LAKE  Salt Lake     1158985.95     1172478.34     1181712.36     1194675.38      1207381.2      1220038.2     1232771.65  ...     1469553.96     1481569.69     1493341.18     1505011.72     1516440.17     1527643.32     1538511.81     1549037.61
+UTAH            Utah       628952.0       647541.0       666548.0       685440.0       705231.0       725293.0       745178.0  ...      1050368.0      1066610.0      1082681.0      1098726.0      1114548.0      1130172.0      1145507.0      1160584.0
+WEBER          Weber      249841.01      252287.14      255153.47       258140.8      261137.17      264174.39       267273.7  ...      328512.07      331799.44      335040.67      338272.88      341455.22      344593.62       347661.9      350654.06
+
+[5 rows x 33 columns]
+23-Feb-26 14:23:52 - Calculating metric for: Wasatch Front Regional Council Region
+23-Feb-26 14:23:52 -                                        pop_proj_2019  pop_proj_2020  pop_proj_2021  pop_proj_2022  pop_proj_2023  pop_proj_2024  ...  pop_proj_2046  pop_proj_2047  pop_proj_2048  pop_proj_2049  pop_proj_2050                                geoname
+geoname                                                                                                                          ...                                                                                                                  
+Wasatch Front Regional Council Region      1795566.3     1815181.98     1832624.44     1853435.09     1873911.71     1894452.23  ...     2389908.06     2410481.04     2430693.28     2450363.16     2469466.12  Wasatch Front Regional Council Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:23:52 - Calculating metric for: Mountainland Association of Governments Region
+23-Feb-26 14:23:52 -                                                 pop_proj_2019  pop_proj_2020  pop_proj_2021  pop_proj_2022  pop_proj_2023  pop_proj_2024  ...  pop_proj_2046  pop_proj_2047  pop_proj_2048  pop_proj_2049  pop_proj_2050                                         geoname
+geoname                                                                                                                                   ...                                                                                                                           
+Mountainland Association of Governments Region       628952.0       647541.0       666548.0       685440.0       705231.0       725293.0  ...      1098726.0      1114548.0      1130172.0      1145507.0      1160584.0  Mountainland Association Of Governments Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:23:52 - Calculating metric for: Wasatch Front Region
+23-Feb-26 14:23:52 -                       pop_proj_2019  pop_proj_2020  pop_proj_2021  pop_proj_2022  pop_proj_2023  pop_proj_2024  pop_proj_2025  ...  pop_proj_2045  pop_proj_2046  pop_proj_2047  pop_proj_2048  pop_proj_2049  pop_proj_2050               geoname
+geoname                                                                                                                        ...                                                                                                                
+Wasatch Front Region      2424518.3     2462722.98     2499172.44     2538875.09     2579142.71     2619745.23     2660487.97  ...      3451634.5     3488634.06     3525029.04     3560865.28     3595870.16     3630050.12  Wasatch Front Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:23:52 - Current metric: Household Estimates
+23-Feb-26 14:23:53 - <FeatureLayer url:"https://services1.arcgis.com/taguadKoI1XFwivx/arcgis/rest/services/Household_TAZ_Projections_RTP_2023_gdb/FeatureServer/0">
+23-Feb-26 14:23:58 - Calculating metric for: CityArea
+23-Feb-26 14:23:58 -                                    geoname  hh_proj_2019  hh_proj_2020  hh_proj_2021  hh_proj_2022  hh_proj_2023  hh_proj_2024  hh_proj_2025  ...  hh_proj_2043  hh_proj_2044  hh_proj_2045  hh_proj_2046  hh_proj_2047  hh_proj_2048  hh_proj_2049  hh_proj_2050
+CityArea                                                                                                                                      ...                                                                                                                
+Alpine                              Alpine        2830.0        2862.0        2893.0        2916.0        2941.0        2967.0        2999.0  ...        3520.0        3562.0        3608.0        3633.0        3665.0        3696.0        3727.0        3760.0
+Alta                                  Alta         171.0         172.0         173.0         174.2         175.3         176.4         177.5  ...         198.2         199.3         200.3         201.3         202.3         203.2         204.1         205.0
+American Fork                American Fork       10239.0       10548.0       10918.0       11495.0       12130.0       12548.0       12927.0  ...       16704.0       16839.0       16996.0       17104.0       17212.0       17334.0       17464.0       17572.0
+Balance of BOX ELDER  Balance Of Box Elder          34.8          35.2          35.8          36.0          36.2          36.6          36.9  ...          76.2          77.2          78.1          79.2          79.8          80.3          80.8          81.6
+Benjamin                          Benjamin         299.0         299.0         299.0         299.0         299.0         299.0         300.0  ...         590.0         655.0         729.0         858.0        1014.0        1236.0        1478.0        1791.0
+
+[5 rows x 33 columns]
+23-Feb-26 14:23:58 - Calculating metric for: CO_NAME
+23-Feb-26 14:23:58 -              geoname  hh_proj_2019  hh_proj_2020  hh_proj_2021  hh_proj_2022  hh_proj_2023  hh_proj_2024  hh_proj_2025  hh_proj_2026  ...  hh_proj_2042  hh_proj_2043  hh_proj_2044  hh_proj_2045  hh_proj_2046  hh_proj_2047  hh_proj_2048  hh_proj_2049  hh_proj_2050
+CO_NAME                                                                                                                               ...                                                                                                                              
+BOX ELDER  Box Elder       10130.5       10300.1       10635.5       10904.4       11181.0       11465.5       11750.4       12042.2  ...       16445.9       16748.4       17042.8       17332.2       17630.2       17917.0       18195.8       18473.1       18756.3
+DAVIS          Davis     110495.97     111551.95     113838.94     116123.04     118386.97     120724.02     123156.98      125697.0  ...      174605.9      177595.0     180524.06     183362.02     186179.08     188958.97     191757.01     194546.93     197333.06
+SALT LAKE  Salt Lake     399635.87     405229.32     411012.84     418018.62      424915.1     431736.69      438488.0     445293.22  ...     570222.08     578301.47     586162.91     593753.59     601225.55     608468.32     615598.34     622624.65     629564.85
+UTAH            Utah      178905.0      184532.8      191279.6      198338.5      205786.4      213375.3      221000.2      228614.1  ...      341542.3      348537.9      355482.5      362363.1      369235.7      376113.3      382984.9      389900.5      396855.1
+WEBER          Weber      86141.03      87006.06      88369.27      89849.48       91354.7      92894.98      94475.11      96098.25  ...     126054.52     128067.85     130053.98     132004.16     133944.42     135864.62     137743.84      139617.0     141499.16
+
+[5 rows x 33 columns]
+23-Feb-26 14:23:58 - Calculating metric for: Wasatch Front Regional Council Region
+23-Feb-26 14:23:58 -                                        hh_proj_2019  hh_proj_2020  hh_proj_2021  hh_proj_2022  hh_proj_2023  hh_proj_2024  hh_proj_2025  ...  hh_proj_2045  hh_proj_2046  hh_proj_2047  hh_proj_2048  hh_proj_2049  hh_proj_2050                                geoname
+geoname                                                                                                                                  ...                                                                                                                           
+Wasatch Front Regional Council Region     606403.37     614087.43     623856.55     634895.54     645837.77     656821.19     667870.49  ...     926451.97     938979.25     951208.91     963294.99     975261.68     987153.37  Wasatch Front Regional Council Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:23:58 - Calculating metric for: Mountainland Association of Governments Region
+23-Feb-26 14:23:58 -                                                 hh_proj_2019  hh_proj_2020  hh_proj_2021  hh_proj_2022  hh_proj_2023  hh_proj_2024  ...  hh_proj_2046  hh_proj_2047  hh_proj_2048  hh_proj_2049  hh_proj_2050                                         geoname
+geoname                                                                                                                             ...                                                                                                                      
+Mountainland Association of Governments Region      178905.0      184532.8      191279.6      198338.5      205786.4      213375.3  ...      369235.7      376113.3      382984.9      389900.5      396855.1  Mountainland Association Of Governments Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:23:58 - Calculating metric for: Wasatch Front Region
+23-Feb-26 14:23:58 -                       hh_proj_2019  hh_proj_2020  hh_proj_2021  hh_proj_2022  hh_proj_2023  hh_proj_2024  hh_proj_2025  hh_proj_2026  ...  hh_proj_2044  hh_proj_2045  hh_proj_2046  hh_proj_2047  hh_proj_2048  hh_proj_2049  hh_proj_2050               geoname
+geoname                                                                                                                               ...                                                                                                                        
+Wasatch Front Region     785308.37     798620.23     815136.15     833234.04     851624.17     870196.49     888870.69     907744.77  ...    1269266.25    1288815.07    1308214.95    1327322.21    1346279.89    1365162.18    1384008.47  Wasatch Front Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:23:58 - Current metric: Households with Access to Transit
+23-Feb-26 14:23:58 - <FeatureLayer url:"https://services1.arcgis.com/taguadKoI1XFwivx/arcgis/rest/services/Households_within_20min_Walk_to_Transit_by_TAZ/FeatureServer/0">
+23-Feb-26 14:24:03 - Calculating metric for: CITYAREA
+23-Feb-26 14:24:03 -                                    geoname  hh_20min_walk_transit_2019  hh_20min_walk_transit_2020  hh_20min_walk_transit_2021  ...  hh_20min_walk_transit_2047  hh_20min_walk_transit_2048  hh_20min_walk_transit_2049  hh_20min_walk_transit_2050
+CITYAREA                                                                                                                        ...                                                                                                                
+Alpine                              Alpine                         0.0                         0.0                         0.0  ...                         0.0                         0.0                         0.0                         0.0
+Alta                                  Alta                         0.0                         0.0                         0.0  ...                         0.0                         0.0                         0.0                         0.0
+American Fork                American Fork                  574.833333                       684.5                  816.833333  ...                 8400.833333                      8424.0                      8455.5                 8524.166667
+Balance of BOX ELDER  Balance Of Box Elder                         0.0                         0.0                         0.0  ...                         0.0                         0.0                         0.0                         0.0
+Benjamin                          Benjamin                         0.0                         0.0                         0.0  ...                   34.833333                   35.166667                   35.333333                   36.166667
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:03 - Calculating metric for: CO_NAME
+23-Feb-26 14:24:03 -              geoname  hh_20min_walk_transit_2019  hh_20min_walk_transit_2020  hh_20min_walk_transit_2021  ...  hh_20min_walk_transit_2047  hh_20min_walk_transit_2048  hh_20min_walk_transit_2049  hh_20min_walk_transit_2050
+CO_NAME                                                                                                   ...                                                                                                                
+BOX ELDER  Box Elder                         0.0                         0.0                         0.0  ...                         0.0                         0.0                         0.0                         0.0
+DAVIS          Davis                 4776.833333                 4883.333333                 5049.333333  ...                11639.333333                11786.166667                11953.833333                     12154.5
+SALT LAKE  Salt Lake               100050.333333               102485.833333                    104808.0  ...               193763.833333               195992.166667               198154.666667               200969.333333
+UTAH            Utah                26424.166667                27460.333333                28444.666667  ...                    160010.5                    160588.5               161279.166667                    162729.0
+WEBER          Weber                 3106.666667                 3147.333333                      3211.5  ...                22290.333333                22429.666667                22583.333333                22733.166667
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:03 - Calculating metric for: Wasatch Front Regional Council Region
+23-Feb-26 14:24:03 -                                        hh_20min_walk_transit_2019  hh_20min_walk_transit_2020  hh_20min_walk_transit_2021  ...  hh_20min_walk_transit_2049  hh_20min_walk_transit_2050                                geoname
+geoname                                                                                                                    ...                                                                                               
+Wasatch Front Regional Council Region               107933.833333                    110516.5               113068.833333  ...               232691.833333                    235857.0  Wasatch Front Regional Council Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:03 - Calculating metric for: Mountainland Association of Governments Region
+23-Feb-26 14:24:03 -                                                 hh_20min_walk_transit_2019  hh_20min_walk_transit_2020  hh_20min_walk_transit_2021  ...  hh_20min_walk_transit_2049  hh_20min_walk_transit_2050                                         geoname
+geoname                                                                                                                             ...                                                                                                        
+Mountainland Association of Governments Region                26424.166667                27460.333333                28444.666667  ...               161279.166667                    162729.0  Mountainland Association Of Governments Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:03 - Calculating metric for: Wasatch Front Region
+23-Feb-26 14:24:04 -                       hh_20min_walk_transit_2019  hh_20min_walk_transit_2020  hh_20min_walk_transit_2021  hh_20min_walk_transit_2022  ...  hh_20min_walk_transit_2048  hh_20min_walk_transit_2049  hh_20min_walk_transit_2050               geoname
+geoname                                                                                                                               ...                                                                                                          
+Wasatch Front Region                    134358.0               137976.833333                    141513.5               145139.166667  ...                    390796.5                    393971.0                    398586.0  Wasatch Front Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:04 - Current metric: Households with Access to Trails 5min
+23-Feb-26 14:24:04 - <FeatureLayer url:"https://services1.arcgis.com/taguadKoI1XFwivx/arcgis/rest/services/walk_access_to_trailheads_5min_gdb_/FeatureServer/0">
+23-Feb-26 14:24:10 - Calculating metric for: CITYAREA
+23-Feb-26 14:24:10 -                                    geoname  hh_5min_walk_trail_2019  hh_5min_walk_trail_2020  hh_5min_walk_trail_2021  ...  hh_5min_walk_trail_2047  hh_5min_walk_trail_2048  hh_5min_walk_trail_2049  hh_5min_walk_trail_2050
+CITYAREA                                                                                                               ...                                                                                                    
+Alpine                              Alpine              2057.235685              2080.298873              2102.278549  ...              2574.885435               2593.61051              2613.048367               2632.43198
+Alta                                  Alta                      0.0                      0.0                      0.0  ...                      0.0                      0.0                      0.0                      0.0
+American Fork                American Fork              2872.271688              2920.961826                2966.6271  ...              4334.864218              4361.230721              4380.181881              4390.746234
+Balance of BOX ELDER  Balance Of Box Elder                      0.0                      0.0                      0.0  ...                      0.0                      0.0                      0.0                      0.0
+Benjamin                          Benjamin                      0.0                      0.0                      0.0  ...                      0.0                      0.0                      0.0                      0.0
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:10 - Calculating metric for: CO_NAME
+23-Feb-26 14:24:10 -              geoname  hh_5min_walk_trail_2019  hh_5min_walk_trail_2020  hh_5min_walk_trail_2021  hh_5min_walk_trail_2022  ...  hh_5min_walk_trail_2046  hh_5min_walk_trail_2047  hh_5min_walk_trail_2048  hh_5min_walk_trail_2049  hh_5min_walk_trail_2050
+CO_NAME                                                                                                                   ...                                                                                                                             
+BOX ELDER  Box Elder                      0.0                      0.0                      0.0                      0.0  ...                      0.0                      0.0                      0.0                      0.0                      0.0
+DAVIS          Davis             34803.658162             35131.819192             35773.492946             36423.008049  ...             56499.374442             57298.660019             58135.350013             58909.805205             59663.494258
+SALT LAKE  Salt Lake            102324.781393            104115.929166            105858.956451            107493.505135  ...            145499.335312            146870.958028            148337.452388            149944.655058            151436.028777
+UTAH            Utah             68574.233712             70635.498869             73007.152261             75131.267996  ...            101851.030865            102500.216526            103087.774343            103562.851647            103985.015946
+WEBER          Weber             10590.523281             10674.353492             10818.804409              10984.33711  ...             14598.657755             14733.490616             14872.484383             14969.004279             15128.337812
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:10 - Calculating metric for: Wasatch Front Regional Council Region
+23-Feb-26 14:24:10 -                                        hh_5min_walk_trail_2019  hh_5min_walk_trail_2020  hh_5min_walk_trail_2021  hh_5min_walk_trail_2022  ...  hh_5min_walk_trail_2048  hh_5min_walk_trail_2049  hh_5min_walk_trail_2050                                geoname
+geoname                                                                                                                                    ...                                                                                                                  
+Wasatch Front Regional Council Region            147718.962835            149922.101851            152451.253805            154900.850293  ...            221345.286784            223823.464542            226227.860848  Wasatch Front Regional Council Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:10 - Calculating metric for: Mountainland Association of Governments Region
+23-Feb-26 14:24:10 -                                                 hh_5min_walk_trail_2019  hh_5min_walk_trail_2020  hh_5min_walk_trail_2021  ...  hh_5min_walk_trail_2049  hh_5min_walk_trail_2050                                         geoname
+geoname                                                                                                                    ...                                                                                                  
+Mountainland Association of Governments Region             68574.233712             70635.498869             73007.152261  ...            103562.851647            103985.015946  Mountainland Association Of Governments Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:10 - Calculating metric for: Wasatch Front Region
+23-Feb-26 14:24:10 -                       hh_5min_walk_trail_2019  hh_5min_walk_trail_2020  hh_5min_walk_trail_2021  hh_5min_walk_trail_2022  ...  hh_5min_walk_trail_2048  hh_5min_walk_trail_2049  hh_5min_walk_trail_2050               geoname
+geoname                                                                                                                   ...                                                                                                 
+Wasatch Front Region            216293.196547             220557.60072            225458.406066            230032.118289  ...            324433.061127            327386.316189            330212.876793  Wasatch Front Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:10 - Current metric: Households with Access to Trails 10min
+23-Feb-26 14:24:11 - <FeatureLayer url:"https://services1.arcgis.com/taguadKoI1XFwivx/arcgis/rest/services/walk_access_to_trailheads_10min_gdb/FeatureServer/0">
+23-Feb-26 14:24:16 - Calculating metric for: CITYAREA
+23-Feb-26 14:24:16 -                                    geoname  hh_10min_walk_trail_2019  hh_10min_walk_trail_2020  hh_10min_walk_trail_2021  ...  hh_10min_walk_trail_2047  hh_10min_walk_trail_2048  hh_10min_walk_trail_2049  hh_10min_walk_trail_2050
+CITYAREA                                                                                                                  ...                                                                                                        
+Alpine                              Alpine               2587.552325               2613.524496                2638.91079  ...               3242.885587               3268.103979               3293.375739               3319.909204
+Alta                                  Alta                       0.0                       0.0                       0.0  ...                       0.0                       0.0                       0.0                       0.0
+American Fork                American Fork               6015.479752               6175.759428               6393.851743  ...               9273.835534               9327.370698               9369.173136               9407.733122
+Balance of BOX ELDER  Balance Of Box Elder                       0.0                       0.0                       0.0  ...                       0.0                       0.0                       0.0                       0.0
+Benjamin                          Benjamin                       0.0                       0.0                       0.0  ...                       0.0                       0.0                       0.0                       0.0
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:16 - Calculating metric for: CO_NAME
+23-Feb-26 14:24:16 -              geoname  hh_10min_walk_trail_2019  hh_10min_walk_trail_2020  hh_10min_walk_trail_2021  hh_10min_walk_trail_2022  ...  hh_10min_walk_trail_2046  hh_10min_walk_trail_2047  hh_10min_walk_trail_2048  hh_10min_walk_trail_2049  hh_10min_walk_trail_2050
+CO_NAME                                                                                                                       ...                                                                                                                                  
+BOX ELDER  Box Elder                       0.0                       0.0                       0.0                       0.0  ...                       0.0                       0.0                       0.0                       0.0                       0.0
+DAVIS          Davis              62040.976957              62609.978862              63741.652735              64857.860319  ...               97538.06082              98846.320269             100098.699523             101336.441352             102514.001638
+SALT LAKE  Salt Lake             179529.058366             182450.549784             185335.282172             188271.652564  ...             255087.162195             257738.170357             260522.411121             263401.665165             266094.907554
+UTAH            Utah             114938.780565             118211.006063             122271.601704             126291.694354  ...             171999.850414              173129.97337             174174.187834             175035.380233             175879.858777
+WEBER          Weber              19262.518998              19368.032151              19558.962911              19789.344532  ...              25402.342804              25614.500144              25830.645107              26008.675283              26249.006667
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:16 - Calculating metric for: Wasatch Front Regional Council Region
+23-Feb-26 14:24:16 -                                        hh_10min_walk_trail_2019  hh_10min_walk_trail_2020  hh_10min_walk_trail_2021  hh_10min_walk_trail_2022  ...  hh_10min_walk_trail_2048  hh_10min_walk_trail_2049  hh_10min_walk_trail_2050                                geoname
+geoname                                                                                                                                        ...                                                                                                                     
+Wasatch Front Regional Council Region             260832.554321             264428.560797             268635.897818             272918.857415  ...             386451.755751               390746.7818             394857.915859  Wasatch Front Regional Council Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:16 - Calculating metric for: Mountainland Association of Governments Region
+23-Feb-26 14:24:16 -                                                 hh_10min_walk_trail_2019  hh_10min_walk_trail_2020  hh_10min_walk_trail_2021  ...  hh_10min_walk_trail_2049  hh_10min_walk_trail_2050                                         geoname
+geoname                                                                                                                       ...                                                                                                    
+Mountainland Association of Governments Region             114938.780565             118211.006063             122271.601704  ...             175035.380233             175879.858777  Mountainland Association Of Governments Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:16 - Calculating metric for: Wasatch Front Region
+23-Feb-26 14:24:16 -                       hh_10min_walk_trail_2019  hh_10min_walk_trail_2020  hh_10min_walk_trail_2021  hh_10min_walk_trail_2022  ...  hh_10min_walk_trail_2048  hh_10min_walk_trail_2049  hh_10min_walk_trail_2050               geoname
+geoname                                                                                                                       ...                                                                                                    
+Wasatch Front Region             375771.334886             382639.566859             390907.499522             399210.551769  ...             560625.943586             565782.162032             570737.774637  Wasatch Front Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:16 - Current metric: Households with Access to Parks 5min
+23-Feb-26 14:24:17 - <FeatureLayer url:"https://services1.arcgis.com/taguadKoI1XFwivx/arcgis/rest/services/walk_access_to_parks_5min_gdb/FeatureServer/0">
+23-Feb-26 14:24:23 - Calculating metric for: CITYAREA
+23-Feb-26 14:24:23 -                                    geoname  hh_5min_walk_parks_2019  hh_5min_walk_parks_2020  hh_5min_walk_parks_2021  ...  hh_5min_walk_parks_2047  hh_5min_walk_parks_2048  hh_5min_walk_parks_2049  hh_5min_walk_parks_2050
+CITYAREA                                                                                                               ...                                                                                                    
+Alpine                              Alpine              1543.257278              1563.153617              1577.629406  ...              1946.987758              1956.437518              1968.338842              1979.707826
+Alta                                  Alta                      0.0                      0.0                      0.0  ...                      0.0                      0.0                      0.0                      0.0
+American Fork                American Fork              6379.303268              6494.641414              6574.397297  ...              8038.767551              8083.534243              8134.148199              8168.493844
+Balance of BOX ELDER  Balance Of Box Elder                      0.0                      0.0                      0.0  ...                      0.0                      0.0                      0.0                      0.0
+Benjamin                          Benjamin                28.835493                28.835493                28.835493  ...                17.728186                20.598963                25.428775                31.912916
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:24 - Calculating metric for: CO_NAME
+23-Feb-26 14:24:24 -              geoname  hh_5min_walk_parks_2019  hh_5min_walk_parks_2020  hh_5min_walk_parks_2021  hh_5min_walk_parks_2022  ...  hh_5min_walk_parks_2046  hh_5min_walk_parks_2047  hh_5min_walk_parks_2048  hh_5min_walk_parks_2049  hh_5min_walk_parks_2050
+CO_NAME                                                                                                                   ...                                                                                                                             
+BOX ELDER  Box Elder                      0.0                      0.0                      0.0                      0.0  ...                      0.0                      0.0                      0.0                      0.0                      0.0
+DAVIS          Davis             39169.980056             39468.656969             40057.807187             40640.860814  ...              56037.01565             56754.473804             57425.496913             58153.792423             58913.324538
+SALT LAKE  Salt Lake            181702.771148            183970.273309            186102.982392            188294.971179  ...            236063.000684            238302.212108            240629.938143            242826.509824            245002.744883
+UTAH            Utah             78388.965687             80120.811065             81560.066249             82697.698082  ...            100112.501791            100754.098403             101315.51221            101813.734028            102220.022716
+WEBER          Weber             32678.183166             32842.834548             33095.804656             33394.686627  ...             39783.833015             40027.840973              40290.50183             40537.981491               40756.4811
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:24 - Calculating metric for: Wasatch Front Regional Council Region
+23-Feb-26 14:24:24 -                                        hh_5min_walk_parks_2019  hh_5min_walk_parks_2020  hh_5min_walk_parks_2021  hh_5min_walk_parks_2022  ...  hh_5min_walk_parks_2048  hh_5min_walk_parks_2049  hh_5min_walk_parks_2050                                geoname
+geoname                                                                                                                                    ...                                                                                                                  
+Wasatch Front Regional Council Region             253550.93437            256281.764826            259256.594235             262330.51862  ...            338345.936885            341518.283739            344672.550521  Wasatch Front Regional Council Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:24 - Calculating metric for: Mountainland Association of Governments Region
+23-Feb-26 14:24:24 -                                                 hh_5min_walk_parks_2019  hh_5min_walk_parks_2020  hh_5min_walk_parks_2021  ...  hh_5min_walk_parks_2049  hh_5min_walk_parks_2050                                         geoname
+geoname                                                                                                                    ...                                                                                                  
+Mountainland Association of Governments Region             78388.965687             80120.811065             81560.066249  ...            101813.734028            102220.022716  Mountainland Association Of Governments Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:24 - Calculating metric for: Wasatch Front Region
+23-Feb-26 14:24:24 -                       hh_5min_walk_parks_2019  hh_5min_walk_parks_2020  hh_5min_walk_parks_2021  hh_5min_walk_parks_2022  ...  hh_5min_walk_parks_2048  hh_5min_walk_parks_2049  hh_5min_walk_parks_2050               geoname
+geoname                                                                                                                   ...                                                                                                 
+Wasatch Front Region            331939.900057            336402.575891            340816.660484            345028.216702  ...            439661.449095            443332.017767            446892.573237  Wasatch Front Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:24 - Current metric: Households with Access to Parks 10min
+23-Feb-26 14:24:24 - <FeatureLayer url:"https://services1.arcgis.com/taguadKoI1XFwivx/arcgis/rest/services/walk_access_to_parks_10min_gdb/FeatureServer/0">
+23-Feb-26 14:24:28 - Calculating metric for: CITYAREA
+23-Feb-26 14:24:28 -                                    geoname  hh_10min_walk_parks_2019  hh_10min_walk_parks_2020  hh_10min_walk_parks_2021  ...  hh_10min_walk_parks_2047  hh_10min_walk_parks_2048  hh_10min_walk_parks_2049  hh_10min_walk_parks_2050
+CITYAREA                                                                                                                  ...                                                                                                        
+Alpine                              Alpine               2246.330492               2274.987239               2299.086537  ...               2859.779904               2881.217038               2902.656331               2924.912971
+Alta                                  Alta                       0.0                       0.0                       0.0  ...                       0.0                       0.0                       0.0                       0.0
+American Fork                American Fork               8168.160747               8322.255442               8438.601966  ...              10780.382485              10842.733085                10907.9362               10972.69863
+Balance of BOX ELDER  Balance Of Box Elder                       0.0                       0.0                       0.0  ...                       0.0                       0.0                       0.0                       0.0
+Benjamin                          Benjamin                 48.986489                 48.972946                 48.966576  ...                 41.632912                 53.524555                  69.10787                 88.771378
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:28 - Calculating metric for: CO_NAME
+23-Feb-26 14:24:28 -              geoname  hh_10min_walk_parks_2019  hh_10min_walk_parks_2020  hh_10min_walk_parks_2021  hh_10min_walk_parks_2022  ...  hh_10min_walk_parks_2046  hh_10min_walk_parks_2047  hh_10min_walk_parks_2048  hh_10min_walk_parks_2049  hh_10min_walk_parks_2050
+CO_NAME                                                                                                                       ...                                                                                                                                  
+BOX ELDER  Box Elder                       0.0                       0.0                       0.0                       0.0  ...                       0.0                       0.0                       0.0                       0.0                       0.0
+DAVIS          Davis              70941.977732              71524.314934              72624.629426              73673.366655  ...             102241.367684             103581.294883             104900.658295             106252.777847             107524.670793
+SALT LAKE  Salt Lake             299113.740623             302873.599716               306405.6223             310102.303111  ...             394381.167097             398284.045887             402371.716589             406461.872975             410542.128793
+UTAH            Utah             128693.320539             131678.338017               134924.0767             137881.489626  ...             176337.596216              177473.79517              178549.87467             179545.587008             180436.329444
+WEBER          Weber              54555.202456              54805.969539              55205.633157              55688.210691  ...              67774.697485              68268.363028              68714.190693                69187.4795              69621.314541
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:28 - Calculating metric for: Wasatch Front Regional Council Region
+23-Feb-26 14:24:28 -                                        hh_10min_walk_parks_2019  hh_10min_walk_parks_2020  hh_10min_walk_parks_2021  hh_10min_walk_parks_2022  ...  hh_10min_walk_parks_2048  hh_10min_walk_parks_2049  hh_10min_walk_parks_2050                                geoname
+geoname                                                                                                                                        ...                                                                                                                     
+Wasatch Front Regional Council Region             424610.920811             429203.884189             434235.884884             439463.880457  ...             575986.565577             581902.130322             587688.114128  Wasatch Front Regional Council Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:28 - Calculating metric for: Mountainland Association of Governments Region
+23-Feb-26 14:24:28 -                                                 hh_10min_walk_parks_2019  hh_10min_walk_parks_2020  hh_10min_walk_parks_2021  ...  hh_10min_walk_parks_2049  hh_10min_walk_parks_2050                                         geoname
+geoname                                                                                                                       ...                                                                                                    
+Mountainland Association of Governments Region             128693.320539             131678.338017               134924.0767  ...             179545.587008             180436.329444  Mountainland Association Of Governments Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:28 - Calculating metric for: Wasatch Front Region
+23-Feb-26 14:24:28 -                       hh_10min_walk_parks_2019  hh_10min_walk_parks_2020  hh_10min_walk_parks_2021  hh_10min_walk_parks_2022  ...  hh_10min_walk_parks_2048  hh_10min_walk_parks_2049  hh_10min_walk_parks_2050               geoname
+geoname                                                                                                                       ...                                                                                                    
+Wasatch Front Region             553304.241351             560882.222206             569159.961583             577345.370082  ...             754536.440246             761447.717329             768124.443571  Wasatch Front Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:28 - Current metric: Population within Centers
+23-Feb-26 14:24:29 - <FeatureLayer url:"https://services1.arcgis.com/taguadKoI1XFwivx/arcgis/rest/services/Population_within_Centers_by_TAZ/FeatureServer/0">
+23-Feb-26 14:24:34 - Calculating metric for: CITYAREA
+23-Feb-26 14:24:34 -                                    geoname  pop_within_centers_2019  pop_within_centers_2020  pop_within_centers_2021  ...  pop_within_centers_2047  pop_within_centers_2048  pop_within_centers_2049  pop_within_centers_2050
+CITYAREA                                                                                                               ...                                                                                                    
+Alpine                              Alpine                      0.0                      0.0                      0.0  ...                      0.0                      0.0                      0.0                      0.0
+Alta                                  Alta                      0.0                      0.0                      0.0  ...                      0.0                      0.0                      0.0                      0.0
+American Fork                American Fork               764.833333               788.666667                    798.0  ...              1594.333333                   1603.0              1611.666667                   1704.0
+Balance of BOX ELDER  Balance Of Box Elder                      0.0                      0.0                      0.0  ...                      0.0                      0.0                      0.0                      0.0
+Benjamin                          Benjamin                      0.0                      0.0                      0.0  ...                      0.0                      0.0                      0.0                      0.0
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:34 - Calculating metric for: CO_NAME
+23-Feb-26 14:24:34 -              geoname  pop_within_centers_2019  pop_within_centers_2020  pop_within_centers_2021  pop_within_centers_2022  ...  pop_within_centers_2046  pop_within_centers_2047  pop_within_centers_2048  pop_within_centers_2049  pop_within_centers_2050
+CO_NAME                                                                                                                   ...                                                                                                                             
+BOX ELDER  Box Elder                      0.0                      0.0                      0.0                      0.0  ...                      0.0                      0.0                      0.0                      0.0                      0.0
+DAVIS          Davis             41417.333333                  42427.5                  44191.5                  45834.5  ...            144183.833333                 147051.5            150111.833333            153105.166667            155602.166667
+SALT LAKE  Salt Lake                 144387.0            151174.833333            158247.166667            165367.166667  ...            462657.833333            470542.833333                 478132.0            485986.333333                 493737.0
+UTAH            Utah             58029.666667             61060.333333             63562.166667             66035.166667  ...                 110190.0            110725.333333            111294.166667                 111928.0            112831.833333
+WEBER          Weber                  39709.0                  40601.0                  41476.0             42202.166667  ...                  69022.5             69913.166667             70756.833333             71553.833333                  72553.5
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:34 - Calculating metric for: Wasatch Front Regional Council Region
+23-Feb-26 14:24:34 -                                        pop_within_centers_2019  pop_within_centers_2020  pop_within_centers_2021  pop_within_centers_2022  ...  pop_within_centers_2048  pop_within_centers_2049  pop_within_centers_2050                                geoname
+geoname                                                                                                                                    ...                                                                                                                  
+Wasatch Front Regional Council Region            225513.333333            234203.333333            243914.666667            253403.833333  ...            699000.666667            710645.333333            721892.666667  Wasatch Front Regional Council Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:34 - Calculating metric for: Mountainland Association of Governments Region
+23-Feb-26 14:24:34 -                                                 pop_within_centers_2019  pop_within_centers_2020  pop_within_centers_2021  ...  pop_within_centers_2049  pop_within_centers_2050                                         geoname
+geoname                                                                                                                    ...                                                                                                  
+Mountainland Association of Governments Region             58029.666667             61060.333333             63562.166667  ...                 111928.0            112831.833333  Mountainland Association Of Governments Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:34 - Calculating metric for: Wasatch Front Region
+23-Feb-26 14:24:34 -                       pop_within_centers_2019  pop_within_centers_2020  pop_within_centers_2021  pop_within_centers_2022  ...  pop_within_centers_2048  pop_within_centers_2049  pop_within_centers_2050               geoname
+geoname                                                                                                                   ...                                                                                                 
+Wasatch Front Region                 283543.0            295263.666667            307476.833333                 319439.0  ...            810294.833333            822573.333333                 834724.5  Wasatch Front Region
+
+[1 rows x 33 columns]
+23-Feb-26 14:24:34 - Current metric: Percentage of Households and Jobs within Centers
+23-Feb-26 14:24:35 - <FeatureLayer url:"https://services1.arcgis.com/taguadKoI1XFwivx/arcgis/rest/services/households_jobs_pct_within_centers_gdb/FeatureServer/0">
+23-Feb-26 14:24:37 - Calculating metric for: GEOG
+23-Feb-26 14:24:37 -                      geoname  hhjob_wcc_pct_2019  hhjob_wcc_pct_2020  hhjob_wcc_pct_2021  hhjob_wcc_pct_2022  hhjob_wcc_pct_2023  ...  hhjob_wcc_pct_2045  hhjob_wcc_pct_2046  hhjob_wcc_pct_2047  hhjob_wcc_pct_2048  hhjob_wcc_pct_2049  hhjob_wcc_pct_2050
+GEOG                                                                                                                              ...                                                                                                                        
+                                             0.0                 0.0                 0.0                 0.0                 0.0  ...                0.12                0.12                0.13                0.13                0.13                0.13
+Alpine                Alpine                 0.0                 0.0                 0.0                 0.0                 0.0  ...                 0.0                 0.0                 0.0                 0.0                 0.0                 0.0
+Alta                    Alta                 0.0                 0.0                 0.0                 0.0                 0.0  ...                 0.0                 0.0                 0.0                 0.0                 0.0                 0.0
+American Fork  American Fork                 0.2                0.19                0.19                0.19                0.19  ...                0.18                0.18                0.18                0.18                0.18                0.18
+BOX ELDER          Box Elder                 0.0                 0.0                 0.0                 0.0                 0.0  ...                 0.0                 0.0                 0.0                 0.0                 0.0                 0.0
+
+[5 rows x 33 columns]
+23-Feb-26 14:24:37 - Current metric: Housing Costs
+23-Feb-26 14:24:38 - <FeatureLayer url:"https://services1.arcgis.com/taguadKoI1XFwivx/arcgis/rest/services/Housing_Tranportation_Costs_gdb/FeatureServer/0">
+23-Feb-26 14:24:42 - Calculating metric for: CITYAREA
+23-Feb-26 14:24:42 -                                    geoname  h_ami_2019  h_ami_2020  h_ami_2021  h_ami_2022  h_ami_2023  h_ami_2024
+CITYAREA                                                                                                          
+Alpine                              Alpine      1829.0      1858.0      2074.0      2640.0      2867.0      4341.0
+Alta                                  Alta         0.0         0.0         0.0         0.0         0.0         0.0
+American Fork                American Fork      1521.0      1600.0      1788.0      2213.0      2400.0      3366.0
+Balance of BOX ELDER  Balance Of Box Elder         0.0         0.0         0.0         0.0         0.0         0.0
+Benjamin                          Benjamin         0.0         0.0         0.0         0.0         0.0         0.0
+23-Feb-26 14:24:42 - Calculating metric for: CO_NAME
+23-Feb-26 14:24:42 -              geoname   h_ami_2019   h_ami_2020   h_ami_2021   h_ami_2022   h_ami_2023   h_ami_2024
+CO_NAME                                                                                           
+                             <NA>         <NA>         <NA>         <NA>         <NA>         <NA>
+BOX ELDER  Box Elder   340.857143   385.285714   423.857143   506.428571        554.0   776.142857
+DAVIS          Davis    1451.3125    1581.6875    1743.8125    2076.3125    2262.3125    2963.1875
+SALT LAKE  Salt Lake  1139.428571  1242.357143  1361.714286  1623.285714  1752.928571  2316.107143
+UTAH            Utah   826.647059   880.029412   976.970588  1182.088235  1265.058824  1802.794118
+23-Feb-26 14:24:42 - Calculating metric for: Wasatch Front Regional Council Region
+23-Feb-26 14:24:42 -                                         h_ami_2019   h_ami_2020   h_ami_2021   h_ami_2022  h_ami_2023  h_ami_2024                                geoname
+geoname                                                                                                                                                 
+Wasatch Front Regional Council Region  1128.731343  1237.358209  1364.134328  1622.447761  1759.41791  2305.80597  Wasatch Front Regional Council Region
+23-Feb-26 14:24:42 - Calculating metric for: Mountainland Association of Governments Region
+23-Feb-26 14:24:42 -                                                 h_ami_2019  h_ami_2020  h_ami_2021   h_ami_2022   h_ami_2023   h_ami_2024                                         geoname
+geoname                                                                                                                                                                  
+Mountainland Association of Governments Region  826.647059  880.029412  976.970588  1182.088235  1265.058824  1802.794118  Mountainland Association Of Governments Region
+23-Feb-26 14:24:42 - Calculating metric for: Wasatch Front Region
+23-Feb-26 14:24:42 -                        h_ami_2019   h_ami_2020  h_ami_2021   h_ami_2022  h_ami_2023   h_ami_2024               geoname
+geoname                                                                                                               
+Wasatch Front Region  1027.039604  1117.069307  1233.80198  1474.207921      1593.0  2136.475248  Wasatch Front Region
+23-Feb-26 14:24:42 - Current metric: Transportation Costs
+23-Feb-26 14:24:43 - <FeatureLayer url:"https://services1.arcgis.com/taguadKoI1XFwivx/arcgis/rest/services/Housing_Tranportation_Costs_gdb/FeatureServer/0">
+23-Feb-26 14:24:47 - Calculating metric for: CITYAREA
+23-Feb-26 14:24:47 -                                    geoname  TCOST2019  TCOST2020  TCOST2021  TCOST2022  TCOST2023  TCOST2024
+CITYAREA                                                                                                    
+Alpine                              Alpine      762.0      608.0      701.0      716.0      738.0      749.0
+Alta                                  Alta      504.0      336.0      408.0      447.0      474.0      441.0
+American Fork                American Fork      429.0      352.0      394.0      406.0      418.0      426.0
+Balance of BOX ELDER  Balance Of Box Elder     1235.0      914.0     1014.0     1140.0     1340.0     1141.0
+Benjamin                          Benjamin      587.0      486.0      550.0      551.0      558.0      536.0
+23-Feb-26 14:24:47 - Calculating metric for: CO_NAME
+23-Feb-26 14:24:47 -              geoname   TCOST2019   TCOST2020   TCOST2021   TCOST2022   TCOST2023   TCOST2024
+CO_NAME                                                                                     
+                            <NA>        <NA>        <NA>        <NA>        <NA>        <NA>
+BOX ELDER  Box Elder  660.142857  564.714286  603.857143  625.142857  664.714286  642.571429
+DAVIS          Davis      498.25    409.6875    456.1875       468.5      476.75       472.0
+SALT LAKE  Salt Lake  533.357143  432.678571  485.321429  498.607143  515.071429  508.107143
+UTAH            Utah  778.264706       629.0  743.911765  762.323529  751.088235  752.382353
+23-Feb-26 14:24:47 - Calculating metric for: Wasatch Front Regional Council Region
+23-Feb-26 14:24:47 -                                         TCOST2019   TCOST2020   TCOST2021   TCOST2022   TCOST2023   TCOST2024                                geoname
+geoname                                                                                                                                             
+Wasatch Front Regional Council Region  523.522388  432.492537  482.567164  495.925373  511.716418  504.447761  Wasatch Front Regional Council Region
+23-Feb-26 14:24:47 - Calculating metric for: Mountainland Association of Governments Region
+23-Feb-26 14:24:47 -                                                  TCOST2019  TCOST2020   TCOST2021   TCOST2022   TCOST2023   TCOST2024                                         geoname
+geoname                                                                                                                                                              
+Mountainland Association of Governments Region  778.264706      629.0  743.911765  762.323529  751.088235  752.382353  Mountainland Association Of Governments Region
+23-Feb-26 14:24:47 - Calculating metric for: Wasatch Front Region
+23-Feb-26 14:24:47 -                        TCOST2019   TCOST2020   TCOST2021  TCOST2022  TCOST2023   TCOST2024               geoname
+geoname                                                                                                         
+Wasatch Front Region  609.277228  498.643564  570.544554  585.60396  592.29703  587.910891  Wasatch Front Region
+23-Feb-26 14:24:47 - Current metric: Housing + Transportation Costs
+23-Feb-26 14:24:48 - <FeatureLayer url:"https://services1.arcgis.com/taguadKoI1XFwivx/arcgis/rest/services/housing_transportation_2017_ACS2019_gdb/FeatureServer/0">

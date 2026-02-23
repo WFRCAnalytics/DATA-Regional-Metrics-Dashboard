@@ -293,7 +293,7 @@ def metricEstimatesProjections(gis, metric_name, input):
 def main():
     
     # toggle whether to upload to AGOL or write to csv
-    upload_data = False
+    upload_data = True
 
     # Script inputs - each metric should be added as dictionary of key/value pairs in the inputs dictionary
     inputs = {
@@ -432,40 +432,40 @@ def main():
                         "outFieldPattern": "hhjob_wcc_pct_"},
 
                 "Housing Costs": 
-                    {"itemId": "82fdb720f4bf43f98c1b7cac14a93c0f",
+                    {"itemId": "0e1a373f086f4809a06ffe260401673d",
                         "index":0,
                         "aggregation":"mean",
                         "query": "1=1",
-                        "geogFields": ["CityArea", 'SUBAREA', "CO_NAME"],
+                        "geogFields": ["CITYAREA", "CO_NAME"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_NAME"], "query": "CO_NAME in ['BOX ELDER', 'WEBER', 'DAVIS', 'SALT LAKE']"},
                                     {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_NAME"], "query": "CO_NAME == 'UTAH'"},
                                     {"geogName": "Wasatch Front Region", "queryFields": ["CO_NAME"], "query": "CO_NAME==CO_NAME"}],
-                        "keyFieldPattern": "^h_ami_[0-9]{4}$",
-                        "outFieldPattern": "h_ami_"},
+                        "keyFieldPattern": "^HCOST[0-9]{4}$",
+                        "outFieldPattern": "HCOST_"},
 
                 "Transportation Costs": 
-                    {"itemId": "82fdb720f4bf43f98c1b7cac14a93c0f",
+                    {"itemId": "0e1a373f086f4809a06ffe260401673d",
                         "index":0,
                         "aggregation":"mean",
                         "query": "1=1",
-                        "geogFields": ["CityArea", 'SUBAREA', "CO_NAME"],
+                        "geogFields": ["CITYAREA", "CO_NAME"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_NAME"], "query": "CO_NAME in ['BOX ELDER', 'WEBER', 'DAVIS', 'SALT LAKE']"},
                                     {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_NAME"], "query": "CO_NAME == 'UTAH'"},
                                     {"geogName": "Wasatch Front Region", "queryFields": ["CO_NAME"], "query": "CO_NAME==CO_NAME"}],
-                        "keyFieldPattern": "^t_ami_[0-9]{4}$",
-                        "outFieldPattern": "t_ami_"},
+                        "keyFieldPattern": "^TCOST[0-9]{4}$",
+                        "outFieldPattern": "TCOST_"},
 
                 "Housing + Transportation Costs": 
-                    {"itemId": "82fdb720f4bf43f98c1b7cac14a93c0f",
+                    {"itemId": "0e1a373f086f4809a06ffe260401673d",
                         "index":0,
                         "aggregation":"mean",
                         "query": "1=1",
-                        "geogFields": ["CityArea", 'SUBAREA', "CO_NAME"],
+                        "geogFields": ["CITYAREA", "CO_NAME"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_NAME"], "query": "CO_NAME in ['BOX ELDER', 'WEBER', 'DAVIS', 'SALT LAKE']"},
                                     {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_NAME"], "query": "CO_NAME == 'UTAH'"},
                                     {"geogName": "Wasatch Front Region", "queryFields": ["CO_NAME"], "query": "CO_NAME==CO_NAME"}],
-                        "keyFieldPattern": "^ht_ami_[0-9]{4}$",
-                        "outFieldPattern": "ht_ami_"},
+                        "keyFieldPattern": "^HPLUST[0-9]{4}$",
+                        "outFieldPattern": "HPLUST_"},
 
                 "Commuters that Drive Alone": 
                     {"itemId": "9fae7da885ce461fad068dad14bcf67c",
