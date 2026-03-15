@@ -1,0 +1,26 @@
+# Pipelines
+
+## Performance Metrics
+
+The modernized performance-metrics pipeline:
+
+1. Loads metric configuration from YAML.
+2. Reads source service layers from ArcGIS.
+3. Converts those responses to plain DataFrame or GeoDataFrame objects.
+4. Applies family-specific transforms.
+5. Joins the results to the configured boundary layer.
+6. Writes local outputs and optionally publishes the hosted layer.
+
+## Housing and Transportation
+
+The housing and transportation rewrite replaces:
+
+- `arcpy.analysis.PairwiseDissolve`
+- `arcpy.SpatialJoin_analysis`
+- file geodatabase outputs
+
+with:
+
+- `GeoDataFrame.dissolve`
+- `geopandas.sjoin`
+- GeoPackage outputs

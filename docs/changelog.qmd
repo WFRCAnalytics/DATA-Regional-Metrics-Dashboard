@@ -1,0 +1,8 @@
+# Changelog
+
+## `modernize-engine`
+
+- Created package, CLI, config, docs, and test scaffolding.
+- Moved legacy workflows under `legacy/`.
+- Extracted metric definitions into YAML.
+- Added initial open-source geometry and housing/transportation helpers.

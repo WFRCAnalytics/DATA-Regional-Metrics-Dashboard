@@ -1,0 +1,29 @@
+# Quickstart
+
+## Prerequisites
+
+- Python 3.12
+- `uv`
+- Quarto
+
+## Environment
+
+Copy `.env.example` values into your shell environment or a local `.env` file.
+
+Required ArcGIS variables:
+
+- `ARCGIS_URL`
+- `ARCGIS_PROFILE` or `ARCGIS_USERNAME` and `ARCGIS_PASSWORD`
+
+Optional safety variable:
+
+- `ARCGIS_PUBLISH_ENABLED=false`
+
+## Common commands
+
+```bash
+uv sync
+uv run regional-metrics --help
+uv run regional-metrics build performance-metrics --dry-run
+uv run regional-metrics docs render
+```

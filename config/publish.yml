@@ -1,0 +1,15 @@
+boundaries:
+  item_id: "98bfc2eb26d94adcb6ae9cab2f7d57a8"
+  index: 0
+  join_field: "GeoName"
+  drop_columns:
+    - "Shape__Area"
+    - "Shape__Length"
+
+output_item:
+  title: "WFRC_PerformanceMetrics"
+  service_name: "WFRC_PerformanceMetrics"
+  tags:
+    - "wfrc"
+    - "metrics"
+  existing_item_id: ""

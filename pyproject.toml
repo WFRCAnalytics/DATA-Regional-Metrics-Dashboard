@@ -1,0 +1,54 @@
+[project]
+name = "regional-metrics"
+version = "0.1.0"
+description = "Modernized workflows for the WFRC Regional Metrics Dashboard"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "arcgis>=2.4.1",
+  "duckdb>=1.1.0",
+  "geopandas>=1.0.1",
+  "pandas>=2.2.3",
+  "pyarrow>=18.0.0",
+  "pyogrio>=0.10.0",
+  "python-dotenv>=1.0.1",
+  "pyyaml>=6.0.2",
+  "rich>=13.9.4",
+  "shapely>=2.0.6",
+  "typer>=0.15.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.13.0",
+  "pytest>=8.3.4",
+  "ruff>=0.8.6",
+]
+
+[project.scripts]
+regional-metrics = "regional_metrics.cli:app"
+
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/regional_metrics"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["legacy", "Inputs", "Logs", "_site"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["B008"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_unused_configs = true
+ignore_missing_imports = true

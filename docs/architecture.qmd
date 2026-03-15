@@ -1,0 +1,25 @@
+# Architecture
+
+## Boundaries
+
+- `arcgis` is used only for ArcGIS service access and hosted layer publishing.
+- Core transformations run on `pandas`, `geopandas`, `shapely`, and `pyogrio`.
+- Quarto is the documentation system for maintainers.
+
+## Code layout
+
+- `io_arcgis.py`: ArcGIS Online/Enterprise reads and publish adapters.
+- `io_spatial.py`: local spatial reads and writes.
+- `pipeline_performance_metrics.py`: orchestration for the hosted dashboard layer.
+- `metrics_*.py`: metric-family specific transforms.
+- `publish_agol.py`: hosted layer publish helpers.
+
+## Legacy boundary
+
+The repo still retains:
+
+- `Inputs/`
+- `Logs/`
+- `legacy/`
+
+These remain available for parity checks and migration reference.

@@ -1,0 +1,25 @@
+# Migration From ArcPy
+
+## Legacy implementation
+
+The legacy repo used:
+
+- `arcpy`
+- ArcGIS Pro project artifacts
+- notebooks with embedded production logic
+
+## Modern target
+
+The modern branch moves to:
+
+- configuration-driven pipelines
+- package modules in `src/`
+- open-source geospatial processing
+- Quarto maintainer docs
+
+## Replacement mapping
+
+- `PairwiseDissolve` -> `GeoDataFrame.dissolve`
+- `SpatialJoin_analysis` -> `geopandas.sjoin`
+- file geodatabase outputs -> GeoPackage and GeoParquet
+- notebook business logic -> importable Python modules

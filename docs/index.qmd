@@ -1,0 +1,22 @@
+# Regional Metrics Modernization
+
+This site documents the modernization of the WFRC Regional Metrics Dashboard repository.
+
+## What changed
+
+- Production code is now organized as a Python package in `src/regional_metrics`.
+- Metric metadata now lives in YAML under `config/`.
+- Documentation now lives in Quarto documents instead of ad hoc notes.
+- Legacy notebooks and the original metrics script are preserved under `legacy/`.
+
+## Current priorities
+
+1. Reproduce the `WFRC_PerformanceMetrics` output schema.
+2. Replace `arcpy` geoprocessing with `geopandas` and related open-source tooling.
+3. Keep the hosted layer publish flow working through the `arcgis` module.
+
+## Key references
+
+- Legacy implementation: `legacy/calc_metrics.py`
+- Legacy notes: `WFRC Dashboard Integration Knowledge Transfer.docx`
+- Configuration: `config/datasets.yml`, `config/geographies.yml`, `config/publish.yml`

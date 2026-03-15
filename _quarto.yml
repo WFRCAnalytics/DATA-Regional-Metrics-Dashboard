@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - docs/*.qmd
+
+website:
+  title: "Regional Metrics Modernization"
+  navbar:
+    left:
+      - href: docs/index.qmd
+        text: Overview
+      - href: docs/architecture.qmd
+        text: Architecture
+      - href: docs/quickstart.qmd
+        text: Quickstart
+      - href: docs/pipelines.qmd
+        text: Pipelines
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+execute:
+  freeze: auto

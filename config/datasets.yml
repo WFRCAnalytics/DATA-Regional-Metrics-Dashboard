@@ -1,0 +1,268 @@
+metrics:
+  jobs_by_auto:
+    name: Jobs By Auto
+    family: weighted_jobs
+    item_id: "d485928e777740c7963a5b68a37db116"
+    index: 0
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITYAREA, CO_NAME, SMALLAREA]
+    geography_group: county_fips_regions
+    key_field_pattern: '^JOBAUTO_[0-9]{2}$'
+    weighted_field_pattern: '^HH_[0-9]{2}$'
+    weighted_field_prefix: "HH_"
+    out_field_pattern: "weighted_ato_jobauto_"
+
+  jobs_by_transit:
+    name: Jobs By Transit
+    family: weighted_jobs
+    item_id: "d485928e777740c7963a5b68a37db116"
+    index: 0
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITYAREA, CO_NAME, SMALLAREA]
+    geography_group: county_fips_regions
+    key_field_pattern: '^JOBTRANSIT_[0-9]{2}$'
+    weighted_field_pattern: '^HH_[0-9]{2}$'
+    weighted_field_prefix: "HH_"
+    out_field_pattern: "weighted_ato_jobtransit_"
+
+  population_estimates:
+    name: Population Estimates
+    family: projections
+    item_id: "db1ebf9044e347758468de2b6d5f744a"
+    index: 0
+    aggregation: sum
+    query: "ModelArea = 'Wasatch Front Travel Demand Model'"
+    geog_fields: [CityArea, CO_NAME]
+    geography_group: county_fips_regions
+    key_field_pattern: '^YEAR[0-9]{4}$'
+    out_field_pattern: "pop_proj_"
+
+  household_estimates:
+    name: Household Estimates
+    family: projections
+    item_id: "920e71114c8e491cb0d1c01e3766d839"
+    index: 0
+    aggregation: sum
+    query: "ModelArea = 'Wasatch Front Travel Demand Model'"
+    geog_fields: [CityArea, CO_NAME]
+    geography_group: county_fips_regions
+    key_field_pattern: '^YEAR[0-9]{4}$'
+    out_field_pattern: "hh_proj_"
+
+  households_with_access_to_transit:
+    name: Households with Access to Transit
+    family: access
+    item_id: "98a0bd9da71a47339f29fefc7b1cb46a"
+    index: 0
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITYAREA, CO_NAME]
+    geography_group: county_fips_regions
+    key_field_pattern: '^HH_[0-9]{4}$'
+    out_field_pattern: "hh_20min_walk_transit_"
+
+  households_with_access_to_trails_5min:
+    name: Households with Access to Trails 5min
+    family: access
+    item_id: "ee833e7d6461440bbd23d1be0918b875"
+    index: 0
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITYAREA, CO_NAME]
+    geography_group: county_fips_regions
+    key_field_pattern: '^HH_[0-9]{4}$'
+    out_field_pattern: "hh_5min_walk_trail_"
+
+  households_with_access_to_trails_10min:
+    name: Households with Access to Trails 10min
+    family: access
+    item_id: "ce0caa2c8f6c412ba8178e744ae52282"
+    index: 0
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITYAREA, CO_NAME]
+    geography_group: county_fips_regions
+    key_field_pattern: '^HH_[0-9]{4}$'
+    out_field_pattern: "hh_10min_walk_trail_"
+
+  households_with_access_to_parks_5min:
+    name: Households with Access to Parks 5min
+    family: access
+    item_id: "371d341c3aa043e9bc0caf046bfaf403"
+    index: 0
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITYAREA, CO_NAME]
+    geography_group: county_fips_regions
+    key_field_pattern: '^HH_[0-9]{4}$'
+    out_field_pattern: "hh_5min_walk_parks_"
+
+  households_with_access_to_parks_10min:
+    name: Households with Access to Parks 10min
+    family: access
+    item_id: "a2fd003749824e12a347cb561b2ad089"
+    index: 0
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITYAREA, CO_NAME]
+    geography_group: county_fips_regions
+    key_field_pattern: '^HH_[0-9]{4}$'
+    out_field_pattern: "hh_10min_walk_parks_"
+
+  population_within_centers:
+    name: Population within Centers
+    family: centers
+    item_id: "f693c6c6e09a4a75b98169eb1dfbeee4"
+    index: 0
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITYAREA, CO_NAME]
+    geography_group: county_fips_regions
+    key_field_pattern: '^POP_[0-9]{4}$'
+    out_field_pattern: "pop_within_centers_"
+
+  percentage_households_jobs_within_centers:
+    name: Percentage of Households and Jobs within Centers
+    family: centers
+    item_id: "0772a38efb4c4e6689ea0577854ad726"
+    index: 0
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [GEOG]
+    geog_areas: []
+    key_field_pattern: '^hhjob_wcc_pct_[0-9]{4}$'
+    out_field_pattern: "hhjob_wcc_pct_"
+
+  housing_costs:
+    name: Housing Costs
+    family: ht
+    item_id: "0e1a373f086f4809a06ffe260401673d"
+    index: 0
+    aggregation: mean
+    query: "1=1"
+    geog_fields: [CITYAREA, CO_NAME]
+    geography_group: county_name_upper_regions
+    key_field_pattern: '^HCOST[0-9]{4}$'
+    out_field_pattern: "HCOST_"
+
+  transportation_costs:
+    name: Transportation Costs
+    family: ht
+    item_id: "0e1a373f086f4809a06ffe260401673d"
+    index: 0
+    aggregation: mean
+    query: "1=1"
+    geog_fields: [CITYAREA, CO_NAME]
+    geography_group: county_name_upper_regions
+    key_field_pattern: '^TCOST[0-9]{4}$'
+    out_field_pattern: "TCOST_"
+
+  housing_transportation_costs:
+    name: Housing + Transportation Costs
+    family: ht
+    item_id: "0e1a373f086f4809a06ffe260401673d"
+    index: 0
+    aggregation: mean
+    query: "1=1"
+    geog_fields: [CITYAREA, CO_NAME]
+    geography_group: county_name_upper_regions
+    key_field_pattern: '^HPLUST[0-9]{4}$'
+    out_field_pattern: "HPLUST_"
+
+  commuters_drive_alone:
+    name: Commuters that Drive Alone
+    family: acs
+    item_id: "9fae7da885ce461fad068dad14bcf67c"
+    index: 0
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITY_NAME, SUBAREA, COUNTY]
+    geography_group: county_title_regions
+    key_field_pattern: '^ACS5_[0-9]{4}$'
+    out_field_pattern: "commuters_drive_alone_"
+
+  commuters_public_transportation:
+    name: Commuters that use Public Transportation
+    family: acs
+    item_id: "9fae7da885ce461fad068dad14bcf67c"
+    index: 2
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITY_NAME, SUBAREA, COUNTY]
+    geography_group: county_title_regions
+    key_field_pattern: '^ACS5_[0-9]{4}$'
+    out_field_pattern: "commuters_public_transport_"
+
+  commuters_work_from_home:
+    name: Commuters that Work From Home
+    family: acs
+    item_id: "9fae7da885ce461fad068dad14bcf67c"
+    index: 1
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITY_NAME, SUBAREA, COUNTY]
+    geography_group: county_title_regions
+    key_field_pattern: '^ACS5_[0-9]{4}$'
+    out_field_pattern: "commuters_work_home_"
+
+  median_income:
+    name: Median Income
+    family: acs
+    item_id: "9fae7da885ce461fad068dad14bcf67c"
+    index: 7
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITY_NAME, SUBAREA, COUNTY]
+    geography_group: county_title_regions
+    key_field_pattern: '^ACS5_[0-9]{4}$'
+    out_field_pattern: "median_income_"
+
+  persons_below_poverty_level:
+    name: Persons below Poverty Level
+    family: acs
+    item_id: "9fae7da885ce461fad068dad14bcf67c"
+    index: 11
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITY_NAME, SUBAREA, COUNTY]
+    geography_group: county_title_regions
+    key_field_pattern: '^ACS5_[0-9]{4}$'
+    out_field_pattern: "persons_below_poverty_"
+
+  aggregate_travel_time_for_commuters:
+    name: Aggregate Travel Time for Commuters
+    family: acs
+    item_id: "9fae7da885ce461fad068dad14bcf67c"
+    index: 13
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITY_NAME, SUBAREA, COUNTY]
+    geography_group: county_title_regions
+    key_field_pattern: '^ACS5_[0-9]{4}$'
+    out_field_pattern: "commuter_travel_time_"
+
+  median_age:
+    name: Median Age
+    family: acs
+    item_id: "9fae7da885ce461fad068dad14bcf67c"
+    index: 14
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITY_NAME, SUBAREA, COUNTY]
+    geography_group: county_title_regions
+    key_field_pattern: '^ACS5_[0-9]{4}$'
+    out_field_pattern: "median_age_"
+
+  persons_with_bachelors_degree:
+    name: Persons with Education of Bachelors Degree
+    family: acs
+    item_id: "9fae7da885ce461fad068dad14bcf67c"
+    index: 21
+    aggregation: sum
+    query: "1=1"
+    geog_fields: [CITY_NAME, SUBAREA, COUNTY]
+    geography_group: county_title_regions
+    key_field_pattern: '^ACS5_[0-9]{4}$'
+    out_field_pattern: "persons_with_bachelors_"

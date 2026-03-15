@@ -1,3 +1,43 @@
-# Folders
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.venv/
+.python-version.local
+
+# Editors and OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Environment
+.env
+.env.local
+
+# Build and docs
+site/
+_site/
+dist/
+build/
+*.egg-info/
+
+# Data products
 Outputs/
 Default.gdb
+data/intermediate/*
+!data/intermediate/.gitkeep
+data/derived/*
+!data/derived/.gitkeep
+
+# Legacy ArcGIS scratch outputs
+*.lock
+
+/.quarto/
+**/*.quarto_ipynb

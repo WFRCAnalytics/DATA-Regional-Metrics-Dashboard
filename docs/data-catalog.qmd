@@ -1,0 +1,19 @@
+# Data Catalog
+
+## Managed configuration
+
+- `config/datasets.yml`: ArcGIS item IDs, metric families, regex field patterns, aggregation rules.
+- `config/geographies.yml`: reusable geography-group definitions.
+- `config/publish.yml`: boundary layer and hosted output metadata.
+
+## Legacy source artifacts
+
+- `Inputs/Walksheds.gdb.zip`
+- `Inputs/Walksheds.gdb/`
+- `legacy/housing-plus-transportation/Inputs/`
+- `Logs/`
+
+## Canonical maintained outputs
+
+- Intermediates: `data/intermediate/*.parquet`
+- Spatial outputs: `data/derived/*.gpkg`

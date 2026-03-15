@@ -1,0 +1,33 @@
+groups:
+  county_fips_regions:
+    - geog_name: Wasatch Front Regional Council Region
+      query_fields: [CO_FIPS]
+      query: "CO_FIPS in [3, 57, 11, 35]"
+    - geog_name: Mountainland Association of Governments Region
+      query_fields: [CO_FIPS]
+      query: "CO_FIPS == 49"
+    - geog_name: Wasatch Front Region
+      query_fields: [CO_FIPS]
+      query: "CO_FIPS == CO_FIPS"
+
+  county_name_upper_regions:
+    - geog_name: Wasatch Front Regional Council Region
+      query_fields: [CO_NAME]
+      query: "CO_NAME in ['BOX ELDER', 'WEBER', 'DAVIS', 'SALT LAKE']"
+    - geog_name: Mountainland Association of Governments Region
+      query_fields: [CO_NAME]
+      query: "CO_NAME == 'UTAH'"
+    - geog_name: Wasatch Front Region
+      query_fields: [CO_NAME]
+      query: "CO_NAME == CO_NAME"
+
+  county_title_regions:
+    - geog_name: Wasatch Front Regional Council Region
+      query_fields: [COUNTY]
+      query: "COUNTY in ['Box Elder', 'Weber', 'Davis', 'Salt Lake']"
+    - geog_name: Mountainland Association of Governments Region
+      query_fields: [COUNTY]
+      query: "COUNTY == 'Utah'"
+    - geog_name: Wasatch Front Region
+      query_fields: [COUNTY]
+      query: "COUNTY == COUNTY"

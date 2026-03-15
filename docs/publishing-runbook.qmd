@@ -1,0 +1,48 @@
+# Publishing Runbook
+
+## Dry run
+
+```bash
+uv run regional-metrics build performance-metrics --dry-run
+```
+
+## Build locally
+
+```bash
+uv run regional-metrics build performance-metrics --output data/derived/performance_metrics.gpkg
+```
+
+## Publish
+
+```bash
+ARCGIS_PUBLISH_ENABLED=true uv run regional-metrics publish performance-metrics --input data/derived/performance_metrics.gpkg --yes
+```
+
+## Publish dry run
+
+```bash
+uv run regional-metrics publish performance-metrics --input data/derived/performance_metrics.gpkg --dry-run
+```
+
+This validates the local file and prints:
+
+- target hosted layer title
+- create vs overwrite mode
+- join field and geometry column
+- row and column counts
+- tags
+
+No ArcGIS Online changes are made during `--dry-run`.
+
+Publishing is blocked unless both conditions are true:
+
+- `ARCGIS_PUBLISH_ENABLED=true` is set in the environment
+- `--yes` is passed on the command line
+
+This is intentional to prevent accidental hosted-layer overwrites.
+
+## Rollback guidance
+
+- Export the last known-good hosted layer before publishing.
+- Keep comparison outputs under `data/derived/comparisons/`.
+- Use the hosted item ID from `config/publish.yml` for overwrite operations.
