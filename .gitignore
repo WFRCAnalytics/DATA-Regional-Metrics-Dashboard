@@ -38,6 +38,7 @@ data/derived/*
 
 # Legacy ArcGIS scratch outputs
 *.lock
+!uv.lock
 
 /.quarto/
 **/*.quarto_ipynb
