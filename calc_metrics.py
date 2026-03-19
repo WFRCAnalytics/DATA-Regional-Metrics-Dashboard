@@ -432,11 +432,11 @@ def main():
                         "outFieldPattern": "hhjob_wcc_pct_"},
 
                 "Housing Costs": 
-                    {"itemId": "0e1a373f086f4809a06ffe260401673d",
+                    {"itemId": "72fd762352bd4712989ae56f163a3386",
                         "index":0,
                         "aggregation":"mean",
                         "query": "1=1",
-                        "geogFields": ["CITYAREA", "CO_NAME"],
+                        "geogFields": ["CITYAREA", 'SUBAREA', "CO_NAME"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_NAME"], "query": "CO_NAME in ['BOX ELDER', 'WEBER', 'DAVIS', 'SALT LAKE']"},
                                     {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_NAME"], "query": "CO_NAME == 'UTAH'"},
                                     {"geogName": "Wasatch Front Region", "queryFields": ["CO_NAME"], "query": "CO_NAME==CO_NAME"}],
@@ -444,11 +444,11 @@ def main():
                         "outFieldPattern": "HCOST_"},
 
                 "Transportation Costs": 
-                    {"itemId": "0e1a373f086f4809a06ffe260401673d",
+                    {"itemId": "72fd762352bd4712989ae56f163a3386",
                         "index":0,
                         "aggregation":"mean",
                         "query": "1=1",
-                        "geogFields": ["CITYAREA", "CO_NAME"],
+                        "geogFields": ["CITYAREA", 'SUBAREA', "CO_NAME"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_NAME"], "query": "CO_NAME in ['BOX ELDER', 'WEBER', 'DAVIS', 'SALT LAKE']"},
                                     {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_NAME"], "query": "CO_NAME == 'UTAH'"},
                                     {"geogName": "Wasatch Front Region", "queryFields": ["CO_NAME"], "query": "CO_NAME==CO_NAME"}],
@@ -456,11 +456,11 @@ def main():
                         "outFieldPattern": "TCOST_"},
 
                 "Housing + Transportation Costs": 
-                    {"itemId": "0e1a373f086f4809a06ffe260401673d",
+                    {"itemId": "72fd762352bd4712989ae56f163a3386",
                         "index":0,
                         "aggregation":"mean",
                         "query": "1=1",
-                        "geogFields": ["CITYAREA", "CO_NAME"],
+                        "geogFields": ["CITYAREA", 'SUBAREA', "CO_NAME"],
                         "geogAreas": [{"geogName": "Wasatch Front Regional Council Region", "queryFields": ["CO_NAME"], "query": "CO_NAME in ['BOX ELDER', 'WEBER', 'DAVIS', 'SALT LAKE']"},
                                     {"geogName": "Mountainland Association of Governments Region", "queryFields": ["CO_NAME"], "query": "CO_NAME == 'UTAH'"},
                                     {"geogName": "Wasatch Front Region", "queryFields": ["CO_NAME"], "query": "CO_NAME==CO_NAME"}],
@@ -801,6 +801,21 @@ def main():
         # Drop duplicate columns"
         merged_df.drop(columns=["Shape__Area", "Shape__Length"], inplace=True)
 
+        # update names of workshop areas, if present
+        wa_lookup = {
+                    'Box Elder Wfrc':'Box Elder County - Southern',
+                    'Davis County North':'Davis County - Northern',
+                    'Davis County South':'Davis County - Southern',
+                    'Salt Lake County North':'Salt Lake County - Northern',
+                    'Salt Lake County Sw':'Salt Lake County - Southwest',
+                    'Salt Lake County Se':'Salt Lake County - Southeast',
+                    'Weber County North':'Weber County - Northern',
+                    'Weber County South':'Weber County - Southern',
+                    'Utah County Central':'Utah County - Central',
+                    'Utah County North':'Utah County - Northern',
+                    'Utah County South':'Utah County - Southern'
+                 }
+        merged_df['GeoName'] = merged_df['GeoName'].replace(wa_lookup)
         
         if upload_data == True:
             # Check if item already exists
