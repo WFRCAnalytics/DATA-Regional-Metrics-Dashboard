@@ -5,6 +5,8 @@ Feb. 23, 2024
 
 Modified by: jreynolds@wfrc.org
 
+Modified by: pukar.bhandari@wfrc.utah.gov on 03/20/2026
+
 Script written for WFRC to calculate "Big 5 Metrics" consumed by Dashboard
 
 ---
@@ -286,10 +288,113 @@ def metricEstimatesProjections(gis, metric_name, input):
     return metric_df
 
 
+def metricWeightedMean(gis, metric_name, input):
+    """
+    Aggregates cost or ratio fields using a household-weighted mean.
+
+    Used for HCOST{YYYY}, TCOST{YYYY}, and HPLUST{YYYY} — all three are per-household
+    metrics and must be weighted by total households (TOTHH{YYYY}) when rolling up
+    to county or region level.  A simple arithmetic mean is wrong because it treats a
+    city of 500 households the same as one with 50,000.
+
+        metric_county = Σ(metric_city × TOTHH_city) / Σ(TOTHH_city)
+
+    Cities with no household data (TOTHH = 0 or NaN) are excluded from both the
+    numerator and denominator, so they do not distort the weighted result.
+
+    At the CITYAREA level each city is a single row, so the weighted mean equals the
+    city value exactly — no change in behaviour for city-level geographies.
+
+    Requires the input dict to include:
+      "weightFieldPattern"  — regex matching TOTHH{YYYY} columns in the source layer
+                              (e.g. "^TOTHH[0-9]{4}$")
+    """
+    logIt(f"Current metric: {metric_name}")
+
+    # Fetch source feature layer
+    ato_fl = getFeatureLayerFromItemIdandIndex(gis, input["itemId"], input["index"])
+    logIt(ato_fl)
+    ato_df = ato_fl.query(where=input["query"]).sdf
+
+    # Identify value fields and weight fields (TOTHH{YYYY})
+    key_flds = sorted([c for c in ato_df.columns if re.match(input["keyFieldPattern"], c)])
+    weight_flds = [c for c in ato_df.columns if re.match(input["weightFieldPattern"], c)]
+
+    # Map 4-digit year string → weight column: "2024" → "TOTHH2024"
+    year_to_weight = {wf[-4:]: wf for wf in weight_flds}
+
+    # Collect all fields needed in the working dataframe
+    df_flds = input["geogFields"][:]
+    for d in input["geogAreas"]:
+        for fld in d["queryFields"]:
+            if fld not in df_flds:
+                df_flds.append(fld)
+    df_flds.extend(key_flds)
+    df_flds.extend(weight_flds)
+    df_flds = list(dict.fromkeys(df_flds))  # deduplicate, preserve order
+    ato_df = ato_df[df_flds]
+
+    # Output column names: HPLUST2024 → HPLUST_2024
+    rename_dict = {fld: input["outFieldPattern"] + fld[-4:] for fld in key_flds}
+
+    def weighted_mean_for_group(group_df):
+        """Return one output row dict with population-weighted HPLUST values."""
+        row = {}
+        for kf in key_flds:
+            yr = kf[-4:]
+            wf = year_to_weight.get(yr)
+            if wf and wf in group_df.columns:
+                weights = group_df[wf].fillna(0)
+                total_w = weights.sum()
+                if total_w > 0:
+                    row[kf] = (group_df[kf] * weights).sum() / total_w
+                else:
+                    row[kf] = None  # no population data for this group-year
+            else:
+                # Safety fallback: simple mean if weight column not found
+                row[kf] = group_df[kf].mean()
+        return row
+
+    all_df_list = []
+
+    # ── Geography fields (CITYAREA, SUBAREA, CO_NAME) ──────────────────────
+    for fld_geog in input["geogFields"]:
+        logIt(f"Calculating metric for: {fld_geog}")
+        rows = []
+        for grp_val, grp in ato_df.groupby(fld_geog):
+            row = {"geoname": grp_val}
+            row.update(weighted_mean_for_group(grp))
+            rows.append(row)
+
+        geog_df = pd.DataFrame(rows)
+        geog_df.rename(columns=rename_dict, inplace=True)
+        geog_df["geoname"] = geog_df["geoname"].str.title()
+        logIt(geog_df.head())
+        all_df_list.append(geog_df)
+
+    # ── Geography areas (county groups, regions) ────────────────────────────
+    for geog_area in input["geogAreas"]:
+        geog_name = geog_area["geogName"]
+        logIt(f"Calculating metric for: {geog_name}")
+        area_df = ato_df.query(geog_area["query"])
+
+        row = {"geoname": geog_name}
+        row.update(weighted_mean_for_group(area_df))
+
+        area_result = pd.DataFrame([row])
+        area_result.rename(columns=rename_dict, inplace=True)
+        area_result["geoname"] = area_result["geoname"].str.title()
+        logIt(area_result.head())
+        all_df_list.append(area_result)
+
+    metric_df = pd.concat(all_df_list, ignore_index=True)
+    return metric_df
+
+
 def main():
 
     # toggle whether to upload to AGOL or write to csv
-    upload_data = True
+    upload_data = False
 
     # Script inputs - each metric should be added as dictionary of key/value pairs in the inputs dictionary
     inputs = {
@@ -570,7 +675,8 @@ def main():
         "Housing Costs": {
             "itemId": "72fd762352bd4712989ae56f163a3386",
             "index": 0,
-            "aggregation": "mean",
+            # Household-weighted mean (see metricWeightedMean).
+            # "aggregation": "mean" is NOT used — metricWeightedMean handles its own agg.
             "query": "1=1",
             "geogFields": ["CITYAREA", "SUBAREA", "CO_NAME"],
             "geogAreas": [
@@ -591,12 +697,13 @@ def main():
                 },
             ],
             "keyFieldPattern": "^HCOST[0-9]{4}$",
+            "weightFieldPattern": "^TOTHH[0-9]{4}$",
             "outFieldPattern": "HCOST_",
         },
         "Transportation Costs": {
             "itemId": "72fd762352bd4712989ae56f163a3386",
             "index": 0,
-            "aggregation": "mean",
+            # Household-weighted mean (see metricWeightedMean).
             "query": "1=1",
             "geogFields": ["CITYAREA", "SUBAREA", "CO_NAME"],
             "geogAreas": [
@@ -617,12 +724,12 @@ def main():
                 },
             ],
             "keyFieldPattern": "^TCOST[0-9]{4}$",
+            "weightFieldPattern": "^TOTHH[0-9]{4}$",
             "outFieldPattern": "TCOST_",
         },
         "Housing + Transportation Costs": {
             "itemId": "72fd762352bd4712989ae56f163a3386",
             "index": 0,
-            "aggregation": "mean",
             "query": "1=1",
             "geogFields": ["CITYAREA", "SUBAREA", "CO_NAME"],
             "geogAreas": [
@@ -643,6 +750,9 @@ def main():
                 },
             ],
             "keyFieldPattern": "^HPLUST[0-9]{4}$",
+            # Changed from TOTPOP to TOTHH: HPLUST is a per-household ratio so
+            # household-weighted aggregation is semantically correct.
+            "weightFieldPattern": "^TOTHH[0-9]{4}$",
             "outFieldPattern": "HPLUST_",
         },
         "Commuters that Drive Alone": {
@@ -1011,22 +1121,24 @@ def main():
 
         if "Housing Costs" in metrics:
             input = inputs["Housing Costs"]
-            # Get dataframe of metric data
-            metric_df = metricEstimatesProjections(gis, "Housing Costs", input)
+            # Get dataframe of metric data — household-weighted mean (TOTHH{YYYY})
+            metric_df = metricWeightedMean(gis, "Housing Costs", input)
             # Merge metric to existing output
             output_df = mergeMetricDataframes(output_df, metric_df)
 
         if "Transportation Costs" in metrics:
             input = inputs["Transportation Costs"]
-            # Get dataframe of metric data
-            metric_df = metricEstimatesProjections(gis, "Transportation Costs", input)
+            # Get dataframe of metric data — household-weighted mean (TOTHH{YYYY})
+            metric_df = metricWeightedMean(gis, "Transportation Costs", input)
             # Merge metric to existing output
             output_df = mergeMetricDataframes(output_df, metric_df)
 
         if "Housing + Transportation Costs" in metrics:
             input = inputs["Housing + Transportation Costs"]
-            # Get dataframe of metric data
-            metric_df = metricEstimatesProjections(gis, "Housing + Transportation Costs", input)
+            # Get dataframe of metric data — household-weighted mean (TOTHH{YYYY}).
+            # HPLUST is a per-household ratio; TOTHH weighting is semantically correct.
+            # Previously used TOTPOP; changed 2026-03-20.
+            metric_df = metricWeightedMean(gis, "Housing + Transportation Costs", input)
             # Merge metric to existing output
             output_df = mergeMetricDataframes(output_df, metric_df)
 
