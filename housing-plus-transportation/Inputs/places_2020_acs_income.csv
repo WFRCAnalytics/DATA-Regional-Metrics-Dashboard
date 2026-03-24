@@ -1,0 +1,1987 @@
+place_name,year,place_medinc,medinc_source
+Alpine,2019,129239.0,acs_place
+Alpine,2020,123450.0,acs_place
+Alpine,2021,138438.0,acs_place
+Alpine,2022,161602.0,acs_place
+Alpine,2023,156786.0,acs_place
+Alpine,2024,168929.0,acs_place
+Alta,2019,64250.0,acs_place
+Alta,2020,66625.0,acs_place
+Alta,2021,52917.0,acs_place
+Alta,2022,49931.0,extrapolated
+Alta,2023,44264.0,extrapolated
+Alta,2024,38598.0,extrapolated
+Altamont,2019,78125.0,acs_place
+Altamont,2020,78854.0,acs_place
+Altamont,2021,82813.0,acs_place
+Altamont,2022,91250.0,acs_place
+Altamont,2023,88750.0,acs_place
+Altamont,2024,94688.0,acs_place
+Alton,2019,45625.0,acs_place
+Alton,2020,41250.0,acs_place
+Alton,2021,47813.0,acs_place
+Alton,2022,49375.0,acs_place
+Alton,2023,60312.0,interpolated
+Alton,2024,71250.0,acs_place
+Amalga,2019,64375.0,acs_place
+Amalga,2020,79167.0,acs_place
+Amalga,2021,83929.0,acs_place
+Amalga,2022,92292.0,acs_place
+Amalga,2023,98438.0,acs_place
+Amalga,2024,97679.0,acs_place
+American Fork,2019,77857.0,acs_place
+American Fork,2020,78690.0,acs_place
+American Fork,2021,82772.0,acs_place
+American Fork,2022,90490.0,acs_place
+American Fork,2023,95823.0,acs_place
+American Fork,2024,98878.0,acs_place
+Aneth,2019,27500.0,acs_place
+Aneth,2020,38750.0,acs_place
+Aneth,2021,38750.0,acs_place
+Aneth,2022,39583.0,acs_place
+Aneth,2023,56563.0,acs_place
+Aneth,2024,62917.0,acs_place
+Annabella,2019,63750.0,acs_place
+Annabella,2020,59750.0,acs_place
+Annabella,2021,64783.0,acs_place
+Annabella,2022,72500.0,acs_place
+Annabella,2023,73750.0,acs_place
+Annabella,2024,82500.0,acs_place
+Antimony,2019,38750.0,acs_place
+Antimony,2020,41000.0,acs_place
+Antimony,2021,42143.0,acs_place
+Antimony,2022,46354.0,acs_place
+Antimony,2023,46250.0,acs_place
+Antimony,2024,48333.0,acs_place
+Apple Valley,2019,67554.0,acs_place
+Apple Valley,2020,61250.0,acs_place
+Apple Valley,2021,64922.0,acs_place
+Apple Valley,2022,80893.0,acs_place
+Apple Valley,2023,89375.0,acs_place
+Apple Valley,2024,86250.0,acs_place
+Aurora,2019,61167.0,acs_place
+Aurora,2020,66607.0,acs_place
+Aurora,2021,87500.0,acs_place
+Aurora,2022,96484.0,acs_place
+Aurora,2023,92321.0,acs_place
+Aurora,2024,91250.0,acs_place
+Avon,2019,98333.0,acs_place
+Avon,2020,101458.0,acs_place
+Avon,2021,89659.0,acs_place
+Avon,2022,82188.0,acs_place
+Avon,2023,93750.0,acs_place
+Avon,2024,114261.0,acs_place
+Ballard,2019,64500.0,acs_place
+Ballard,2020,66354.0,acs_place
+Ballard,2021,69583.0,acs_place
+Ballard,2022,73833.0,acs_place
+Ballard,2023,81250.0,acs_place
+Ballard,2024,87037.0,acs_place
+Bear River City,2019,69375.0,acs_place
+Bear River City,2020,67656.0,acs_place
+Bear River City,2021,65000.0,acs_place
+Bear River City,2022,66250.0,acs_place
+Bear River City,2023,87917.0,acs_place
+Bear River City,2024,97895.0,acs_place
+Beaver,2019,57979.0,acs_place
+Beaver,2020,66696.0,acs_place
+Beaver,2021,73456.0,acs_place
+Beaver,2022,80313.0,acs_place
+Beaver,2023,82625.0,acs_place
+Beaver,2024,75960.0,acs_place
+Benjamin,2019,72708.0,acs_place
+Benjamin,2020,83438.0,acs_place
+Benjamin,2021,72000.0,acs_place
+Benjamin,2022,100375.0,acs_place
+Benjamin,2023,67045.0,acs_place
+Benjamin,2024,69632.0,acs_place
+Benson,2019,58826.0,acs_place
+Benson,2020,50370.0,acs_place
+Benson,2021,63021.0,acs_place
+Benson,2022,69188.0,acs_place
+Benson,2023,82019.0,acs_place
+Benson,2024,93194.0,acs_place
+Beryl Junction,2019,16582.0,acs_place
+Beryl Junction,2020,16558.0,acs_place
+Beryl Junction,2021,16534.0,extrapolated
+Beryl Junction,2022,16510.0,extrapolated
+Beryl Junction,2023,16486.0,extrapolated
+Beryl Junction,2024,16462.0,extrapolated
+Bicknell,2019,56750.0,acs_place
+Bicknell,2020,48750.0,acs_place
+Bicknell,2021,47188.0,acs_place
+Bicknell,2022,90833.0,acs_place
+Bicknell,2023,71563.0,acs_place
+Bicknell,2024,76932.0,acs_place
+Big Water,2019,41477.0,acs_place
+Big Water,2020,42391.0,acs_place
+Big Water,2021,54479.0,acs_place
+Big Water,2022,58864.0,acs_place
+Big Water,2023,45625.0,acs_place
+Big Water,2024,48750.0,acs_place
+Blanding,2019,55833.0,acs_place
+Blanding,2020,57758.0,acs_place
+Blanding,2021,61952.0,acs_place
+Blanding,2022,61833.0,acs_place
+Blanding,2023,63333.0,acs_place
+Blanding,2024,71797.0,acs_place
+Bluebell,2019,74028.0,acs_place
+Bluebell,2020,76890.0,acs_place
+Bluebell,2021,83750.0,acs_place
+Bluebell,2022,88750.0,acs_place
+Bluebell,2023,119107.0,acs_place
+Bluebell,2024,91542.0,acs_place
+Bluff,2019,64375.0,acs_place
+Bluff,2020,71250.0,acs_place
+Bluff,2021,48810.0,acs_place
+Bluff,2022,51607.0,acs_place
+Bluff,2023,53973.0,acs_place
+Bluff,2024,56042.0,acs_place
+Bluffdale,2019,116454.0,acs_place
+Bluffdale,2020,113023.0,acs_place
+Bluffdale,2021,113007.0,acs_place
+Bluffdale,2022,119009.0,acs_place
+Bluffdale,2023,122879.0,acs_place
+Bluffdale,2024,129531.0,acs_place
+Bonanza,2019,,acs_place
+Bonanza,2020,,acs_place
+Bonanza,2021,,acs_place
+Bonanza,2022,,acs_place
+Bonanza,2023,,acs_place
+Bonanza,2024,,acs_place
+Boulder,2019,51964.0,acs_place
+Boulder,2020,44000.0,acs_place
+Boulder,2021,44559.0,acs_place
+Boulder,2022,49148.0,acs_place
+Boulder,2023,50450.0,acs_place
+Boulder,2024,39688.0,acs_place
+Bountiful,2019,77823.0,acs_place
+Bountiful,2020,83660.0,acs_place
+Bountiful,2021,89365.0,acs_place
+Bountiful,2022,96060.0,acs_place
+Bountiful,2023,103723.0,acs_place
+Bountiful,2024,104785.0,acs_place
+Brian Head,2019,68079.0,extrapolated
+Brian Head,2020,72188.0,acs_place
+Brian Head,2021,67594.0,interpolated
+Brian Head,2022,63000.0,acs_place
+Brian Head,2023,64643.0,acs_place
+Brian Head,2024,75125.0,acs_place
+Brigham City,2019,53504.0,acs_place
+Brigham City,2020,57312.0,acs_place
+Brigham City,2021,60615.0,acs_place
+Brigham City,2022,63315.0,acs_place
+Brigham City,2023,66435.0,acs_place
+Brigham City,2024,71308.0,acs_place
+Brighton,2020,117857.0,acs_place
+Brighton,2021,127686.0,acs_place
+Brighton,2022,138006.0,acs_place
+Brighton,2023,143563.0,acs_place
+Brighton,2024,148139.0,acs_place
+Bryce Canyon City,2019,,acs_place
+Bryce Canyon City,2020,,acs_place
+Bryce Canyon City,2021,,acs_place
+Bryce Canyon City,2022,,acs_place
+Bryce Canyon City,2023,,acs_place
+Bryce Canyon City,2024,,acs_place
+Cache,2019,,acs_place
+Cache,2020,,acs_place
+Cache,2021,,acs_place
+Cache,2022,,acs_place
+Cache,2023,,acs_place
+Cache,2024,,acs_place
+Cannonville,2019,68750.0,acs_place
+Cannonville,2020,62583.0,interpolated
+Cannonville,2021,56417.0,interpolated
+Cannonville,2022,50250.0,acs_place
+Cannonville,2023,29079.0,acs_place
+Cannonville,2024,25221.0,extrapolated
+Carbonville,2019,66081.0,acs_place
+Carbonville,2020,73875.0,acs_place
+Carbonville,2021,77321.0,acs_place
+Carbonville,2022,77386.0,acs_place
+Carbonville,2023,64405.0,acs_place
+Carbonville,2024,67193.0,acs_place
+Castle Dale,2019,43333.0,acs_place
+Castle Dale,2020,51688.0,acs_place
+Castle Dale,2021,53348.0,acs_place
+Castle Dale,2022,62500.0,acs_place
+Castle Dale,2023,69821.0,acs_place
+Castle Dale,2024,82958.0,acs_place
+Castle Valley,2019,53125.0,acs_place
+Castle Valley,2020,53542.0,acs_place
+Castle Valley,2021,46667.0,acs_place
+Castle Valley,2022,43438.0,acs_place
+Castle Valley,2023,44464.0,acs_place
+Castle Valley,2024,47167.0,acs_place
+Cedar City,2019,48346.0,acs_place
+Cedar City,2020,52524.0,acs_place
+Cedar City,2021,55022.0,acs_place
+Cedar City,2022,60778.0,acs_place
+Cedar City,2023,63789.0,acs_place
+Cedar City,2024,63589.0,acs_place
+Cedar Fort,2019,76250.0,acs_place
+Cedar Fort,2020,86250.0,acs_place
+Cedar Fort,2021,90250.0,acs_place
+Cedar Fort,2022,95938.0,acs_place
+Cedar Fort,2023,102500.0,acs_place
+Cedar Fort,2024,103000.0,acs_place
+Cedar Highlands,2019,74112.0,acs_place
+Cedar Highlands,2020,,acs_place
+Cedar Highlands,2021,,acs_place
+Cedar Highlands,2022,,acs_place
+Cedar Highlands,2023,,acs_place
+Cedar Highlands,2024,,acs_place
+Cedar Hills,2019,104808.0,acs_place
+Cedar Hills,2020,107440.0,acs_place
+Cedar Hills,2021,117984.0,acs_place
+Cedar Hills,2022,130847.0,acs_place
+Cedar Hills,2023,137527.0,acs_place
+Cedar Hills,2024,139008.0,acs_place
+Centerfield,2019,67863.0,acs_place
+Centerfield,2020,70545.0,acs_place
+Centerfield,2021,66705.0,acs_place
+Centerfield,2022,68333.0,acs_place
+Centerfield,2023,83281.0,acs_place
+Centerfield,2024,77778.0,acs_place
+Centerville,2019,93344.0,acs_place
+Centerville,2020,100230.0,acs_place
+Centerville,2021,107808.0,acs_place
+Centerville,2022,113697.0,acs_place
+Centerville,2023,117831.0,acs_place
+Centerville,2024,123130.0,acs_place
+Central,2019,52000.0,acs_place
+Central,2020,52159.0,acs_place
+Central,2021,54479.0,acs_place
+Central,2022,69444.0,acs_place
+Central,2023,81875.0,acs_place
+Central,2024,115486.0,acs_place
+Central Valley,2019,55461.0,acs_place
+Central Valley,2020,73750.0,acs_place
+Central Valley,2021,92273.0,acs_place
+Central Valley,2022,98750.0,acs_place
+Central Valley,2023,89583.0,acs_place
+Central Valley,2024,93333.0,acs_place
+Charleston,2019,76500.0,acs_place
+Charleston,2020,70938.0,acs_place
+Charleston,2021,76875.0,acs_place
+Charleston,2022,107500.0,acs_place
+Charleston,2023,93875.0,acs_place
+Charleston,2024,96607.0,acs_place
+Circleville,2019,52917.0,acs_place
+Circleville,2020,48750.0,acs_place
+Circleville,2021,55625.0,acs_place
+Circleville,2022,58438.0,acs_place
+Circleville,2023,74375.0,acs_place
+Circleville,2024,75179.0,acs_place
+Clarkston,2019,59531.0,acs_place
+Clarkston,2020,55313.0,acs_place
+Clarkston,2021,55694.0,acs_place
+Clarkston,2022,62321.0,acs_place
+Clarkston,2023,65625.0,acs_place
+Clarkston,2024,75208.0,acs_place
+Clawson,2019,64167.0,acs_place
+Clawson,2020,45000.0,acs_place
+Clawson,2021,39375.0,acs_place
+Clawson,2022,43750.0,acs_place
+Clawson,2023,62188.0,acs_place
+Clawson,2024,75250.0,acs_place
+Clear Creek,2019,,acs_place
+Clear Creek,2020,,acs_place
+Clear Creek,2021,,acs_place
+Clear Creek,2022,,acs_place
+Clear Creek,2023,,acs_place
+Clear Creek,2024,,acs_place
+Clearfield,2019,60260.0,acs_place
+Clearfield,2020,62374.0,acs_place
+Clearfield,2021,64689.0,acs_place
+Clearfield,2022,69889.0,acs_place
+Clearfield,2023,75429.0,acs_place
+Clearfield,2024,75495.0,acs_place
+Cleveland,2019,78214.0,acs_place
+Cleveland,2020,77768.0,acs_place
+Cleveland,2021,82609.0,acs_place
+Cleveland,2022,90326.0,acs_place
+Cleveland,2023,92589.0,acs_place
+Cleveland,2024,74375.0,acs_place
+Clinton,2019,82161.0,acs_place
+Clinton,2020,88023.0,acs_place
+Clinton,2021,90397.0,acs_place
+Clinton,2022,102712.0,acs_place
+Clinton,2023,109915.0,acs_place
+Clinton,2024,116194.0,acs_place
+Coalville,2019,81466.0,acs_place
+Coalville,2020,80063.0,acs_place
+Coalville,2021,80529.0,acs_place
+Coalville,2022,84917.0,acs_place
+Coalville,2023,85921.0,acs_place
+Coalville,2024,95729.0,acs_place
+Copperton,2019,80909.0,acs_place
+Copperton,2020,68472.0,acs_place
+Copperton,2021,70076.0,acs_place
+Copperton,2022,78281.0,acs_place
+Copperton,2023,77778.0,acs_place
+Copperton,2024,83000.0,acs_place
+Corinne,2019,52228.0,acs_place
+Corinne,2020,58558.0,acs_place
+Corinne,2021,62857.0,acs_place
+Corinne,2022,70227.0,acs_place
+Corinne,2023,74844.0,acs_place
+Corinne,2024,76429.0,acs_place
+Cornish,2019,52321.0,acs_place
+Cornish,2020,51250.0,acs_place
+Cornish,2021,55625.0,acs_place
+Cornish,2022,85000.0,acs_place
+Cornish,2023,87500.0,acs_place
+Cornish,2024,97500.0,acs_place
+Cottonwood Heights,2019,93564.0,acs_place
+Cottonwood Heights,2020,95427.0,acs_place
+Cottonwood Heights,2021,99645.0,acs_place
+Cottonwood Heights,2022,110197.0,acs_place
+Cottonwood Heights,2023,116583.0,acs_place
+Cottonwood Heights,2024,119422.0,acs_place
+Cove,2019,47273.0,acs_place
+Cove,2020,48542.0,acs_place
+Cove,2021,49100.0,acs_place
+Cove,2022,89784.0,interpolated
+Cove,2023,130469.0,acs_place
+Cove,2024,138190.0,extrapolated
+Dammeron Valley,2019,53547.0,acs_place
+Dammeron Valley,2020,56910.0,acs_place
+Dammeron Valley,2021,65033.0,acs_place
+Dammeron Valley,2022,71458.0,acs_place
+Dammeron Valley,2023,111146.0,acs_place
+Dammeron Valley,2024,114188.0,acs_place
+Daniel,2019,85179.0,acs_place
+Daniel,2020,89583.0,acs_place
+Daniel,2021,89844.0,acs_place
+Daniel,2022,99688.0,acs_place
+Daniel,2023,113438.0,acs_place
+Daniel,2024,106471.0,acs_place
+Delta,2019,59200.0,acs_place
+Delta,2020,52639.0,acs_place
+Delta,2021,62375.0,acs_place
+Delta,2022,68110.0,acs_place
+Delta,2023,73224.0,acs_place
+Delta,2024,78506.0,acs_place
+Deseret,2019,36739.0,acs_place
+Deseret,2020,55451.0,interpolated
+Deseret,2021,74163.0,interpolated
+Deseret,2022,92875.0,acs_place
+Deseret,2023,111587.0,extrapolated
+Deseret,2024,130299.0,extrapolated
+Deweyville,2019,73125.0,acs_place
+Deweyville,2020,70417.0,acs_place
+Deweyville,2021,76667.0,acs_place
+Deweyville,2022,76250.0,acs_place
+Deweyville,2023,87500.0,acs_place
+Deweyville,2024,88750.0,acs_place
+Draper,2019,117266.0,acs_place
+Draper,2020,112541.0,acs_place
+Draper,2021,116977.0,acs_place
+Draper,2022,126041.0,acs_place
+Draper,2023,130680.0,acs_place
+Draper,2024,128910.0,acs_place
+Duchesne,2019,52885.0,acs_place
+Duchesne,2020,59125.0,acs_place
+Duchesne,2021,65208.0,acs_place
+Duchesne,2022,72202.0,acs_place
+Duchesne,2023,78854.0,acs_place
+Duchesne,2024,77059.0,acs_place
+Dugway,2019,89491.0,acs_place
+Dugway,2020,88558.0,acs_place
+Dugway,2021,93482.0,acs_place
+Dugway,2022,112500.0,acs_place
+Dugway,2023,104145.0,acs_place
+Dugway,2024,99583.0,acs_place
+Dutch John,2019,83750.0,acs_place
+Dutch John,2020,,acs_place
+Dutch John,2021,,acs_place
+Dutch John,2022,,acs_place
+Dutch John,2023,,acs_place
+Dutch John,2024,,acs_place
+Eagle Mountain,2019,83290.0,acs_place
+Eagle Mountain,2020,87094.0,acs_place
+Eagle Mountain,2021,91993.0,acs_place
+Eagle Mountain,2022,100837.0,acs_place
+Eagle Mountain,2023,105576.0,acs_place
+Eagle Mountain,2024,113648.0,acs_place
+East Basin,2020,136964.0,acs_place
+East Basin,2021,170677.0,acs_place
+East Basin,2022,172614.0,acs_place
+East Basin,2023,187361.0,acs_place
+East Basin,2024,145678.0,acs_place
+East Carbon,2019,38523.0,acs_place
+East Carbon,2020,29867.0,acs_place
+East Carbon,2021,39583.0,acs_place
+East Carbon,2022,52554.0,acs_place
+East Carbon,2023,40114.0,acs_place
+East Carbon,2024,37991.0,acs_place
+Echo,2019,,acs_place
+Echo,2020,,acs_place
+Echo,2021,,acs_place
+Echo,2022,90714.0,acs_place
+Echo,2023,,acs_place
+Echo,2024,,acs_place
+Eden,2019,118558.0,acs_place
+Eden,2020,121172.0,acs_place
+Eden,2021,124375.0,acs_place
+Eden,2022,113587.0,acs_place
+Eden,2023,149539.0,acs_place
+Eden,2024,121923.0,acs_place
+Elberta,2019,60647.0,acs_place
+Elberta,2020,,acs_place
+Elberta,2021,,acs_place
+Elberta,2022,,acs_place
+Elberta,2023,,acs_place
+Elberta,2024,,acs_place
+Elk Ridge,2019,100391.0,acs_place
+Elk Ridge,2020,103875.0,acs_place
+Elk Ridge,2021,108750.0,acs_place
+Elk Ridge,2022,126131.0,acs_place
+Elk Ridge,2023,138587.0,acs_place
+Elk Ridge,2024,143167.0,acs_place
+Elmo,2019,65000.0,acs_place
+Elmo,2020,65833.0,acs_place
+Elmo,2021,60833.0,acs_place
+Elmo,2022,62917.0,acs_place
+Elmo,2023,52143.0,acs_place
+Elmo,2024,45000.0,acs_place
+Elsinore,2019,52639.0,acs_place
+Elsinore,2020,52875.0,acs_place
+Elsinore,2021,56786.0,acs_place
+Elsinore,2022,53929.0,acs_place
+Elsinore,2023,67708.0,acs_place
+Elsinore,2024,70500.0,acs_place
+Elwood,2019,83068.0,acs_place
+Elwood,2020,88681.0,acs_place
+Elwood,2021,93068.0,acs_place
+Elwood,2022,98309.0,acs_place
+Elwood,2023,99375.0,acs_place
+Elwood,2024,101771.0,acs_place
+Emery,2019,56875.0,acs_place
+Emery,2020,61250.0,acs_place
+Emery,2021,66875.0,acs_place
+Emery,2022,68333.0,acs_place
+Emery,2023,75000.0,acs_place
+Emery,2024,73125.0,acs_place
+Emigration Canyon,2019,127625.0,acs_place
+Emigration Canyon,2020,130139.0,acs_place
+Emigration Canyon,2021,143472.0,acs_place
+Emigration Canyon,2022,138125.0,acs_place
+Emigration Canyon,2023,184722.0,acs_place
+Emigration Canyon,2024,190833.0,acs_place
+Enoch,2019,61857.0,acs_place
+Enoch,2020,62643.0,acs_place
+Enoch,2021,65625.0,acs_place
+Enoch,2022,74438.0,acs_place
+Enoch,2023,81767.0,acs_place
+Enoch,2024,80750.0,acs_place
+Enterprise,2019,58650.0,acs_place
+Enterprise,2020,63750.0,acs_place
+Enterprise,2021,68828.0,acs_place
+Enterprise,2022,69083.0,acs_place
+Enterprise,2023,72407.0,acs_place
+Enterprise,2024,91250.0,acs_place
+Ephraim,2019,43476.0,acs_place
+Ephraim,2020,56750.0,acs_place
+Ephraim,2021,60982.0,acs_place
+Ephraim,2022,70677.0,acs_place
+Ephraim,2023,71661.0,acs_place
+Ephraim,2024,66541.0,acs_place
+Erda,2019,110365.0,acs_place
+Erda,2020,129028.0,acs_place
+Erda,2021,135932.0,acs_place
+Erda,2022,143125.0,acs_place
+Erda,2023,153068.0,acs_place
+Erda,2024,148676.0,acs_place
+Escalante,2019,39120.0,acs_place
+Escalante,2020,39508.0,acs_place
+Escalante,2021,39808.0,acs_place
+Escalante,2022,41938.0,acs_place
+Escalante,2023,44048.0,acs_place
+Escalante,2024,68750.0,acs_place
+Eureka,2019,56094.0,acs_place
+Eureka,2020,58750.0,acs_place
+Eureka,2021,61202.0,acs_place
+Eureka,2022,67813.0,acs_place
+Eureka,2023,70938.0,acs_place
+Eureka,2024,74028.0,acs_place
+Fairfield,2019,72500.0,acs_place
+Fairfield,2020,81667.0,acs_place
+Fairfield,2021,91250.0,acs_place
+Fairfield,2022,117500.0,acs_place
+Fairfield,2023,122500.0,acs_place
+Fairfield,2024,103750.0,acs_place
+Fairview,2019,51750.0,acs_place
+Fairview,2020,57266.0,acs_place
+Fairview,2021,57768.0,acs_place
+Fairview,2022,57391.0,acs_place
+Fairview,2023,59750.0,acs_place
+Fairview,2024,66442.0,acs_place
+Farmington,2019,106488.0,acs_place
+Farmington,2020,99208.0,acs_place
+Farmington,2021,107559.0,acs_place
+Farmington,2022,115278.0,acs_place
+Farmington,2023,120432.0,acs_place
+Farmington,2024,127338.0,acs_place
+Farr West,2019,90917.0,acs_place
+Farr West,2020,90439.0,acs_place
+Farr West,2021,98088.0,acs_place
+Farr West,2022,108862.0,acs_place
+Farr West,2023,111875.0,acs_place
+Farr West,2024,127574.0,acs_place
+Fayette,2019,72500.0,acs_place
+Fayette,2020,63462.0,acs_place
+Fayette,2021,65781.0,acs_place
+Fayette,2022,73438.0,acs_place
+Fayette,2023,67917.0,acs_place
+Fayette,2024,75833.0,acs_place
+Ferron,2019,57313.0,acs_place
+Ferron,2020,65329.0,acs_place
+Ferron,2021,64236.0,acs_place
+Ferron,2022,65913.0,acs_place
+Ferron,2023,68324.0,acs_place
+Ferron,2024,70947.0,acs_place
+Fielding,2019,64375.0,acs_place
+Fielding,2020,55000.0,acs_place
+Fielding,2021,65833.0,acs_place
+Fielding,2022,75000.0,acs_place
+Fielding,2023,75000.0,acs_place
+Fielding,2024,81250.0,acs_place
+Fillmore,2019,57593.0,acs_place
+Fillmore,2020,61375.0,acs_place
+Fillmore,2021,70669.0,acs_place
+Fillmore,2022,71250.0,acs_place
+Fillmore,2023,77000.0,acs_place
+Fillmore,2024,66442.0,acs_place
+Flaming Gorge,2019,75417.0,acs_place
+Flaming Gorge,2020,76250.0,acs_place
+Flaming Gorge,2021,56042.0,interpolated
+Flaming Gorge,2022,35833.0,acs_place
+Flaming Gorge,2023,36964.0,acs_place
+Flaming Gorge,2024,37250.0,acs_place
+Fort Duchesne,2019,37143.0,acs_place
+Fort Duchesne,2020,24821.0,acs_place
+Fort Duchesne,2021,32917.0,acs_place
+Fort Duchesne,2022,40417.0,acs_place
+Fort Duchesne,2023,40052.0,acs_place
+Fort Duchesne,2024,42596.0,acs_place
+Fountain Green,2019,54444.0,acs_place
+Fountain Green,2020,58311.0,acs_place
+Fountain Green,2021,63125.0,acs_place
+Fountain Green,2022,68583.0,acs_place
+Fountain Green,2023,70402.0,acs_place
+Fountain Green,2024,73017.0,acs_place
+Francis,2019,83750.0,acs_place
+Francis,2020,86012.0,acs_place
+Francis,2021,97708.0,acs_place
+Francis,2022,104013.0,acs_place
+Francis,2023,113500.0,acs_place
+Francis,2024,117054.0,acs_place
+Fremont,2019,335169.0,extrapolated
+Fremont,2020,282033.0,extrapolated
+Fremont,2021,228897.0,extrapolated
+Fremont,2022,175761.0,extrapolated
+Fremont,2023,122625.0,acs_place
+Fremont,2024,69489.0,acs_place
+Fruit Heights,2019,97488.0,acs_place
+Fruit Heights,2020,98438.0,acs_place
+Fruit Heights,2021,104593.0,acs_place
+Fruit Heights,2022,117123.0,acs_place
+Fruit Heights,2023,134500.0,acs_place
+Fruit Heights,2024,140679.0,acs_place
+Garden,2019,43967.0,acs_place
+Garden,2020,45556.0,acs_place
+Garden,2021,46029.0,acs_place
+Garden,2022,47246.0,extrapolated
+Garden,2023,48277.0,extrapolated
+Garden,2024,49308.0,extrapolated
+Garden City,2019,53571.0,acs_place
+Garden City,2020,60644.0,acs_place
+Garden City,2021,57679.0,acs_place
+Garden City,2022,63125.0,acs_place
+Garden City,2023,62750.0,acs_place
+Garden City,2024,51875.0,acs_place
+Garland,2019,54087.0,acs_place
+Garland,2020,48844.0,acs_place
+Garland,2021,50762.0,acs_place
+Garland,2022,56332.0,acs_place
+Garland,2023,65369.0,acs_place
+Garland,2024,74375.0,acs_place
+Genola,2019,82917.0,acs_place
+Genola,2020,96786.0,acs_place
+Genola,2021,102917.0,acs_place
+Genola,2022,126500.0,acs_place
+Genola,2023,137661.0,acs_place
+Genola,2024,126667.0,acs_place
+Glendale,2019,55208.0,acs_place
+Glendale,2020,54500.0,acs_place
+Glendale,2021,56607.0,acs_place
+Glendale,2022,61563.0,acs_place
+Glendale,2023,63056.0,acs_place
+Glendale,2024,50625.0,acs_place
+Glenwood,2019,76302.0,acs_place
+Glenwood,2020,93571.0,acs_place
+Glenwood,2021,95625.0,acs_place
+Glenwood,2022,87500.0,acs_place
+Glenwood,2023,83333.0,acs_place
+Glenwood,2024,83875.0,acs_place
+Goshen,2019,62679.0,acs_place
+Goshen,2020,81118.0,acs_place
+Goshen,2021,85417.0,acs_place
+Goshen,2022,92232.0,acs_place
+Goshen,2023,93529.0,acs_place
+Goshen,2024,95147.0,acs_place
+Granite,2019,102250.0,acs_place
+Granite,2020,100380.0,acs_place
+Granite,2021,107120.0,acs_place
+Granite,2022,115417.0,acs_place
+Granite,2023,99375.0,acs_place
+Granite,2024,85417.0,acs_place
+Grantsville,2019,72378.0,acs_place
+Grantsville,2020,76771.0,acs_place
+Grantsville,2021,84923.0,acs_place
+Grantsville,2022,94260.0,acs_place
+Grantsville,2023,97216.0,acs_place
+Grantsville,2024,101349.0,acs_place
+Green River,2019,53281.0,acs_place
+Green River,2020,42361.0,acs_place
+Green River,2021,39868.0,acs_place
+Green River,2022,43190.0,acs_place
+Green River,2023,45781.0,acs_place
+Green River,2024,65129.0,acs_place
+Gunnison,2019,63816.0,acs_place
+Gunnison,2020,66786.0,acs_place
+Gunnison,2021,73625.0,acs_place
+Gunnison,2022,64514.0,acs_place
+Gunnison,2023,66111.0,acs_place
+Gunnison,2024,70833.0,acs_place
+Halchita,2019,27500.0,acs_place
+Halchita,2020,17188.0,acs_place
+Halchita,2021,21667.0,interpolated
+Halchita,2022,26146.0,interpolated
+Halchita,2023,30625.0,acs_place
+Halchita,2024,30553.0,extrapolated
+Halls Crossing,2019,,acs_place
+Halls Crossing,2020,,acs_place
+Halls Crossing,2021,,acs_place
+Halls Crossing,2022,,acs_place
+Halls Crossing,2023,,acs_place
+Halls Crossing,2024,,acs_place
+Hanksville,2019,39286.0,acs_place
+Hanksville,2020,40250.0,acs_place
+Hanksville,2021,34063.0,acs_place
+Hanksville,2022,45714.0,acs_place
+Hanksville,2023,37614.0,acs_place
+Hanksville,2024,38274.0,acs_place
+Harrisville,2019,74342.0,acs_place
+Harrisville,2020,80250.0,acs_place
+Harrisville,2021,77426.0,acs_place
+Harrisville,2022,82232.0,acs_place
+Harrisville,2023,75981.0,acs_place
+Harrisville,2024,88750.0,acs_place
+Hatch,2019,57250.0,acs_place
+Hatch,2020,70313.0,acs_place
+Hatch,2021,86250.0,acs_place
+Hatch,2022,93125.0,acs_place
+Hatch,2023,49375.0,acs_place
+Hatch,2024,83750.0,acs_place
+Heber,2019,74665.0,acs_place
+Heber,2020,80417.0,acs_place
+Heber,2021,86365.0,acs_place
+Heber,2022,98934.0,acs_place
+Heber,2023,107784.0,acs_place
+Heber,2024,110339.0,acs_place
+Helper,2019,56111.0,acs_place
+Helper,2020,55760.0,acs_place
+Helper,2021,58528.0,acs_place
+Helper,2022,59323.0,acs_place
+Helper,2023,61908.0,acs_place
+Helper,2024,56875.0,acs_place
+Henefer,2019,76063.0,acs_place
+Henefer,2020,79896.0,acs_place
+Henefer,2021,95167.0,acs_place
+Henefer,2022,89306.0,acs_place
+Henefer,2023,106667.0,acs_place
+Henefer,2024,93654.0,acs_place
+Henrieville,2019,60938.0,acs_place
+Henrieville,2020,62625.0,acs_place
+Henrieville,2021,62639.0,acs_place
+Henrieville,2022,48750.0,acs_place
+Henrieville,2023,39583.0,acs_place
+Henrieville,2024,49375.0,acs_place
+Herriman,2019,101460.0,acs_place
+Herriman,2020,102096.0,acs_place
+Herriman,2021,109154.0,acs_place
+Herriman,2022,115198.0,acs_place
+Herriman,2023,118446.0,acs_place
+Herriman,2024,122650.0,acs_place
+Hideout,2019,63309.0,acs_place
+Hideout,2020,61750.0,acs_place
+Hideout,2021,63333.0,acs_place
+Hideout,2022,73472.0,acs_place
+Hideout,2023,76912.0,acs_place
+Hideout,2024,98929.0,acs_place
+Highland,2019,139453.0,acs_place
+Highland,2020,146177.0,acs_place
+Highland,2021,156136.0,acs_place
+Highland,2022,166429.0,acs_place
+Highland,2023,178662.0,acs_place
+Highland,2024,186075.0,acs_place
+Hildale,2019,53334.0,extrapolated
+Hildale,2020,58189.0,acs_place
+Hildale,2021,62857.0,acs_place
+Hildale,2022,65179.0,acs_place
+Hildale,2023,62727.0,acs_place
+Hildale,2024,78523.0,acs_place
+Hinckley,2019,58333.0,acs_place
+Hinckley,2020,67500.0,acs_place
+Hinckley,2021,63375.0,acs_place
+Hinckley,2022,89135.0,acs_place
+Hinckley,2023,80500.0,acs_place
+Hinckley,2024,84844.0,acs_place
+Hobble Creek,2020,192813.0,acs_place
+Hobble Creek,2021,203333.0,acs_place
+Hobble Creek,2022,220385.0,acs_place
+Hobble Creek,2023,227981.0,acs_place
+Hobble Creek,2024,241767.0,extrapolated
+Holden,2019,60694.0,acs_place
+Holden,2020,66250.0,acs_place
+Holden,2021,72083.0,acs_place
+Holden,2022,80208.0,acs_place
+Holden,2023,72500.0,acs_place
+Holden,2024,77031.0,acs_place
+Holladay,2019,88728.0,acs_place
+Holladay,2020,92635.0,acs_place
+Holladay,2021,97911.0,acs_place
+Holladay,2022,106099.0,acs_place
+Holladay,2023,112369.0,acs_place
+Holladay,2024,117043.0,acs_place
+Honeyville,2019,90962.0,acs_place
+Honeyville,2020,90982.0,acs_place
+Honeyville,2021,94375.0,acs_place
+Honeyville,2022,88393.0,acs_place
+Honeyville,2023,80347.0,acs_place
+Honeyville,2024,87083.0,acs_place
+Hooper,2019,96688.0,acs_place
+Hooper,2020,100347.0,acs_place
+Hooper,2021,103828.0,acs_place
+Hooper,2022,103661.0,acs_place
+Hooper,2023,114773.0,acs_place
+Hooper,2024,113333.0,acs_place
+Howell,2019,52250.0,acs_place
+Howell,2020,72656.0,acs_place
+Howell,2021,75764.0,acs_place
+Howell,2022,80469.0,acs_place
+Howell,2023,86176.0,acs_place
+Howell,2024,88015.0,acs_place
+Hoytsville,2019,92813.0,acs_place
+Hoytsville,2020,85667.0,acs_place
+Hoytsville,2021,58523.0,acs_place
+Hoytsville,2022,67708.0,acs_place
+Hoytsville,2023,66250.0,acs_place
+Hoytsville,2024,64643.0,acs_place
+Huntington,2019,56250.0,acs_place
+Huntington,2020,56850.0,acs_place
+Huntington,2021,59539.0,acs_place
+Huntington,2022,66833.0,acs_place
+Huntington,2023,79091.0,acs_place
+Huntington,2024,76500.0,acs_place
+Huntsville,2019,69861.0,acs_place
+Huntsville,2020,95000.0,acs_place
+Huntsville,2021,89167.0,acs_place
+Huntsville,2022,110417.0,acs_place
+Huntsville,2023,83500.0,acs_place
+Huntsville,2024,113750.0,acs_place
+Hurricane,2019,55190.0,acs_place
+Hurricane,2020,57882.0,acs_place
+Hurricane,2021,57409.0,acs_place
+Hurricane,2022,64182.0,acs_place
+Hurricane,2023,67424.0,acs_place
+Hurricane,2024,75016.0,acs_place
+Hyde Park,2019,75530.0,acs_place
+Hyde Park,2020,76591.0,acs_place
+Hyde Park,2021,82787.0,acs_place
+Hyde Park,2022,93306.0,acs_place
+Hyde Park,2023,108068.0,acs_place
+Hyde Park,2024,113102.0,acs_place
+Hyrum,2019,62639.0,acs_place
+Hyrum,2020,66902.0,acs_place
+Hyrum,2021,73971.0,acs_place
+Hyrum,2022,75951.0,acs_place
+Hyrum,2023,85557.0,acs_place
+Hyrum,2024,88725.0,acs_place
+Independence,2019,130833.0,acs_place
+Independence,2020,127500.0,acs_place
+Independence,2021,138750.0,acs_place
+Independence,2022,148750.0,acs_place
+Independence,2023,119167.0,acs_place
+Independence,2024,132375.0,extrapolated
+Interlaken,2019,67734.0,acs_place
+Interlaken,2020,69300.0,acs_place
+Interlaken,2021,74643.0,acs_place
+Interlaken,2022,131250.0,acs_place
+Interlaken,2023,152857.0,acs_place
+Interlaken,2024,173542.0,acs_place
+Ivins,2019,63680.0,acs_place
+Ivins,2020,67996.0,acs_place
+Ivins,2021,64786.0,acs_place
+Ivins,2022,67354.0,acs_place
+Ivins,2023,72263.0,acs_place
+Ivins,2024,78089.0,acs_place
+Jensen,2019,45852.0,acs_place
+Jensen,2020,46909.0,interpolated
+Jensen,2021,47966.0,acs_place
+Jensen,2022,32810.0,interpolated
+Jensen,2023,17655.0,interpolated
+Jensen,2024,2499.0,acs_place
+Joseph,2019,55000.0,acs_place
+Joseph,2020,54732.0,acs_place
+Joseph,2021,60833.0,acs_place
+Joseph,2022,73125.0,acs_place
+Joseph,2023,80000.0,acs_place
+Joseph,2024,89375.0,acs_place
+Junction,2019,35417.0,acs_place
+Junction,2020,39684.0,interpolated
+Junction,2021,43950.0,interpolated
+Junction,2022,48217.0,interpolated
+Junction,2023,52483.0,interpolated
+Junction,2024,56750.0,acs_place
+Kamas,2019,71875.0,acs_place
+Kamas,2020,70867.0,acs_place
+Kamas,2021,74728.0,acs_place
+Kamas,2022,81341.0,acs_place
+Kamas,2023,87353.0,acs_place
+Kamas,2024,96638.0,acs_place
+Kanab,2019,47480.0,acs_place
+Kanab,2020,53667.0,acs_place
+Kanab,2021,65473.0,acs_place
+Kanab,2022,70737.0,acs_place
+Kanab,2023,80040.0,acs_place
+Kanab,2024,85486.0,acs_place
+Kanarraville,2019,57679.0,acs_place
+Kanarraville,2020,54531.0,acs_place
+Kanarraville,2021,56406.0,acs_place
+Kanarraville,2022,71250.0,acs_place
+Kanarraville,2023,73750.0,acs_place
+Kanarraville,2024,77381.0,extrapolated
+Kanosh,2019,55750.0,acs_place
+Kanosh,2020,62882.0,acs_place
+Kanosh,2021,61250.0,acs_place
+Kanosh,2022,74250.0,acs_place
+Kanosh,2023,76974.0,acs_place
+Kanosh,2024,80357.0,acs_place
+Kaysville,2019,99597.0,acs_place
+Kaysville,2020,103730.0,acs_place
+Kaysville,2021,110700.0,acs_place
+Kaysville,2022,121867.0,acs_place
+Kaysville,2023,128996.0,acs_place
+Kaysville,2024,133026.0,acs_place
+Kearns,2019,64337.0,acs_place
+Kearns,2020,68870.0,acs_place
+Kearns,2021,72739.0,acs_place
+Kearns,2022,79334.0,acs_place
+Kearns,2023,83355.0,acs_place
+Kearns,2024,86968.0,acs_place
+Kenilworth,2019,16240.0,extrapolated
+Kenilworth,2020,19240.0,extrapolated
+Kenilworth,2021,22240.0,acs_place
+Kenilworth,2022,25240.0,acs_place
+Kenilworth,2023,28240.0,extrapolated
+Kenilworth,2024,31240.0,extrapolated
+Kingston,2019,40250.0,acs_place
+Kingston,2020,19063.0,acs_place
+Kingston,2021,25110.0,interpolated
+Kingston,2022,31156.0,interpolated
+Kingston,2023,37203.0,interpolated
+Kingston,2024,43250.0,acs_place
+Koosharem,2019,48125.0,acs_place
+Koosharem,2020,50313.0,acs_place
+Koosharem,2021,54205.0,acs_place
+Koosharem,2022,58594.0,acs_place
+Koosharem,2023,60938.0,acs_place
+Koosharem,2024,77500.0,acs_place
+La Sal,2019,,acs_place
+La Sal,2020,,acs_place
+La Sal,2021,,acs_place
+La Sal,2022,33628.0,acs_place
+La Sal,2023,,acs_place
+La Sal,2024,,acs_place
+La Verkin,2019,52785.0,acs_place
+La Verkin,2020,49954.0,acs_place
+La Verkin,2021,51058.0,acs_place
+La Verkin,2022,56392.0,acs_place
+La Verkin,2023,63061.0,acs_place
+La Verkin,2024,68269.0,acs_place
+Lake Shore,2019,70714.0,acs_place
+Lake Shore,2020,81313.0,acs_place
+Lake Shore,2021,83983.0,acs_place
+Lake Shore,2022,91912.0,acs_place
+Lake Shore,2023,97357.0,acs_place
+Lake Shore,2024,99058.0,acs_place
+Laketown,2019,74500.0,acs_place
+Laketown,2020,77143.0,acs_place
+Laketown,2021,80000.0,acs_place
+Laketown,2022,74609.0,acs_place
+Laketown,2023,79643.0,acs_place
+Laketown,2024,79211.0,acs_place
+Lapoint,2020,54750.0,acs_place
+Lapoint,2021,,acs_place
+Lapoint,2022,,acs_place
+Lapoint,2023,,acs_place
+Lapoint,2024,,acs_place
+Layton,2019,77426.0,acs_place
+Layton,2020,81067.0,acs_place
+Layton,2021,85224.0,acs_place
+Layton,2022,93453.0,acs_place
+Layton,2023,99188.0,acs_place
+Layton,2024,102480.0,acs_place
+Leamington,2019,63250.0,acs_place
+Leamington,2020,63750.0,acs_place
+Leamington,2021,61500.0,acs_place
+Leamington,2022,59000.0,acs_place
+Leamington,2023,54688.0,acs_place
+Leamington,2024,79000.0,acs_place
+Leeds,2019,46099.0,acs_place
+Leeds,2020,47066.0,acs_place
+Leeds,2021,72434.0,acs_place
+Leeds,2022,82188.0,acs_place
+Leeds,2023,81181.0,acs_place
+Leeds,2024,84688.0,acs_place
+Lehi,2019,95510.0,acs_place
+Lehi,2020,101429.0,acs_place
+Lehi,2021,108669.0,acs_place
+Lehi,2022,117243.0,acs_place
+Lehi,2023,125860.0,acs_place
+Lehi,2024,131299.0,acs_place
+Levan,2019,53173.0,acs_place
+Levan,2020,55833.0,acs_place
+Levan,2021,65357.0,acs_place
+Levan,2022,75625.0,acs_place
+Levan,2023,78047.0,acs_place
+Levan,2024,82969.0,acs_place
+Lewiston,2019,59926.0,acs_place
+Lewiston,2020,64034.0,acs_place
+Lewiston,2021,69167.0,acs_place
+Lewiston,2022,71857.0,acs_place
+Lewiston,2023,88333.0,acs_place
+Lewiston,2024,98583.0,acs_place
+Liberty,2019,93583.0,acs_place
+Liberty,2020,95729.0,acs_place
+Liberty,2021,109395.0,acs_place
+Liberty,2022,114423.0,acs_place
+Liberty,2023,96250.0,acs_place
+Liberty,2024,106719.0,acs_place
+Lindon,2019,90978.0,acs_place
+Lindon,2020,95233.0,acs_place
+Lindon,2021,100351.0,acs_place
+Lindon,2022,101188.0,acs_place
+Lindon,2023,104583.0,acs_place
+Lindon,2024,120956.0,acs_place
+Loa,2019,41429.0,acs_place
+Loa,2020,52500.0,acs_place
+Loa,2021,60000.0,acs_place
+Loa,2022,69063.0,acs_place
+Loa,2023,66838.0,acs_place
+Loa,2024,98603.0,acs_place
+Logan,2019,41833.0,acs_place
+Logan,2020,43056.0,acs_place
+Logan,2021,46761.0,acs_place
+Logan,2022,52473.0,acs_place
+Logan,2023,56764.0,acs_place
+Logan,2024,60687.0,acs_place
+Lyman,2019,55341.0,acs_place
+Lyman,2020,77321.0,acs_place
+Lyman,2021,70000.0,acs_place
+Lyman,2022,67500.0,acs_place
+Lyman,2023,50625.0,acs_place
+Lyman,2024,58382.0,extrapolated
+Lynndyl,2019,33750.0,acs_place
+Lynndyl,2020,44375.0,acs_place
+Lynndyl,2021,61875.0,acs_place
+Lynndyl,2022,65625.0,acs_place
+Lynndyl,2023,51750.0,acs_place
+Lynndyl,2024,54688.0,acs_place
+Maeser,2019,75852.0,acs_place
+Maeser,2020,63821.0,acs_place
+Maeser,2021,64700.0,acs_place
+Maeser,2022,67389.0,acs_place
+Maeser,2023,77873.0,acs_place
+Maeser,2024,83813.0,acs_place
+Magna,2019,63075.0,acs_place
+Magna,2020,68765.0,acs_place
+Magna,2021,72705.0,acs_place
+Magna,2022,79934.0,acs_place
+Magna,2023,87516.0,acs_place
+Magna,2024,90346.0,acs_place
+Manila,2019,72708.0,acs_place
+Manila,2020,100357.0,acs_place
+Manila,2021,60000.0,acs_place
+Manila,2022,77813.0,acs_place
+Manila,2023,71607.0,acs_place
+Manila,2024,78000.0,acs_place
+Manti,2019,51413.0,acs_place
+Manti,2020,44540.0,acs_place
+Manti,2021,49167.0,acs_place
+Manti,2022,53750.0,acs_place
+Manti,2023,59500.0,acs_place
+Manti,2024,62614.0,acs_place
+Mantua,2019,90250.0,acs_place
+Mantua,2020,98625.0,acs_place
+Mantua,2021,109464.0,acs_place
+Mantua,2022,127563.0,acs_place
+Mantua,2023,134239.0,acs_place
+Mantua,2024,142188.0,acs_place
+Mapleton,2019,112730.0,acs_place
+Mapleton,2020,110417.0,acs_place
+Mapleton,2021,114449.0,acs_place
+Mapleton,2022,123534.0,acs_place
+Mapleton,2023,127860.0,acs_place
+Mapleton,2024,133142.0,acs_place
+Marion,2019,88611.0,acs_place
+Marion,2020,108750.0,acs_place
+Marion,2021,80250.0,acs_place
+Marion,2022,99464.0,acs_place
+Marion,2023,91458.0,acs_place
+Marion,2024,82826.0,acs_place
+Marriott-Slaterville,2019,75347.0,acs_place
+Marriott-Slaterville,2020,72202.0,acs_place
+Marriott-Slaterville,2021,77554.0,acs_place
+Marriott-Slaterville,2022,82098.0,acs_place
+Marriott-Slaterville,2023,89602.0,acs_place
+Marriott-Slaterville,2024,101786.0,acs_place
+Marysvale,2019,46042.0,acs_place
+Marysvale,2020,37981.0,acs_place
+Marysvale,2021,37813.0,acs_place
+Marysvale,2022,39167.0,acs_place
+Marysvale,2023,43289.0,acs_place
+Marysvale,2024,42250.0,acs_place
+Mayfield,2019,58125.0,acs_place
+Mayfield,2020,58250.0,acs_place
+Mayfield,2021,71042.0,acs_place
+Mayfield,2022,85000.0,acs_place
+Mayfield,2023,82083.0,acs_place
+Mayfield,2024,80000.0,acs_place
+Meadow,2019,49583.0,acs_place
+Meadow,2020,49583.0,acs_place
+Meadow,2021,44464.0,acs_place
+Meadow,2022,58125.0,acs_place
+Meadow,2023,43750.0,acs_place
+Meadow,2024,54375.0,acs_place
+Mendon,2019,80000.0,acs_place
+Mendon,2020,93438.0,acs_place
+Mendon,2021,96563.0,acs_place
+Mendon,2022,124375.0,acs_place
+Mendon,2023,141563.0,acs_place
+Mendon,2024,148261.0,acs_place
+Mexican Hat,2019,,acs_place
+Mexican Hat,2020,,acs_place
+Mexican Hat,2021,,acs_place
+Mexican Hat,2022,,acs_place
+Mexican Hat,2023,,acs_place
+Mexican Hat,2024,,acs_place
+Midvale,2019,60216.0,acs_place
+Midvale,2020,62354.0,acs_place
+Midvale,2021,65897.0,acs_place
+Midvale,2022,70742.0,acs_place
+Midvale,2023,73058.0,acs_place
+Midvale,2024,75084.0,acs_place
+Midway,2019,87394.0,acs_place
+Midway,2020,101944.0,acs_place
+Midway,2021,108672.0,acs_place
+Midway,2022,130648.0,acs_place
+Midway,2023,146750.0,acs_place
+Midway,2024,157065.0,acs_place
+Milford,2019,49669.0,acs_place
+Milford,2020,65045.0,acs_place
+Milford,2021,72500.0,acs_place
+Milford,2022,83783.0,acs_place
+Milford,2023,79861.0,acs_place
+Milford,2024,82368.0,acs_place
+Millcreek,2019,72134.0,acs_place
+Millcreek,2020,74325.0,acs_place
+Millcreek,2021,81577.0,acs_place
+Millcreek,2022,88186.0,acs_place
+Millcreek,2023,98502.0,acs_place
+Millcreek,2024,98045.0,acs_place
+Millville,2019,71042.0,acs_place
+Millville,2020,65506.0,acs_place
+Millville,2021,78073.0,acs_place
+Millville,2022,91250.0,acs_place
+Millville,2023,90417.0,acs_place
+Millville,2024,114773.0,acs_place
+Minersville,2019,59625.0,acs_place
+Minersville,2020,70625.0,acs_place
+Minersville,2021,61500.0,acs_place
+Minersville,2022,66429.0,acs_place
+Minersville,2023,89000.0,acs_place
+Minersville,2024,73750.0,acs_place
+Moab,2019,51168.0,acs_place
+Moab,2020,46875.0,acs_place
+Moab,2021,42083.0,acs_place
+Moab,2022,52385.0,acs_place
+Moab,2023,55333.0,acs_place
+Moab,2024,61667.0,acs_place
+Modena,2020,,acs_place
+Modena,2021,,acs_place
+Modena,2022,,acs_place
+Modena,2023,,acs_place
+Modena,2024,,acs_place
+Mona,2019,79306.0,acs_place
+Mona,2020,81806.0,acs_place
+Mona,2021,85500.0,acs_place
+Mona,2022,98594.0,acs_place
+Mona,2023,91552.0,acs_place
+Mona,2024,115179.0,acs_place
+Monroe,2019,59750.0,acs_place
+Monroe,2020,60464.0,acs_place
+Monroe,2021,64833.0,acs_place
+Monroe,2022,62361.0,acs_place
+Monroe,2023,63807.0,acs_place
+Monroe,2024,66172.0,acs_place
+Montezuma Creek,2019,27500.0,acs_place
+Montezuma Creek,2020,45375.0,interpolated
+Montezuma Creek,2021,63250.0,acs_place
+Montezuma Creek,2022,39750.0,acs_place
+Montezuma Creek,2023,57625.0,extrapolated
+Montezuma Creek,2024,63679.0,extrapolated
+Monticello,2019,63500.0,acs_place
+Monticello,2020,65928.0,acs_place
+Monticello,2021,68807.0,acs_place
+Monticello,2022,71833.0,acs_place
+Monticello,2023,63750.0,acs_place
+Monticello,2024,72969.0,acs_place
+Morgan,2019,78438.0,acs_place
+Morgan,2020,79153.0,acs_place
+Morgan,2021,101757.0,acs_place
+Morgan,2022,112232.0,acs_place
+Morgan,2023,114102.0,acs_place
+Morgan,2024,115735.0,acs_place
+Moroni,2019,61042.0,acs_place
+Moroni,2020,63077.0,acs_place
+Moroni,2021,63902.0,acs_place
+Moroni,2022,69417.0,acs_place
+Moroni,2023,71500.0,acs_place
+Moroni,2024,65833.0,acs_place
+Mount Pleasant,2019,54875.0,acs_place
+Mount Pleasant,2020,54811.0,acs_place
+Mount Pleasant,2021,59776.0,acs_place
+Mount Pleasant,2022,61441.0,acs_place
+Mount Pleasant,2023,67459.0,acs_place
+Mount Pleasant,2024,68920.0,acs_place
+Mountain Green,2019,123787.0,acs_place
+Mountain Green,2020,125768.0,acs_place
+Mountain Green,2021,129196.0,acs_place
+Mountain Green,2022,140192.0,acs_place
+Mountain Green,2023,145925.0,acs_place
+Mountain Green,2024,150313.0,acs_place
+Murray,2019,64470.0,acs_place
+Murray,2020,65397.0,acs_place
+Murray,2021,72524.0,acs_place
+Murray,2022,81693.0,acs_place
+Murray,2023,87864.0,acs_place
+Murray,2024,90746.0,acs_place
+Myton,2019,33906.0,acs_place
+Myton,2020,44531.0,acs_place
+Myton,2021,47875.0,acs_place
+Myton,2022,52083.0,acs_place
+Myton,2023,54107.0,acs_place
+Myton,2024,62292.0,acs_place
+Naples,2019,77847.0,acs_place
+Naples,2020,78973.0,acs_place
+Naples,2021,83327.0,acs_place
+Naples,2022,87679.0,acs_place
+Naples,2023,94048.0,acs_place
+Naples,2024,97865.0,acs_place
+Navajo Mountain,2019,25000.0,acs_place
+Navajo Mountain,2020,,acs_place
+Navajo Mountain,2021,,acs_place
+Navajo Mountain,2022,,acs_place
+Navajo Mountain,2023,,acs_place
+Navajo Mountain,2024,,acs_place
+Neola,2019,75568.0,acs_place
+Neola,2020,75500.0,acs_place
+Neola,2021,82000.0,acs_place
+Neola,2022,93333.0,acs_place
+Neola,2023,96250.0,acs_place
+Neola,2024,101875.0,acs_place
+Nephi,2019,62207.0,acs_place
+Nephi,2020,69118.0,acs_place
+Nephi,2021,74113.0,acs_place
+Nephi,2022,89026.0,acs_place
+Nephi,2023,97348.0,acs_place
+Nephi,2024,106108.0,acs_place
+New Harmony,2019,41635.0,acs_place
+New Harmony,2020,60313.0,acs_place
+New Harmony,2021,66250.0,acs_place
+New Harmony,2022,80486.0,acs_place
+New Harmony,2023,82663.0,acs_place
+New Harmony,2024,85298.0,acs_place
+Newcastle,2019,36250.0,acs_place
+Newcastle,2020,48438.0,interpolated
+Newcastle,2021,60625.0,acs_place
+Newcastle,2022,71648.0,interpolated
+Newcastle,2023,82670.0,acs_place
+Newcastle,2024,86739.0,acs_place
+Newton,2019,70000.0,acs_place
+Newton,2020,64615.0,acs_place
+Newton,2021,66125.0,acs_place
+Newton,2022,79375.0,acs_place
+Newton,2023,80000.0,acs_place
+Newton,2024,81000.0,acs_place
+Nibley,2019,91372.0,acs_place
+Nibley,2020,90650.0,acs_place
+Nibley,2021,90188.0,acs_place
+Nibley,2022,100108.0,acs_place
+Nibley,2023,105726.0,acs_place
+Nibley,2024,108072.0,acs_place
+North Logan,2019,71351.0,acs_place
+North Logan,2020,73148.0,acs_place
+North Logan,2021,76709.0,acs_place
+North Logan,2022,80597.0,acs_place
+North Logan,2023,84821.0,acs_place
+North Logan,2024,89891.0,acs_place
+North Ogden,2019,81198.0,acs_place
+North Ogden,2020,87755.0,acs_place
+North Ogden,2021,93490.0,acs_place
+North Ogden,2022,101766.0,acs_place
+North Ogden,2023,107425.0,acs_place
+North Ogden,2024,113722.0,acs_place
+North Salt Lake,2019,85185.0,acs_place
+North Salt Lake,2020,80064.0,acs_place
+North Salt Lake,2021,84661.0,acs_place
+North Salt Lake,2022,94365.0,acs_place
+North Salt Lake,2023,106885.0,acs_place
+North Salt Lake,2024,101447.0,acs_place
+Oak City,2019,74306.0,acs_place
+Oak City,2020,61750.0,acs_place
+Oak City,2021,64664.0,acs_place
+Oak City,2022,69075.0,acs_place
+Oak City,2023,71452.0,acs_place
+Oak City,2024,73479.0,acs_place
+Oakley,2019,80577.0,acs_place
+Oakley,2020,78594.0,acs_place
+Oakley,2021,97083.0,acs_place
+Oakley,2022,119231.0,acs_place
+Oakley,2023,102143.0,acs_place
+Oakley,2024,125550.0,acs_place
+Oasis,2019,,acs_place
+Oasis,2020,,acs_place
+Oasis,2021,,acs_place
+Oasis,2022,,acs_place
+Oasis,2023,36042.0,acs_place
+Oasis,2024,,acs_place
+Ogden,2019,50061.0,acs_place
+Ogden,2020,55974.0,acs_place
+Ogden,2021,58284.0,acs_place
+Ogden,2022,66226.0,acs_place
+Ogden,2023,70053.0,acs_place
+Ogden,2024,72575.0,acs_place
+Oljato-Monument Valley,2019,22692.0,acs_place
+Oljato-Monument Valley,2020,18194.0,acs_place
+Oljato-Monument Valley,2021,14625.0,acs_place
+Oljato-Monument Valley,2022,13603.0,acs_place
+Oljato-Monument Valley,2023,28750.0,acs_place
+Oljato-Monument Valley,2024,30227.0,acs_place
+Ophir,2019,37500.0,acs_place
+Ophir,2020,45769.0,acs_place
+Ophir,2021,48162.0,acs_place
+Ophir,2022,54472.0,extrapolated
+Ophir,2023,59803.0,extrapolated
+Ophir,2024,65134.0,extrapolated
+Orangeville,2019,61023.0,acs_place
+Orangeville,2020,61731.0,acs_place
+Orangeville,2021,75313.0,acs_place
+Orangeville,2022,83438.0,acs_place
+Orangeville,2023,89643.0,acs_place
+Orangeville,2024,90086.0,acs_place
+Orderville,2019,67386.0,acs_place
+Orderville,2020,65313.0,acs_place
+Orderville,2021,67321.0,acs_place
+Orderville,2022,87361.0,acs_place
+Orderville,2023,91944.0,acs_place
+Orderville,2024,82688.0,acs_place
+Orem,2019,64590.0,acs_place
+Orem,2020,65622.0,acs_place
+Orem,2021,70412.0,acs_place
+Orem,2022,77568.0,acs_place
+Orem,2023,81292.0,acs_place
+Orem,2024,83342.0,acs_place
+Palmyra,2019,76563.0,acs_place
+Palmyra,2020,87898.0,acs_place
+Palmyra,2021,93452.0,acs_place
+Palmyra,2022,69000.0,acs_place
+Palmyra,2023,92857.0,acs_place
+Palmyra,2024,97188.0,acs_place
+Panguitch,2019,51250.0,acs_place
+Panguitch,2020,37917.0,acs_place
+Panguitch,2021,51402.0,interpolated
+Panguitch,2022,64886.0,acs_place
+Panguitch,2023,75283.0,acs_place
+Panguitch,2024,76750.0,acs_place
+Paradise,2019,75714.0,acs_place
+Paradise,2020,72361.0,acs_place
+Paradise,2021,74519.0,acs_place
+Paradise,2022,96000.0,acs_place
+Paradise,2023,95000.0,acs_place
+Paradise,2024,109688.0,acs_place
+Paragonah,2019,56375.0,acs_place
+Paragonah,2020,61776.0,acs_place
+Paragonah,2021,64038.0,acs_place
+Paragonah,2022,67826.0,acs_place
+Paragonah,2023,70057.0,acs_place
+Paragonah,2024,64271.0,acs_place
+Park City,2019,111000.0,acs_place
+Park City,2020,114798.0,acs_place
+Park City,2021,121701.0,acs_place
+Park City,2022,132315.0,acs_place
+Park City,2023,140875.0,acs_place
+Park City,2024,133558.0,acs_place
+Parowan,2019,42101.0,acs_place
+Parowan,2020,41505.0,acs_place
+Parowan,2021,44085.0,acs_place
+Parowan,2022,47974.0,acs_place
+Parowan,2023,49934.0,acs_place
+Parowan,2024,53145.0,acs_place
+Payson,2019,67272.0,acs_place
+Payson,2020,69014.0,acs_place
+Payson,2021,75682.0,acs_place
+Payson,2022,81387.0,acs_place
+Payson,2023,84286.0,acs_place
+Payson,2024,89905.0,acs_place
+Peoa,2019,31609.0,extrapolated
+Peoa,2020,61038.0,extrapolated
+Peoa,2021,102014.0,acs_place
+Peoa,2022,116641.0,acs_place
+Peoa,2023,121190.0,acs_place
+Peoa,2024,198594.0,acs_place
+Perry,2019,90477.0,acs_place
+Perry,2020,82435.0,acs_place
+Perry,2021,89069.0,acs_place
+Perry,2022,97259.0,acs_place
+Perry,2023,99478.0,acs_place
+Perry,2024,112639.0,acs_place
+Peter,2019,72007.0,acs_place
+Peter,2020,73438.0,acs_place
+Peter,2021,93750.0,acs_place
+Peter,2022,120179.0,acs_place
+Peter,2023,124940.0,acs_place
+Peter,2024,116719.0,acs_place
+Pine Valley,2019,50417.0,acs_place
+Pine Valley,2020,80796.0,interpolated
+Pine Valley,2021,111176.0,acs_place
+Pine Valley,2022,119145.0,acs_place
+Pine Valley,2023,98580.0,acs_place
+Pine Valley,2024,104286.0,acs_place
+Plain City,2019,74714.0,acs_place
+Plain City,2020,108355.0,acs_place
+Plain City,2021,107222.0,acs_place
+Plain City,2022,120250.0,acs_place
+Plain City,2023,126250.0,acs_place
+Plain City,2024,132766.0,acs_place
+Pleasant Grove,2019,72327.0,acs_place
+Pleasant Grove,2020,76672.0,acs_place
+Pleasant Grove,2021,81850.0,acs_place
+Pleasant Grove,2022,91322.0,acs_place
+Pleasant Grove,2023,96347.0,acs_place
+Pleasant Grove,2024,101073.0,acs_place
+Pleasant View,2019,98765.0,acs_place
+Pleasant View,2020,101979.0,acs_place
+Pleasant View,2021,110687.0,acs_place
+Pleasant View,2022,121086.0,acs_place
+Pleasant View,2023,126679.0,acs_place
+Pleasant View,2024,129462.0,acs_place
+Plymouth,2019,57000.0,acs_place
+Plymouth,2020,64464.0,acs_place
+Plymouth,2021,69583.0,acs_place
+Plymouth,2022,75625.0,acs_place
+Plymouth,2023,83393.0,acs_place
+Plymouth,2024,85625.0,acs_place
+Portage,2019,47083.0,acs_place
+Portage,2020,47500.0,acs_place
+Portage,2021,48958.0,acs_place
+Portage,2022,52500.0,acs_place
+Portage,2023,55313.0,acs_place
+Portage,2024,63333.0,acs_place
+Price,2019,45730.0,acs_place
+Price,2020,42500.0,acs_place
+Price,2021,45429.0,acs_place
+Price,2022,47724.0,acs_place
+Price,2023,46947.0,acs_place
+Price,2024,53203.0,acs_place
+Providence,2019,80697.0,acs_place
+Providence,2020,84243.0,acs_place
+Providence,2021,89167.0,acs_place
+Providence,2022,98454.0,acs_place
+Providence,2023,103831.0,acs_place
+Providence,2024,118072.0,acs_place
+Provo,2019,48888.0,acs_place
+Provo,2020,50072.0,acs_place
+Provo,2021,53572.0,acs_place
+Provo,2022,57943.0,acs_place
+Provo,2023,62800.0,acs_place
+Provo,2024,64171.0,acs_place
+Randlett,2019,23750.0,acs_place
+Randlett,2020,24861.0,acs_place
+Randlett,2021,24580.0,interpolated
+Randlett,2022,24299.0,interpolated
+Randlett,2023,24018.0,acs_place
+Randlett,2024,28583.0,acs_place
+Randolph,2019,60469.0,acs_place
+Randolph,2020,73125.0,acs_place
+Randolph,2021,83068.0,acs_place
+Randolph,2022,90417.0,acs_place
+Randolph,2023,87083.0,acs_place
+Randolph,2024,87632.0,acs_place
+Redmond,2019,57308.0,acs_place
+Redmond,2020,69167.0,acs_place
+Redmond,2021,66250.0,acs_place
+Redmond,2022,71667.0,acs_place
+Redmond,2023,71250.0,acs_place
+Redmond,2024,77083.0,acs_place
+Richfield,2019,46625.0,acs_place
+Richfield,2020,48776.0,acs_place
+Richfield,2021,53836.0,acs_place
+Richfield,2022,70477.0,acs_place
+Richfield,2023,77847.0,acs_place
+Richfield,2024,74756.0,acs_place
+Richmond,2019,61667.0,acs_place
+Richmond,2020,67411.0,acs_place
+Richmond,2021,74688.0,acs_place
+Richmond,2022,84511.0,acs_place
+Richmond,2023,103047.0,acs_place
+Richmond,2024,110428.0,acs_place
+River Heights,2019,71750.0,acs_place
+River Heights,2020,77984.0,acs_place
+River Heights,2021,83375.0,acs_place
+River Heights,2022,90625.0,acs_place
+River Heights,2023,109063.0,acs_place
+River Heights,2024,117708.0,acs_place
+Riverdale,2019,56000.0,acs_place
+Riverdale,2020,54723.0,acs_place
+Riverdale,2021,63079.0,acs_place
+Riverdale,2022,73642.0,acs_place
+Riverdale,2023,64496.0,acs_place
+Riverdale,2024,67323.0,acs_place
+Riverside,2019,95568.0,acs_place
+Riverside,2020,98977.0,acs_place
+Riverside,2021,94250.0,acs_place
+Riverside,2022,85046.0,acs_place
+Riverside,2023,71952.0,acs_place
+Riverside,2024,73246.0,acs_place
+Riverton,2019,101619.0,acs_place
+Riverton,2020,101810.0,acs_place
+Riverton,2021,107674.0,acs_place
+Riverton,2022,115869.0,acs_place
+Riverton,2023,119093.0,acs_place
+Riverton,2024,126910.0,acs_place
+Rockville,2019,37500.0,acs_place
+Rockville,2020,38281.0,acs_place
+Rockville,2021,39500.0,acs_place
+Rockville,2022,48438.0,acs_place
+Rockville,2023,46250.0,acs_place
+Rockville,2024,54722.0,acs_place
+Rocky Ridge,2019,51544.0,acs_place
+Rocky Ridge,2020,58654.0,acs_place
+Rocky Ridge,2021,78750.0,acs_place
+Rocky Ridge,2022,86250.0,acs_place
+Rocky Ridge,2023,89485.0,acs_place
+Rocky Ridge,2024,95625.0,acs_place
+Roosevelt,2019,63479.0,acs_place
+Roosevelt,2020,57659.0,acs_place
+Roosevelt,2021,62375.0,acs_place
+Roosevelt,2022,66552.0,acs_place
+Roosevelt,2023,72664.0,acs_place
+Roosevelt,2024,76456.0,acs_place
+Roy,2019,70032.0,acs_place
+Roy,2020,72739.0,acs_place
+Roy,2021,76611.0,acs_place
+Roy,2022,83959.0,acs_place
+Roy,2023,91112.0,acs_place
+Roy,2024,91282.0,acs_place
+Rush Valley,2019,78214.0,acs_place
+Rush Valley,2020,72500.0,acs_place
+Rush Valley,2021,75909.0,acs_place
+Rush Valley,2022,82000.0,acs_place
+Rush Valley,2023,85917.0,acs_place
+Rush Valley,2024,87188.0,acs_place
+Salem,2019,98750.0,acs_place
+Salem,2020,86745.0,acs_place
+Salem,2021,92250.0,acs_place
+Salem,2022,101700.0,acs_place
+Salem,2023,107617.0,acs_place
+Salem,2024,111117.0,acs_place
+Salina,2019,54286.0,acs_place
+Salina,2020,55565.0,acs_place
+Salina,2021,55990.0,acs_place
+Salina,2022,61742.0,acs_place
+Salina,2023,64464.0,acs_place
+Salina,2024,64129.0,acs_place
+Salt Lake City,2019,60676.0,acs_place
+Salt Lake City,2020,63156.0,acs_place
+Salt Lake City,2021,65880.0,acs_place
+Salt Lake City,2022,72357.0,acs_place
+Salt Lake City,2023,74925.0,acs_place
+Salt Lake City,2024,75090.0,acs_place
+Samak,2019,51700.0,acs_place
+Samak,2020,,acs_place
+Samak,2021,,acs_place
+Samak,2022,,acs_place
+Samak,2023,,acs_place
+Samak,2024,,acs_place
+Sandy,2019,94018.0,acs_place
+Sandy,2020,95715.0,acs_place
+Sandy,2021,100749.0,acs_place
+Sandy,2022,108165.0,acs_place
+Sandy,2023,111242.0,acs_place
+Sandy,2024,112176.0,acs_place
+Santa Clara,2019,83326.0,acs_place
+Santa Clara,2020,74531.0,acs_place
+Santa Clara,2021,84128.0,acs_place
+Santa Clara,2022,91625.0,acs_place
+Santa Clara,2023,93083.0,acs_place
+Santa Clara,2024,96475.0,acs_place
+Santaquin,2019,72171.0,acs_place
+Santaquin,2020,76071.0,acs_place
+Santaquin,2021,82057.0,acs_place
+Santaquin,2022,91301.0,acs_place
+Santaquin,2023,95175.0,acs_place
+Santaquin,2024,99837.0,acs_place
+Saratoga Springs,2019,102531.0,acs_place
+Saratoga Springs,2020,101592.0,acs_place
+Saratoga Springs,2021,106844.0,acs_place
+Saratoga Springs,2022,117005.0,acs_place
+Saratoga Springs,2023,123619.0,acs_place
+Saratoga Springs,2024,128802.0,acs_place
+Scipio,2019,69219.0,acs_place
+Scipio,2020,80313.0,acs_place
+Scipio,2021,76250.0,acs_place
+Scipio,2022,79886.0,acs_place
+Scipio,2023,82292.0,acs_place
+Scipio,2024,75313.0,acs_place
+Scofield,2019,66000.0,acs_place
+Scofield,2020,65250.0,acs_place
+Scofield,2021,68750.0,acs_place
+Scofield,2022,69417.0,extrapolated
+Scofield,2023,70792.0,extrapolated
+Scofield,2024,72167.0,extrapolated
+Sigurd,2019,58977.0,acs_place
+Sigurd,2020,46875.0,acs_place
+Sigurd,2021,65938.0,acs_place
+Sigurd,2022,75694.0,acs_place
+Sigurd,2023,80000.0,acs_place
+Sigurd,2024,80357.0,acs_place
+Silver Summit,2019,147404.0,acs_place
+Silver Summit,2020,143571.0,acs_place
+Silver Summit,2021,195750.0,acs_place
+Silver Summit,2022,226442.0,acs_place
+Silver Summit,2023,235329.0,acs_place
+Silver Summit,2024,241792.0,acs_place
+Smithfield,2019,71118.0,acs_place
+Smithfield,2020,73788.0,acs_place
+Smithfield,2021,79321.0,acs_place
+Smithfield,2022,87175.0,acs_place
+Smithfield,2023,90602.0,acs_place
+Smithfield,2024,97537.0,acs_place
+Snowville,2019,60000.0,acs_place
+Snowville,2020,61500.0,acs_place
+Snowville,2021,64688.0,acs_place
+Snowville,2022,68750.0,acs_place
+Snowville,2023,71500.0,acs_place
+Snowville,2024,67396.0,acs_place
+Snyderville,2019,116932.0,acs_place
+Snyderville,2020,120313.0,acs_place
+Snyderville,2021,139850.0,acs_place
+Snyderville,2022,135132.0,acs_place
+Snyderville,2023,139228.0,acs_place
+Snyderville,2024,143517.0,acs_place
+South Jordan,2019,104597.0,acs_place
+South Jordan,2020,106824.0,acs_place
+South Jordan,2021,111774.0,acs_place
+South Jordan,2022,119822.0,acs_place
+South Jordan,2023,126400.0,acs_place
+South Jordan,2024,134047.0,acs_place
+South Ogden,2019,68585.0,acs_place
+South Ogden,2020,70552.0,acs_place
+South Ogden,2021,74724.0,acs_place
+South Ogden,2022,80762.0,acs_place
+South Ogden,2023,81543.0,acs_place
+South Ogden,2024,80130.0,acs_place
+South Salt Lake,2019,47813.0,acs_place
+South Salt Lake,2020,49616.0,acs_place
+South Salt Lake,2021,50589.0,acs_place
+South Salt Lake,2022,57125.0,acs_place
+South Salt Lake,2023,68035.0,acs_place
+South Salt Lake,2024,72152.0,acs_place
+South Weber,2019,107848.0,acs_place
+South Weber,2020,115639.0,acs_place
+South Weber,2021,120365.0,acs_place
+South Weber,2022,130769.0,acs_place
+South Weber,2023,132667.0,acs_place
+South Weber,2024,138600.0,acs_place
+South Willard,2019,74688.0,acs_place
+South Willard,2020,70817.0,acs_place
+South Willard,2021,79722.0,acs_place
+South Willard,2022,108281.0,acs_place
+South Willard,2023,114063.0,acs_place
+South Willard,2024,119327.0,acs_place
+Spanish Fork,2019,78490.0,acs_place
+Spanish Fork,2020,79846.0,acs_place
+Spanish Fork,2021,84903.0,acs_place
+Spanish Fork,2022,93989.0,acs_place
+Spanish Fork,2023,98497.0,acs_place
+Spanish Fork,2024,104844.0,acs_place
+Spanish Valley,2019,131502.0,extrapolated
+Spanish Valley,2020,105313.0,acs_place
+Spanish Valley,2021,119485.0,acs_place
+Spanish Valley,2022,98063.0,acs_place
+Spanish Valley,2023,67108.0,acs_place
+Spanish Valley,2024,63483.0,extrapolated
+Spring City,2019,52563.0,acs_place
+Spring City,2020,52898.0,acs_place
+Spring City,2021,58977.0,acs_place
+Spring City,2022,62679.0,acs_place
+Spring City,2023,65139.0,acs_place
+Spring City,2024,71250.0,acs_place
+Spring Glen,2019,59135.0,acs_place
+Spring Glen,2020,52411.0,acs_place
+Spring Glen,2021,47096.0,interpolated
+Spring Glen,2022,41780.0,acs_place
+Spring Glen,2023,36864.0,acs_place
+Spring Glen,2024,52386.0,acs_place
+Spring Lake,2019,83750.0,acs_place
+Spring Lake,2020,81250.0,acs_place
+Spring Lake,2021,56094.0,acs_place
+Spring Lake,2022,155139.0,acs_place
+Spring Lake,2023,143049.0,acs_place
+Spring Lake,2024,94936.0,acs_place
+Springdale,2019,54167.0,acs_place
+Springdale,2020,59276.0,acs_place
+Springdale,2021,64688.0,acs_place
+Springdale,2022,69500.0,acs_place
+Springdale,2023,69545.0,acs_place
+Springdale,2024,89000.0,acs_place
+Springville,2019,69139.0,acs_place
+Springville,2020,72356.0,acs_place
+Springville,2021,76982.0,acs_place
+Springville,2022,84699.0,acs_place
+Springville,2023,88516.0,acs_place
+Springville,2024,89816.0,acs_place
+St. George,2019,58259.0,acs_place
+St. George,2020,59989.0,acs_place
+St. George,2021,63604.0,acs_place
+St. George,2022,69333.0,acs_place
+St. George,2023,72870.0,acs_place
+St. George,2024,76508.0,acs_place
+Stansbury Park,2019,101122.0,acs_place
+Stansbury Park,2020,110984.0,acs_place
+Stansbury Park,2021,109931.0,acs_place
+Stansbury Park,2022,124551.0,acs_place
+Stansbury Park,2023,132429.0,acs_place
+Stansbury Park,2024,126526.0,acs_place
+Sterling,2019,66406.0,acs_place
+Sterling,2020,53466.0,acs_place
+Sterling,2021,57273.0,acs_place
+Sterling,2022,61964.0,acs_place
+Sterling,2023,64261.0,acs_place
+Sterling,2024,66359.0,acs_place
+Stockton,2019,58250.0,acs_place
+Stockton,2020,85375.0,acs_place
+Stockton,2021,79167.0,acs_place
+Stockton,2022,78594.0,acs_place
+Stockton,2023,92857.0,acs_place
+Stockton,2024,110625.0,acs_place
+Summit,2019,35179.0,acs_place
+Summit,2020,34943.0,acs_place
+Summit,2021,36635.0,acs_place
+Summit,2022,95769.0,acs_place
+Summit,2023,100592.0,acs_place
+Summit,2024,118119.0,extrapolated
+Summit Park,2019,131250.0,acs_place
+Summit Park,2020,139053.0,acs_place
+Summit Park,2021,156200.0,acs_place
+Summit Park,2022,171408.0,acs_place
+Summit Park,2023,179516.0,acs_place
+Summit Park,2024,185900.0,acs_place
+Sundance,2020,141696.0,extrapolated
+Sundance,2021,135000.0,acs_place
+Sundance,2022,146250.0,acs_place
+Sundance,2023,130139.0,acs_place
+Sundance,2024,132857.0,acs_place
+Sunset,2019,62281.0,acs_place
+Sunset,2020,63697.0,acs_place
+Sunset,2021,62950.0,acs_place
+Sunset,2022,64604.0,acs_place
+Sunset,2023,74250.0,acs_place
+Sunset,2024,76364.0,acs_place
+Sutherland,2019,,acs_place
+Sutherland,2020,,acs_place
+Sutherland,2021,,acs_place
+Sutherland,2022,,acs_place
+Sutherland,2023,80250.0,acs_place
+Sutherland,2024,,acs_place
+Syracuse,2019,99625.0,acs_place
+Syracuse,2020,103522.0,acs_place
+Syracuse,2021,114864.0,acs_place
+Syracuse,2022,125602.0,acs_place
+Syracuse,2023,132459.0,acs_place
+Syracuse,2024,133443.0,acs_place
+Tabiona,2019,50000.0,acs_place
+Tabiona,2020,53125.0,acs_place
+Tabiona,2021,60714.0,acs_place
+Tabiona,2022,66429.0,acs_place
+Tabiona,2023,69167.0,acs_place
+Tabiona,2024,69375.0,acs_place
+Taylorsville,2019,66311.0,acs_place
+Taylorsville,2020,67249.0,acs_place
+Taylorsville,2021,73325.0,acs_place
+Taylorsville,2022,81417.0,acs_place
+Taylorsville,2023,85608.0,acs_place
+Taylorsville,2024,86413.0,acs_place
+Teasdale,2019,35707.0,acs_place
+Teasdale,2020,34491.0,acs_place
+Teasdale,2021,33558.0,acs_place
+Teasdale,2022,36611.0,acs_place
+Teasdale,2023,72708.0,acs_place
+Teasdale,2024,65452.0,extrapolated
+Thatcher,2019,61875.0,acs_place
+Thatcher,2020,57396.0,acs_place
+Thatcher,2021,82188.0,acs_place
+Thatcher,2022,74500.0,acs_place
+Thatcher,2023,91042.0,acs_place
+Thatcher,2024,100750.0,acs_place
+Thompson Springs,2019,,acs_place
+Thompson Springs,2020,,acs_place
+Thompson Springs,2021,,acs_place
+Thompson Springs,2022,,acs_place
+Thompson Springs,2023,,acs_place
+Thompson Springs,2024,,acs_place
+Timber Lakes,2019,47583.0,acs_place
+Timber Lakes,2020,42197.0,acs_place
+Timber Lakes,2021,41633.0,acs_place
+Timber Lakes,2022,46268.0,acs_place
+Timber Lakes,2023,49435.0,acs_place
+Timber Lakes,2024,47756.0,extrapolated
+Tooele,2019,63851.0,acs_place
+Tooele,2020,65740.0,acs_place
+Tooele,2021,76618.0,acs_place
+Tooele,2022,84225.0,acs_place
+Tooele,2023,88893.0,acs_place
+Tooele,2024,96221.0,acs_place
+Toquerville,2019,75556.0,acs_place
+Toquerville,2020,81563.0,acs_place
+Toquerville,2021,80357.0,acs_place
+Toquerville,2022,87344.0,acs_place
+Toquerville,2023,91818.0,acs_place
+Toquerville,2024,97813.0,acs_place
+Torrey,2019,32750.0,acs_place
+Torrey,2020,38438.0,acs_place
+Torrey,2021,56125.0,acs_place
+Torrey,2022,48750.0,acs_place
+Torrey,2023,74423.0,acs_place
+Torrey,2024,64583.0,acs_place
+Tremonton,2019,53705.0,acs_place
+Tremonton,2020,59488.0,acs_place
+Tremonton,2021,62543.0,acs_place
+Tremonton,2022,67335.0,acs_place
+Tremonton,2023,72028.0,acs_place
+Tremonton,2024,74741.0,acs_place
+Trenton,2019,53333.0,acs_place
+Trenton,2020,52500.0,acs_place
+Trenton,2021,55500.0,acs_place
+Trenton,2022,77500.0,acs_place
+Trenton,2023,83000.0,acs_place
+Trenton,2024,95313.0,acs_place
+Tropic,2019,47813.0,acs_place
+Tropic,2020,45625.0,acs_place
+Tropic,2021,40625.0,acs_place
+Tropic,2022,54519.0,acs_place
+Tropic,2023,64375.0,acs_place
+Tropic,2024,72031.0,acs_place
+Tselakai Dezza,2019,31250.0,acs_place
+Tselakai Dezza,2020,31875.0,acs_place
+Tselakai Dezza,2021,31250.0,acs_place
+Tselakai Dezza,2022,27500.0,acs_place
+Tselakai Dezza,2023,24063.0,acs_place
+Tselakai Dezza,2024,34000.0,acs_place
+Uintah,2019,90208.0,acs_place
+Uintah,2020,74808.0,acs_place
+Uintah,2021,91818.0,acs_place
+Uintah,2022,106528.0,acs_place
+Uintah,2023,101417.0,acs_place
+Uintah,2024,108125.0,acs_place
+Vernal,2019,48325.0,acs_place
+Vernal,2020,47962.0,acs_place
+Vernal,2021,50692.0,acs_place
+Vernal,2022,58869.0,acs_place
+Vernal,2023,59178.0,acs_place
+Vernal,2024,64457.0,acs_place
+Vernon,2019,61979.0,acs_place
+Vernon,2020,59375.0,acs_place
+Vernon,2021,47857.0,acs_place
+Vernon,2022,52344.0,acs_place
+Vernon,2023,76250.0,acs_place
+Vernon,2024,58917.0,acs_place
+Veyo,2019,82030.0,acs_place
+Veyo,2020,77460.0,interpolated
+Veyo,2021,72890.0,interpolated
+Veyo,2022,68320.0,interpolated
+Veyo,2023,63750.0,acs_place
+Veyo,2024,68182.0,acs_place
+Vineyard,2019,81116.0,acs_place
+Vineyard,2020,80868.0,acs_place
+Vineyard,2021,86355.0,acs_place
+Vineyard,2022,94018.0,acs_place
+Vineyard,2023,100022.0,acs_place
+Vineyard,2024,103380.0,acs_place
+Virgin,2019,63611.0,acs_place
+Virgin,2020,59000.0,acs_place
+Virgin,2021,62500.0,acs_place
+Virgin,2022,72813.0,acs_place
+Virgin,2023,80625.0,acs_place
+Virgin,2024,70625.0,acs_place
+Wales,2019,69286.0,acs_place
+Wales,2020,71250.0,acs_place
+Wales,2021,78750.0,acs_place
+Wales,2022,89375.0,acs_place
+Wales,2023,75625.0,acs_place
+Wales,2024,71250.0,acs_place
+Wallsburg,2019,66563.0,acs_place
+Wallsburg,2020,67188.0,acs_place
+Wallsburg,2021,86875.0,acs_place
+Wallsburg,2022,99500.0,acs_place
+Wallsburg,2023,92292.0,acs_place
+Wallsburg,2024,107292.0,acs_place
+Wanship,2019,90250.0,acs_place
+Wanship,2020,77955.0,acs_place
+Wanship,2021,87875.0,acs_place
+Wanship,2022,82500.0,acs_place
+Wanship,2023,77292.0,acs_place
+Wanship,2024,126071.0,acs_place
+Washington,2019,66479.0,acs_place
+Washington,2020,75389.0,acs_place
+Washington,2021,79450.0,acs_place
+Washington,2022,94655.0,acs_place
+Washington,2023,94015.0,acs_place
+Washington,2024,91853.0,acs_place
+Washington Terrace,2019,63503.0,acs_place
+Washington Terrace,2020,65204.0,acs_place
+Washington Terrace,2021,65253.0,acs_place
+Washington Terrace,2022,72558.0,acs_place
+Washington Terrace,2023,79971.0,acs_place
+Washington Terrace,2024,80119.0,acs_place
+Wellington,2019,47880.0,acs_place
+Wellington,2020,45375.0,acs_place
+Wellington,2021,51827.0,acs_place
+Wellington,2022,54063.0,acs_place
+Wellington,2023,58807.0,acs_place
+Wellington,2024,61466.0,acs_place
+Wellsville,2019,89643.0,acs_place
+Wellsville,2020,84209.0,acs_place
+Wellsville,2021,94231.0,acs_place
+Wellsville,2022,102581.0,acs_place
+Wellsville,2023,110543.0,acs_place
+Wellsville,2024,104351.0,acs_place
+Wendover,2019,33750.0,acs_place
+Wendover,2020,36882.0,acs_place
+Wendover,2021,43529.0,acs_place
+Wendover,2022,41989.0,acs_place
+Wendover,2023,45938.0,acs_place
+Wendover,2024,44173.0,acs_place
+West Bountiful,2019,95652.0,acs_place
+West Bountiful,2020,99797.0,acs_place
+West Bountiful,2021,110906.0,acs_place
+West Bountiful,2022,123379.0,acs_place
+West Bountiful,2023,127344.0,acs_place
+West Bountiful,2024,135179.0,acs_place
+West Haven,2019,77733.0,acs_place
+West Haven,2020,80762.0,acs_place
+West Haven,2021,84461.0,acs_place
+West Haven,2022,92425.0,acs_place
+West Haven,2023,104307.0,acs_place
+West Haven,2024,101012.0,acs_place
+West Jordan,2019,80955.0,acs_place
+West Jordan,2020,84722.0,acs_place
+West Jordan,2021,90227.0,acs_place
+West Jordan,2022,99002.0,acs_place
+West Jordan,2023,103960.0,acs_place
+West Jordan,2024,108153.0,acs_place
+West Mountain,2019,83125.0,acs_place
+West Mountain,2020,85833.0,acs_place
+West Mountain,2021,92188.0,acs_place
+West Mountain,2022,103365.0,acs_place
+West Mountain,2023,107222.0,acs_place
+West Mountain,2024,111791.0,acs_place
+West Point,2019,92655.0,acs_place
+West Point,2020,99226.0,acs_place
+West Point,2021,103975.0,acs_place
+West Point,2022,114801.0,acs_place
+West Point,2023,118660.0,acs_place
+West Point,2024,120687.0,acs_place
+West Valley City,2019,66342.0,acs_place
+West Valley City,2020,70427.0,acs_place
+West Valley City,2021,75137.0,acs_place
+West Valley City,2022,81719.0,acs_place
+West Valley City,2023,88604.0,acs_place
+West Valley City,2024,92209.0,acs_place
+West Wood,2019,69886.0,acs_place
+West Wood,2020,72969.0,acs_place
+West Wood,2021,73185.0,acs_place
+West Wood,2022,64063.0,acs_place
+West Wood,2023,78889.0,acs_place
+West Wood,2024,86583.0,acs_place
+White City,2019,63446.0,acs_place
+White City,2020,68380.0,acs_place
+White City,2021,71250.0,acs_place
+White City,2022,86763.0,acs_place
+White City,2023,98603.0,acs_place
+White City,2024,106357.0,acs_place
+White Mesa,2019,13056.0,acs_place
+White Mesa,2020,30371.0,interpolated
+White Mesa,2021,47685.0,interpolated
+White Mesa,2022,65000.0,acs_place
+White Mesa,2023,53839.0,acs_place
+White Mesa,2024,75535.0,extrapolated
+Whiterocks,2019,28125.0,acs_place
+Whiterocks,2020,31944.0,acs_place
+Whiterocks,2021,40000.0,acs_place
+Whiterocks,2022,34432.0,acs_place
+Whiterocks,2023,40370.0,extrapolated
+Whiterocks,2024,43067.0,extrapolated
+Willard,2019,81250.0,acs_place
+Willard,2020,86484.0,acs_place
+Willard,2021,91422.0,acs_place
+Willard,2022,92434.0,acs_place
+Willard,2023,91875.0,acs_place
+Willard,2024,97782.0,acs_place
+Wolf Creek,2019,114306.0,acs_place
+Wolf Creek,2020,122419.0,acs_place
+Wolf Creek,2021,122373.0,acs_place
+Wolf Creek,2022,137813.0,acs_place
+Wolf Creek,2023,162708.0,acs_place
+Wolf Creek,2024,130729.0,acs_place
+Woodland,2019,77375.0,acs_place
+Woodland,2020,80694.0,acs_place
+Woodland,2021,60357.0,acs_place
+Woodland,2022,80331.0,acs_place
+Woodland,2023,80556.0,acs_place
+Woodland,2024,85135.0,acs_place
+Woodland Hills,2019,101071.0,acs_place
+Woodland Hills,2020,121750.0,acs_place
+Woodland Hills,2021,125357.0,acs_place
+Woodland Hills,2022,130096.0,acs_place
+Woodland Hills,2023,137426.0,acs_place
+Woodland Hills,2024,151964.0,acs_place
+Woodruff,2019,102083.0,acs_place
+Woodruff,2020,123681.0,acs_place
+Woodruff,2021,101250.0,acs_place
+Woodruff,2022,83984.0,interpolated
+Woodruff,2023,66719.0,acs_place
+Woodruff,2024,63750.0,acs_place
+Woods Cross,2019,77433.0,acs_place
+Woods Cross,2020,85453.0,acs_place
+Woods Cross,2021,89441.0,acs_place
+Woods Cross,2022,101742.0,acs_place
+Woods Cross,2023,115335.0,acs_place
+Woods Cross,2024,120543.0,acs_place
