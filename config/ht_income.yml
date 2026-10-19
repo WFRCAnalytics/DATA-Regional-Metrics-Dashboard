@@ -1,0 +1,59 @@
+# Config for the city-level H+T income-share workflow (ACS income -> HPLUST).
+# Mirrors HT_INCOME_CONFIG from the main-branch Process-GPI-TDM-HT-by-City notebook.
+ht_income:
+  state: UT
+  state_fips: "49"
+  county_fips: ["003", "011", "035", "049", "057"]
+  acs_dataset: acs/acs5
+  acs_vars:
+    median_income: B19013_001E   # Median household income
+    population: B02001_001E      # Total population
+    households: B11001_001E      # Total households (weight for income roll-up)
+  acs_start_year: 2009           # Earliest ACS 5-year API vintage
+  bg_reference_year: 2020        # TIGER vintage of the block-group / place references
+  city_key: CITYAREA
+  year_prefixes: [HCOST, TCOST, HPLUST]
+  target_years_override: null    # H+T years default to the suffixes found in the cost CSV
+  county_name_to_fips:           # matches the "County" column of the H+T cost CSV
+    Box Elder: "49003"
+    Davis: "49011"
+    Salt Lake: "49035"
+    Utah: "49049"
+    Weber: "49057"
+  county_tdm_rows:               # whole-county TDM rows that take the ACS county income
+    Davis County: "49011"
+    Weber County: "49057"
+  workshop_area_lookup:
+    Box Elder (WFRC): Box Elder Wfrc
+    North Davis County: Davis County North
+    South Davis County: Davis County South
+    North Salt Lake County: Salt Lake County North
+    Southwest Salt Lake County: Salt Lake County Sw
+    Southeast Salt Lake County: Salt Lake County Se
+    North Weber County: Weber County North
+    South Weber County: Weber County South
+    Central Utah County: Utah County Central
+    North Utah County: Utah County North
+    South Utah County: Utah County South
+  # Parity vs the main-branch snapshot: exact everywhere except these column prefixes.
+  # TOTPOP / TOTHH sum many extrapolated block-group counts rounded to whole people; an
+  # OLS fit that differs by one floating-point step across numpy/LAPACK builds flips a few
+  # exact-.5 ties by +/-1 (observed max 2). Income and HPLUST columns are exact.
+  parity_tolerances:
+    TOTPOP: 2
+    TOTHH: 2
+  paths:
+    ht_costs_csv: data/raw/housing-plus-transportation/H +T Costs for Dashboard 2019-2024 (GPI & TDM) - Composite H + T Metric.csv
+    city_areas: data/raw/housing-plus-transportation/city_area_with_workshop_areas.shp
+    # Tract / county / place panels are cached once; delete a file to force a re-download.
+    tract_panel: data/raw/housing-plus-transportation/tracts_2020_acs_income.csv
+    county_panel: data/raw/housing-plus-transportation/counties_2020_acs_income.csv
+    place_panel: data/raw/housing-plus-transportation/places_2020_acs_income.csv
+    # Rebuildable intermediates (GeoParquet / Parquet, git-ignored).
+    bg_reference: data/intermediate/ht_income/bg_2020_ut_5county.parquet
+    bg_panel: data/intermediate/ht_income/bg_acs_panel.parquet
+    # Maintained outputs.
+    output_gpkg: data/derived/affordability_housing_transportation_costs.gpkg
+    output_csv: data/derived/affordability_housing_transportation_costs.csv
+    # Snapshot exported from the main-branch notebook, used for parity checks.
+    baseline_csv: data/raw/housing-plus-transportation/baseline_main_Affordability_Housing_Transportation_Costs.csv

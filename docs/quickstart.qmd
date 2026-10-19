@@ -15,6 +15,10 @@ Required ArcGIS variables:
 - `ARCGIS_URL`
 - `ARCGIS_PROFILE` or `ARCGIS_USERNAME` and `ARCGIS_PASSWORD`
 
+Required for the H+T income workflow:
+
+- `CENSUS_API_KEY` (Census Bureau API key, read from the environment or `.env`)
+
 Optional safety variable:
 
 - `ARCGIS_PUBLISH_ENABLED=false`
@@ -26,4 +30,19 @@ uv sync
 uv run regional-metrics --help
 uv run regional-metrics build performance-metrics --dry-run
 uv run regional-metrics docs render
+uv run regional-metrics build housing-transportation-income --dry-run
+```
+
+## Python and notebooks
+
+`uv` manages Python and every dependency; do not call a system `python` or `pip`. Run commands
+with `uv run`, and add dependencies with `uv add` so `pyproject.toml` and `uv.lock` stay in
+sync.
+
+Executable analysis documents are Quarto `.qmd` files, not `.ipynb` notebooks. They use the
+`python3` Jupyter kernel installed inside the project `.venv`; do not register another kernel.
+
+```bash
+uv sync --extra dev --extra docs
+uv run quarto render analysis/ht-income.qmd
 ```

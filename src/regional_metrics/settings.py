@@ -18,6 +18,7 @@ from .models import (
     ArcGISSettings,
     BoundariesConfig,
     GeographyAreaConfig,
+    HTIncomeConfig,
     MetricConfig,
     OutputItemConfig,
     ProjectConfig,
@@ -57,6 +58,21 @@ def load_arcgis_settings() -> ArcGISSettings:
         username=os.getenv("ARCGIS_USERNAME") or None,
         password=os.getenv("ARCGIS_PASSWORD") or None,
     )
+
+
+def load_census_api_key() -> str:
+    """Return CENSUS_API_KEY from the environment or the repo .env file."""
+    load_environment()
+    key = os.getenv("CENSUS_API_KEY", "").strip()
+    if not key:
+        raise RuntimeError("CENSUS_API_KEY is not set. Add it to .env or the environment.")
+    return key
+
+
+def load_ht_income_config(root: Path | None = None) -> HTIncomeConfig:
+    repo_root = root or project_root()
+    document = load_yaml(config_dir(repo_root) / "ht_income.yml")
+    return HTIncomeConfig.from_dict(document["ht_income"], repo_root)
 
 
 def publish_enabled() -> bool:

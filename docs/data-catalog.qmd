@@ -6,6 +6,14 @@
 - `config/geographies.yml`: reusable geography-group definitions.
 - `config/publish.yml`: boundary layer and hosted output metadata.
 
+## H+T income inputs (`config/ht_income.yml`)
+
+- `data/raw/housing-plus-transportation/H +T Costs ... Composite H + T Metric.csv`: GPI / TDM H and T costs by city area.
+- `data/raw/housing-plus-transportation/city_area_with_workshop_areas.shp`: city boundary layer (EPSG:26912).
+- `data/raw/housing-plus-transportation/{tracts,counties,places}_2020_acs_income.csv`: cached, gap-filled ACS panels. Delete one to force a re-download.
+- `data/raw/housing-plus-transportation/baseline_main_Affordability_Housing_Transportation_Costs.csv`: main-branch output snapshot used for parity checks.
+- `data/intermediate/ht_income/`: rebuildable 2020 block-group GeoParquet reference and block-group ACS panel (git-ignored).
+
 ## Legacy source artifacts
 
 - `Inputs/Walksheds.gdb.zip`

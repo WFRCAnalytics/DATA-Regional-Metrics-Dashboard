@@ -16,6 +16,8 @@ website:
         text: Quickstart
       - href: docs/pipelines.qmd
         text: Pipelines
+      - href: docs/ht-income.qmd
+        text: H+T Income
 
 format:
   html:

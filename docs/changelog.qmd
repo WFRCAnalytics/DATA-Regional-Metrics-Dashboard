@@ -6,3 +6,12 @@
 - Moved legacy workflows under `legacy/`.
 - Extracted metric definitions into YAML.
 - Added initial open-source geometry and housing/transportation helpers.
+- Ported the city-level H+T income-share workflow (`HPLUST`, `MEDINC_CITY`, `MEDINC_CNTY`,
+  `TOTPOP`, `TOTHH`) from the main-branch notebook into `acs_panel.py`, `ht_income.py` and
+  `pipeline_ht_income.py`, with `config/ht_income.yml`, the
+  `build housing-transportation-income` CLI command, tests, and a parity check against a
+  snapshot of the main-branch output.
+- Replaced `arcpy` `CopyFeatures` / `Project` / `SpatialJoin` (`HAVE_THEIR_CENTER_IN`) with
+  GeoPandas reprojection and a centroid-in-polygon join.
+- Added `analysis/ht-income.qmd`, an executable Quarto run-through that uses the project's
+  uv-managed Jupyter kernel.

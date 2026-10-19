@@ -1,0 +1,110 @@
+# H+T Income Share
+
+City-level housing + transportation (H+T) affordability: the share of income spent on H+T
+costs, normalized by ACS median household income. This is the `modernize-engine` port of the
+main-branch `Process-GPI-TDM-HT-by-City.ipynb` notebook and reproduces its output schema and
+geography grain.
+
+```bash
+uv run regional-metrics build housing-transportation-income            # build + parity check
+uv run regional-metrics build housing-transportation-income --dry-run  # list input paths
+uv run quarto render analysis/ht-income.qmd                            # executable run-through
+```
+
+## Metric
+
+$$
+\text{HPLUST}_{y} = \frac{(\text{HCOST}_{y} + \text{TCOST}_{y}) \times 12}{\text{MEDINC}_{y,\text{CNTY}}}
+$$
+
+- `HCOST`, `TCOST`: monthly housing and transportation cost per city area (GPI / TDM table).
+- `HTCOST = HCOST + TCOST`.
+- `MEDINC{YYYY}_CNTY`: ACS 5-year county median household income (`B19013_001E`) of the
+  city's county.
+- Result is a 0--1 annual share. It stays null (written as 0 in the legacy export) when county
+  income is missing.
+
+## Which geography normalizes income
+
+**The county.** `HPLUST` divides by the county median household income, so every city in a
+county shares one denominator. The county comes from the `County` column of the cost CSV,
+mapped to a county FIPS code in `config/ht_income.yml`. `MEDINC{YYYY}_CITY` (below) is exported
+for reference but is not used in `HPLUST`.
+
+## Income geographies
+
+| Output column | Geography | Source |
+|---|---|---|
+| `MEDINC{YYYY}_CNTY` | County | ACS county `B19013_001E` |
+| `MEDINC{YYYY}_CITY` | City | ACS Place value for cities that match a Census Place; ACS county value for the whole-county TDM rows (`Davis County`, `Weber County`); otherwise the household-weighted mean of block-group income |
+| `TOTPOP{YYYY}`, `TOTHH{YYYY}` | City | Sum over block groups assigned to the city |
+
+`MEDINC_CITY` and `MEDINC_CNTY` cover every ACS year from 2009. Costs, `HPLUST`, `TOTPOP` and
+`TOTHH` are exported for the H+T years in the cost CSV; the other years' `TOTPOP` / `TOTHH`
+columns are kept at the end of the table, as in the legacy output.
+
+## Workflow
+
+```{mermaid}
+flowchart TD
+    A[ACS block groups, tracts, counties, places] --> B[Gap fill per geography]
+    B --> C[Block-group income fallback: tract, then county]
+    D[2020 block groups + city polygons] --> E[Centroid-in-city assignment]
+    C --> F[Household-weighted city income]
+    E --> F
+    F --> G[Hybrid city income: place, county, block groups]
+    G --> H[HTCOST, HPLUST, export]
+    A --> H
+```
+
+1. **Fetch** ACS 5-year income, population and households for 2009 through the latest H+T
+   year (`acs_panel.fetch_acs_panel`). Years the API cannot serve are recorded, not fatal.
+   Block-group data is not available before 2013, and 2020-vintage block groups have no data
+   before 2020.
+2. **Gap fill** each geography independently (`acs_panel.fill_acs_panel`): internal gaps are
+   linearly interpolated, edge gaps use an OLS trend over all observed years, and geographies
+   with fewer than two observed years stay null. Filled rows are tagged `interpolated` or
+   `extrapolated`. Values are rounded to whole numbers; non-positive values become null.
+3. **Fall back** for block groups whose income is still null: parent tract first, then parent
+   county (`acs_panel.apply_income_fallback`). Population and households are not filled this way.
+4. **Assign** each 2020 block group to one city by the city polygon containing its centroid
+   (`ht_income.assign_block_groups_to_cities`). Block groups are reprojected to the city layer's
+   CRS (EPSG:26912) first. Where city polygons overlap, the first polygon in layer order wins.
+5. **Aggregate** to cities (`ht_income.aggregate_city_income`):
+   `MEDINC = sum(income x households) / sum(households)`, using only block groups with income
+   and households above zero. `TOTPOP` and `TOTHH` sum the same block groups.
+6. **Hybrid income** (`ht_income.build_hybrid_medinc`) with priority place > county (TDM rows
+   only) > block-group mean.
+7. **Share and export** (`ht_income.compute_ht_income_share`, `build_export_frame`).
+
+## Caching
+
+Tract, county and place panels are cached as CSV under `data/raw/housing-plus-transportation/`;
+the block-group reference (GeoParquet) and block-group panel (Parquet) are cached under
+`data/intermediate/ht_income/`. A cache that does not cover the requested years is rebuilt. Use
+`--refresh` or delete a file to force a re-download. Fetching needs `CENSUS_API_KEY`.
+
+## Outputs
+
+- `data/derived/affordability_housing_transportation_costs.gpkg` (GeoPackage, EPSG:26912)
+- `data/derived/affordability_housing_transportation_costs.csv` (same table without geometry)
+
+## Parity with the main branch
+
+`validation.compare_to_baseline` compares the build against
+`baseline_main_Affordability_Housing_Transportation_Costs.csv`, an export of the main-branch
+notebook's output.
+
+- Same 109 city rows and the same 93 columns in the same order.
+- Income columns (`MEDINC_CITY`, `MEDINC_CNTY`) and `HPLUST` match exactly (differences below
+  1e-9).
+- `TOTPOP` / `TOTHH` match within 2 people. The block-group-to-city assignment is identical to
+  the ArcGIS join, and the gap-fill logic returns identical values to the notebook's function
+  on the same data. The remaining difference is most likely rounding: each count sums many
+  extrapolated block-group values rounded to whole people, and a fit that differs by one
+  floating-point step between numpy / LAPACK builds flips exact-.5 ties by 1. This has not been
+  confirmed by re-running the notebook in the original ArcGIS Pro environment.
+
+The snapshot is a local export of the main-branch notebook's output dated 2026-04-27, the same
+day as main commit `b059e67`; it was not tracked on main. Re-export it when the main-branch
+output changes.

@@ -24,3 +24,17 @@ with:
 - `GeoDataFrame.dissolve`
 - `geopandas.sjoin`
 - GeoPackage outputs
+
+## Housing and Transportation Income Share
+
+The city-level `HPLUST` workflow is a port of the main-branch
+`Process-GPI-TDM-HT-by-City.ipynb` notebook. See [H+T Income Share](ht-income.qmd) for the
+method, geographies, and parity results.
+
+```bash
+uv run regional-metrics build housing-transportation-income
+```
+
+It fetches ACS 5-year median income, population, and households for 2009 through the latest
+H+T year, gap-fills them, aggregates block groups to cities, and normalizes the H+T cost by
+the county median household income.

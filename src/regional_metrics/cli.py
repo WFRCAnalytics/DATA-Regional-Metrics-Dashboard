@@ -11,10 +11,17 @@ from .io_arcgis import connect_gis, feature_layer_to_frame, get_item_layer
 from .io_spatial import read_spatial, write_spatial
 from .logging_utils import configure_logging
 from .metrics_ht import build_city_cost_layer, load_ht_cost_table, summarize_ht_by_geography
+from .pipeline_ht_income import (
+    build_ht_income,
+    validate_against_baseline,
+    write_ht_income_outputs,
+)
 from .pipeline_performance_metrics import build_performance_metrics
 from .publish_agol import build_publish_plan, publish_geodataframe
 from .settings import (
     load_arcgis_settings,
+    load_census_api_key,
+    load_ht_income_config,
     load_project_config,
     project_root,
     publish_enabled,
@@ -103,6 +110,46 @@ def build_housing_transportation_command(
     raise typer.BadParameter(
         "Provide either --city-layer and --cost-table, or provide --geography and --block-groups."
     )
+
+
+@build_app.command("housing-transportation-income")
+def build_housing_transportation_income_command(
+    refresh: bool = typer.Option(
+        False, help="Ignore cached ACS panels and block-group reference; re-download everything."
+    ),
+    compare_baseline: bool = typer.Option(
+        True,
+        "--compare-baseline/--no-compare-baseline",
+        help="Check the result against the main-branch snapshot in the config.",
+    ),
+    dry_run: bool = typer.Option(False, help="Validate config and input files; build nothing."),
+):
+    """City-level H+T income share (HPLUST) normalized by ACS county median income."""
+    config = load_ht_income_config()
+    configure_logging(load_project_config().logging)
+
+    if dry_run:
+        table = Table(title="H+T income inputs")
+        table.add_column("Path key")
+        table.add_column("Path")
+        table.add_column("Exists")
+        for key, path in config.paths.items():
+            table.add_row(key, str(path), "yes" if path.exists() else "no")
+        console.print(table)
+        return
+
+    api_key = load_census_api_key()
+    result = build_ht_income(config, api_key, refresh=refresh)
+    gpkg, csv_path = write_ht_income_outputs(result, config)
+    console.print(f"Wrote {len(result.export)} cities to {gpkg} and {csv_path}")
+
+    if compare_baseline:
+        report = validate_against_baseline(result.export, config)
+        status = "PASSED" if report.passed else "FAILED"
+        console.print(f"Parity vs main-branch snapshot: {status}")
+        if not report.passed:
+            console.print(report.failing_columns.to_string(index=False))
+            raise typer.Exit(code=1)
 
 
 @app.command("compare")

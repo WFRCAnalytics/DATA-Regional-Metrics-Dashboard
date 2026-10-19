@@ -42,3 +42,7 @@ data/derived/*
 
 /.quarto/
 **/*.quarto_ipynb
+
+# Rendered analysis documents
+analysis/*.html
+analysis/*_files/

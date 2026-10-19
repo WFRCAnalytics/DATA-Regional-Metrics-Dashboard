@@ -1,0 +1,196 @@
+---
+title: "H+T Income Share by City"
+subtitle: "Run-through of the city-level HPLUST workflow"
+jupyter: python3
+execute:
+  echo: true
+  warning: false
+format:
+  html:
+    toc: true
+    code-fold: show
+    embed-resources: true
+---
+
+This document runs the housing + transportation (H+T) income-share workflow end to end and
+shows the checks that matter at each stage. It replaces the main-branch
+`Process-GPI-TDM-HT-by-City.ipynb` notebook. All analysis logic lives in
+`src/regional_metrics/` (`acs_panel.py`, `ht_income.py`, `pipeline_ht_income.py`); this file
+only calls it and inspects the results.
+
+**Metric.** For each city and H+T year,
+
+$$
+\text{HPLUST}_{y} = \frac{\text{HTCOST}_{y} \times 12}{\text{MEDINC}_{y,\text{county}}}
+$$
+
+where `HTCOST` is the monthly housing + transportation cost and `MEDINC_CNTY` is the ACS 5-year
+county median household income (`B19013_001E`) of the city's county. It is a 0--1 annual share.
+
+**Run it** with the project environment (no separate kernel is registered; Quarto uses the
+`python3` kernel inside the uv-managed `.venv`):
+
+```bash
+uv run quarto render analysis/ht-income.qmd
+```
+
+## Setup
+
+The Census API key is read from `CENSUS_API_KEY` in the environment or `.env`. It is only
+needed when a cache is missing or stale; delete a cached panel (or pass `refresh=True`) to
+force a re-download.
+
+```{python}
+import pandas as pd
+
+from regional_metrics.pipeline_ht_income import (
+    build_ht_income,
+    validate_against_baseline,
+    write_ht_income_outputs,
+)
+from regional_metrics.settings import load_census_api_key, load_ht_income_config
+
+pd.options.display.max_columns = None
+pd.options.display.width = 140
+
+config = load_ht_income_config()
+
+try:
+    api_key = load_census_api_key()
+except RuntimeError:
+    api_key = None  # fine when every cache is already present
+
+api_key is not None
+```
+
+## Run the workflow
+
+```{python}
+result = build_ht_income(config, api_key)
+
+print("H+T years :", result.target_years)
+print(f"ACS years : {result.acs_years[0]}-{result.acs_years[-1]}")
+print("Export    :", result.export.shape, "| CRS", result.export.crs.to_epsg())
+```
+
+## Input checks
+
+Cities in the cost CSV must all exist in the city layer. Layer-only rows are geometry with no
+H+T costs (non-residential TDM zones such as Utah Lake or Camp Williams).
+
+```{python}
+result.name_mismatches
+```
+
+## Block-group income provenance
+
+Block-group income comes from the ACS where published. Block groups are missing for years
+before 2013 (the API does not serve them) and for 2020-vintage block groups before 2020, so
+gaps are interpolated or extrapolated. Anything still null falls back to the parent tract,
+then the parent county.
+
+```{python}
+provenance = (
+    result.bg_panel.groupby(["year", "income_source"], dropna=False)
+    .size()
+    .unstack(fill_value=0)
+)
+provenance
+```
+
+```{python}
+result.fallback_summary
+```
+
+`still_null` should be zero in every year; if not, a block group has no usable income at any
+level and its city loses that block group's households from the weighted mean.
+
+## Block groups to cities
+
+Each block group is assigned to the city polygon that contains its centroid, replacing
+ArcGIS's `HAVE_THEIR_CENTER_IN`. Unmatched block groups are expected only in non-residential
+zones.
+
+```{python}
+lookup = result.bg_city_lookup
+pd.Series(
+    {
+        "block groups": len(lookup),
+        "matched to a city": int(lookup[config.city_key].notna().sum()),
+        "unmatched": int(lookup[config.city_key].isna().sum()),
+        "duplicate GEOIDs": int(lookup[config.bg_key].duplicated().sum()),
+    }
+)
+```
+
+## City median income source
+
+`MEDINC{year}_CITY` uses the ACS Place value where a city matches a Census Place, the ACS
+county value for whole-county TDM rows, and the household-weighted block-group mean
+otherwise. The table shows which source each city resolved to in the latest ACS year.
+
+```{python}
+result.medinc_sources["medinc_source"].value_counts().rename("cities").to_frame()
+```
+
+## HPLUST by year
+
+```{python}
+share_columns = [f"HPLUST{year}" for year in result.target_years]
+export = pd.DataFrame(result.export.drop(columns=result.export.geometry.name))
+export[share_columns].replace(0, float("nan")).describe().T[["count", "min", "50%", "max"]]
+```
+
+Zeros are the legacy placeholder for "no county income"; they are excluded above. Expected
+range is roughly 0--0.6. A maximum above 1 would indicate a calculation error.
+
+```{python}
+assert (export[share_columns].max() < 1).all(), "HPLUST above 1 - check the inputs"
+```
+
+### Spot check
+
+One city, end to end, so the arithmetic can be verified by hand:
+
+```{python}
+year = result.target_years[-1]
+row = export.loc[export[config.city_key] == "Alpine"].iloc[0]
+pd.Series(
+    {
+        "HCOST (monthly)": row[f"HCOST{year}"],
+        "TCOST (monthly)": row[f"TCOST{year}"],
+        "HTCOST (monthly)": row[f"HTCOST{year}"],
+        "MEDINC_CNTY": row[f"MEDINC{year}_CNTY"],
+        "HPLUST": row[f"HPLUST{year}"],
+        "check: HTCOST*12/MEDINC_CNTY": row[f"HTCOST{year}"] * 12 / row[f"MEDINC{year}_CNTY"],
+    },
+    name=f"Alpine {year}",
+)
+```
+
+## Parity with the main branch
+
+The result is compared with the snapshot exported from the main-branch notebook (see
+`baseline_csv` in `config/ht_income.yml`). Income and share columns must match exactly;
+`TOTPOP` / `TOTHH` allow a small tolerance (see the config comment).
+
+```{python}
+report = validate_against_baseline(result.export, config)
+
+print("Parity passed          :", report.passed)
+print("Same column order      :", report.column_order_matches)
+print("Missing / extra columns:", report.missing_columns, report.extra_columns)
+print("Missing / extra cities :", report.missing_keys, report.extra_keys)
+report.column_diffs.sort_values("max_abs_diff", ascending=False).head(10)
+```
+
+```{python}
+assert report.passed, report.failing_columns
+```
+
+## Write outputs
+
+```{python}
+gpkg_path, csv_path = write_ht_income_outputs(result, config)
+gpkg_path.name, csv_path.name
+```

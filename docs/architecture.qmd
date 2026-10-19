@@ -13,6 +13,10 @@
 - `pipeline_performance_metrics.py`: orchestration for the hosted dashboard layer.
 - `metrics_*.py`: metric-family specific transforms.
 - `publish_agol.py`: hosted layer publish helpers.
+- `acs_panel.py`: ACS income / population / household panels (fetch, gap fill, geography fallback).
+- `ht_income.py`: city-level H+T income share (block-group to city, hybrid city income, `HPLUST`).
+- `pipeline_ht_income.py`: orchestration and caching for the H+T income workflow.
+- `validation.py`: output comparison, including the parity check against main-branch snapshots.
 
 ## Legacy boundary
 
